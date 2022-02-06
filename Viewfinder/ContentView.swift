@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var value: Double = 0
+
     var body: some View {
         VStack {
             PreviewPanel()
+
+            StyledSlider(imageName: "timer", value: $value)
+
             Spacer()
         }
         .padding(14)

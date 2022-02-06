@@ -26,6 +26,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         self.statusBarItem?.menu = menu
-        self.statusBarItem?.button?.image = NSImage(systemSymbolName: "camera", accessibilityDescription: nil)
+        self.statusBarItem?.button?.image = NSImage(systemSymbolName: "camera.fill", accessibilityDescription: nil)
     }
 }
