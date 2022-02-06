@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Panel<Content>: View where Content: View {
+    @Environment(\.colorScheme) private var colorScheme
+
     let content: () -> Content
     let cornerRadius: CGFloat = 10
     let shadowPadding: CGFloat = 12
@@ -28,14 +30,14 @@ struct Panel<Content>: View where Content: View {
             .padding(shadowPadding)
             .background(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .dark ? .black : .gray)
                     .padding(shadowPadding)
                     .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 0)
                     .reverseMask {
                         RoundedRectangle(cornerRadius: cornerRadius)
                             .padding(shadowPadding)
-
-                    })
+                    }
+            )
             .padding(-shadowPadding)
     }
 }

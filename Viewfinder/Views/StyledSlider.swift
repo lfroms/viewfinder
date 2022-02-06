@@ -36,7 +36,7 @@ struct StyledSlider: View {
                         Circle()
                             .fill(.white)
                             .frame(width: 20, height: 20, alignment: .center)
-                            .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 0)
+                            .shadow(color: .black.opacity(0.15), radius: 10, x: 0, y: 0)
                     )
                     .padding(.leading, leftOffset(totalWidth: proxy.size.width))
                     .opacity(handleOutlineOpacity(totalWidth: proxy.size.width))
@@ -50,8 +50,8 @@ struct StyledSlider: View {
                 .onChanged { drag in
                     value = calculatePercentage(dragX: drag.location.x, totalWidth: proxy.size.width)
                 })
-            .frame(height: 22)
         }
+        .frame(height: 22)
     }
 
     private func handleOutlineOpacity(totalWidth: CGFloat) -> CGFloat {

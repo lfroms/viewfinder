@@ -13,7 +13,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let contentView = NSHostingView(
-            rootView: ContentView().padding(.vertical, -4) // Compensate for internal margins.
+            rootView: ContentView().padding(.top, -4) // Compensate for internal margins.
         )
 
         contentView.frame = NSRect(x: 0, y: 0, width: 380, height: 640)
