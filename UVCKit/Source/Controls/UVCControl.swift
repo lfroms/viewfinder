@@ -34,7 +34,7 @@ public class UVCControl {
             length: length
         )
 
-        return Int(value)
+        return value
     }
 
     internal func write(value: Int, length: Int) throws -> Int {
@@ -46,6 +46,6 @@ public class UVCControl {
             length: length
         )
 
-        return Int(value)
+        return value
     }
 }

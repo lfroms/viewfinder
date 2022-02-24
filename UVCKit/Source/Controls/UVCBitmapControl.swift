@@ -5,7 +5,7 @@
 //  Created by Lukas Romsicki on 2022-02-09.
 //
 
-public class UVCBitmapControl<BitmapValue: UVCBitmapValue>: UVCControl {
+public class UVCBitmapControl<BitmapValue: UVCBitmapValue>: UVCControl, UVCControllable {
     public lazy var defaultValue: BitmapValue = {
         guard
             let value = try? read(requestType: .getDefault, length: length),

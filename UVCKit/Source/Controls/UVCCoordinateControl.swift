@@ -5,8 +5,8 @@
 //  Created by Lukas Romsicki on 2022-02-09.
 //
 
-public class UVCCoordinateControl: UVCControl {
-    public struct Coordinate {
+public class UVCCoordinateControl: UVCControl, UVCControllable, UVCRangeControllable {
+    public struct Coordinate: Equatable {
         let x: Int
         let y: Int
     }

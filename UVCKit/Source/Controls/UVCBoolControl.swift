@@ -5,7 +5,7 @@
 //  Created by Lukas Romsicki on 2022-02-09.
 //
 
-public class UVCBoolControl: UVCControl {
+public class UVCBoolControl: UVCControl, UVCControllable {
     public lazy var defaultValue: Bool = {
         let value = try? read(requestType: .getDefault, length: length) != 0
         return value ?? false

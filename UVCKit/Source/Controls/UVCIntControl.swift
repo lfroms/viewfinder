@@ -5,7 +5,7 @@
 //  Created by Lukas Romsicki on 2022-02-09.
 //
 
-public class UVCIntControl: UVCControl {
+public class UVCIntControl: UVCControl, UVCControllable, UVCRangeControllable {
     public lazy var defaultValue: Int = {
         let value = try? read(requestType: .getDefault, length: length)
         return value ?? 0
