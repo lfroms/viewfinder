@@ -17,6 +17,7 @@ final class DeviceControls: ObservableObject {
     lazy var contrast = DeviceControl(control: controls.contrast)
     lazy var contrastAuto = DeviceControl(control: controls.contrastAuto)
     lazy var saturation = DeviceControl(control: controls.saturation)
+    lazy var sharpness = DeviceControl(control: controls.sharpness)
 
     init(controls: UVCDeviceControls) {
         self.controls = controls
