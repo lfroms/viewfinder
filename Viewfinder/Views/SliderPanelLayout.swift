@@ -19,8 +19,13 @@ struct SliderPanelLayout: View {
         Panel {
             VStack(alignment: .center, spacing: 8) {
                 HStack(alignment: .firstTextBaseline) {
-                    Label(title, systemImage: systemImage)
-                        .font(.body.bold())
+                    HStack(alignment: .firstTextBaseline, spacing: 6) {
+                        Image(systemName: systemImage)
+                            .frame(width: 20)
+
+                        Text(title)
+                    }
+                    .font(.body.bold())
 
                     Spacer()
 
