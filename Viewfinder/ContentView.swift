@@ -19,6 +19,7 @@ struct ContentView: View {
                 VStack(spacing: 12) {
                     BrightnessPanel()
                     ContrastPanel()
+                    SaturationPanel()
                     WhiteBalancePanel()
                 }
                 .padding(12)

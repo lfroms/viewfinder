@@ -23,6 +23,7 @@
 		8044386227C8740A00715373 /* Int+Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386127C8740A00715373 /* Int+Percentage.swift */; };
 		8044386427C8742A00715373 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386327C8742A00715373 /* Double+Round.swift */; };
 		8044386627C8745300715373 /* ContrastPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386527C8745300715373 /* ContrastPanel.swift */; };
+		8044386827C876D300715373 /* SaturationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386727C876D300715373 /* SaturationPanel.swift */; };
 		806867B427B1EDB20000C64D /* UVCSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B327B1EDB20000C64D /* UVCSelector.swift */; };
 		806867B727B1EF880000C64D /* UVCDescriptorSubtype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */; };
 		806867B927B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */; };
@@ -109,6 +110,7 @@
 		8044386127C8740A00715373 /* Int+Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Percentage.swift"; sourceTree = "<group>"; };
 		8044386327C8742A00715373 /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 		8044386527C8745300715373 /* ContrastPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrastPanel.swift; sourceTree = "<group>"; };
+		8044386727C876D300715373 /* SaturationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationPanel.swift; sourceTree = "<group>"; };
 		806867B327B1EDB20000C64D /* UVCSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCSelector.swift; sourceTree = "<group>"; };
 		806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDescriptorSubtype.swift; sourceTree = "<group>"; };
 		806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCVideoInterfaceClassCode.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				80CF9BE827BDCC9E001C0E0A /* WhiteBalancePanel.swift */,
 				8044385F27C8670600715373 /* BrightnessPanel.swift */,
 				8044386527C8745300715373 /* ContrastPanel.swift */,
+				8044386727C876D300715373 /* SaturationPanel.swift */,
 			);
 			path = Panels;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				80C4482427AF2A6C0059150C /* PreviewPanel.swift in Sources */,
 				8044385C27C83E8600715373 /* PlainToggle.swift in Sources */,
 				80CF9BE727BB27B4001C0E0A /* MenuSliderControls.swift in Sources */,
+				8044386827C876D300715373 /* SaturationPanel.swift in Sources */,
 				80C4481F27AF28B40059150C /* PreviewView.swift in Sources */,
 				809127AB27B5E37200C38C0A /* Device.swift in Sources */,
 				8044386227C8740A00715373 /* Int+Percentage.swift in Sources */,
