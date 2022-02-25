@@ -22,6 +22,7 @@ struct ContentView: View {
                     ContrastPanel()
                     SaturationPanel()
                     SharpnessPanel()
+                    FocusPanel()
                 }
                 .padding(12)
             }
