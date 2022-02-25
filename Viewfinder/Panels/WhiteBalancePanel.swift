@@ -12,34 +12,12 @@ struct WhiteBalancePanel: View {
     @CameraControl(\.whiteBalanceAuto) var whiteBalanceAuto: DeviceControl
 
     var body: some View {
-        Panel {
-            VStack(alignment: .center, spacing: 8) {
-                HStack(alignment: .firstTextBaseline) {
-                    Label("White Balance", systemImage: "slider.horizontal.3")
-                        .font(.body.bold())
-
-                    Spacer()
-
-                    Text(verbatim: "\(whiteBalance.value)K")
-                        .font(.caption.bold().monospacedDigit())
-                        .opacity(0.8)
-
-                    if whiteBalanceAuto.value {
-                        AutoBadge()
-                            .transition(.opacity)
-                    }
-                }
-
-                HStack(spacing: 8) {
-                    PlainToggle(isOn: $whiteBalanceAuto.value.animation())
-                    MenuSlider(value: $whiteBalance.value, in: whiteBalance.range)
-                        .disabled(whiteBalanceAuto.value)
-                }
-            }
-            .padding(12)
-        }
-        .task {
-            NotificationCenter.default.post(name: .readCameraValues, object: nil)
-        }
+        SliderPanelLayout(
+            title: "White Balance",
+            systemImage: "slider.horizontal.3",
+            auto: $whiteBalanceAuto.value,
+            value: $whiteBalance.value,
+            range: whiteBalance.range
+        )
     }
 }

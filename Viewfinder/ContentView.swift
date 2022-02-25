@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     var body: some View {
         VStack(spacing: 0) {
             PreviewPanel()
@@ -18,6 +20,11 @@ struct ContentView: View {
                     WhiteBalancePanel()
                 }
                 .padding(12)
+            }
+        }
+        .onReceive(timer) { _ in
+            Task {
+                NotificationCenter.default.post(name: .readCameraValues, object: nil)
             }
         }
     }

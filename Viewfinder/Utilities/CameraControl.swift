@@ -18,7 +18,7 @@ struct CameraControl<T: UVCControllable>: DynamicProperty {
             fatalError("No primary device found.")
         }
 
-        self.deviceControl = DeviceControls(device: primaryDevice)[keyPath: keyPath]
+        self.deviceControl = primaryDevice.controls[keyPath: keyPath]
     }
 
     var wrappedValue: DeviceControl<T> {

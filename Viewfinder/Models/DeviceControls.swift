@@ -12,9 +12,7 @@ final class DeviceControls: ObservableObject {
     let whiteBalance: DeviceControl<UVCIntControl>
     let whiteBalanceAuto: DeviceControl<UVCBoolControl>
 
-    init(device: Device) {
-        let controls = device.uvc.controls
-
+    init(controls: UVCDeviceControls) {
         self.whiteBalance = DeviceControl(control: controls.whiteBalance)
         self.whiteBalanceAuto = DeviceControl(control: controls.whiteBalanceAuto)
     }

@@ -18,6 +18,7 @@
 		8044385827C6EEC200715373 /* DeviceControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385727C6EEC200715373 /* DeviceControls.swift */; };
 		8044385A27C83E5700715373 /* AutoBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385927C83E5700715373 /* AutoBadge.swift */; };
 		8044385C27C83E8600715373 /* PlainToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385B27C83E8600715373 /* PlainToggle.swift */; };
+		8044385E27C8586800715373 /* SliderPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385D27C8586800715373 /* SliderPanelLayout.swift */; };
 		806867B427B1EDB20000C64D /* UVCSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B327B1EDB20000C64D /* UVCSelector.swift */; };
 		806867B727B1EF880000C64D /* UVCDescriptorSubtype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */; };
 		806867B927B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */; };
@@ -99,6 +100,7 @@
 		8044385727C6EEC200715373 /* DeviceControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControls.swift; sourceTree = "<group>"; };
 		8044385927C83E5700715373 /* AutoBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBadge.swift; sourceTree = "<group>"; };
 		8044385B27C83E8600715373 /* PlainToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainToggle.swift; sourceTree = "<group>"; };
+		8044385D27C8586800715373 /* SliderPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPanelLayout.swift; sourceTree = "<group>"; };
 		806867B327B1EDB20000C64D /* UVCSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCSelector.swift; sourceTree = "<group>"; };
 		806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDescriptorSubtype.swift; sourceTree = "<group>"; };
 		806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCVideoInterfaceClassCode.swift; sourceTree = "<group>"; };
@@ -285,12 +287,13 @@
 		80C4481C27AF28990059150C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				80C4481D27AF28A30059150C /* Preview */,
-				80C4482827AF32650059150C /* Panel.swift */,
+				8044385927C83E5700715373 /* AutoBadge.swift */,
 				8097A4DD27AF78750003BB23 /* MenuSlider.swift */,
 				80CF9BE627BB27B4001C0E0A /* MenuSliderControls.swift */,
-				8044385927C83E5700715373 /* AutoBadge.swift */,
+				80C4482827AF32650059150C /* Panel.swift */,
 				8044385B27C83E8600715373 /* PlainToggle.swift */,
+				80C4481D27AF28A30059150C /* Preview */,
+				8044385D27C8586800715373 /* SliderPanelLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				80C4481B27AF1A9E0059150C /* AppDelegate.swift in Sources */,
 				80CF9BE927BDCC9E001C0E0A /* WhiteBalancePanel.swift in Sources */,
 				8044385A27C83E5700715373 /* AutoBadge.swift in Sources */,
+				8044385E27C8586800715373 /* SliderPanelLayout.swift in Sources */,
 				80C4482427AF2A6C0059150C /* PreviewPanel.swift in Sources */,
 				8044385C27C83E8600715373 /* PlainToggle.swift in Sources */,
 				80CF9BE727BB27B4001C0E0A /* MenuSliderControls.swift in Sources */,

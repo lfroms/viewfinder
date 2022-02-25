@@ -9,8 +9,9 @@ import AVFoundation
 import UVCKit
 
 struct Device {
-    let uvc: UVCDevice
+    private let uvc: UVCDevice
     let input: AVCaptureDeviceInput
+    let controls: DeviceControls
 
     init?(device: AVCaptureDevice) {
         guard
@@ -22,5 +23,6 @@ struct Device {
 
         self.input = input
         self.uvc = uvcDevice
+        self.controls = DeviceControls(controls: uvc.controls)
     }
 }
