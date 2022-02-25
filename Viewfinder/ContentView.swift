@@ -17,6 +17,8 @@ struct ContentView: View {
 
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 12) {
+                    BrightnessPanel()
+                    ContrastPanel()
                     WhiteBalancePanel()
                 }
                 .padding(12)

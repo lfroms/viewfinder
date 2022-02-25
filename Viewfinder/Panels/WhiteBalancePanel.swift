@@ -15,6 +15,7 @@ struct WhiteBalancePanel: View {
         SliderPanelLayout(
             title: "White Balance",
             systemImage: "slider.horizontal.3",
+            valueLabel: "\(whiteBalance.value)K",
             auto: $whiteBalanceAuto.value,
             value: $whiteBalance.value,
             range: whiteBalance.range

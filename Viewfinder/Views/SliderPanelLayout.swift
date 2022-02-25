@@ -10,6 +10,7 @@ import SwiftUI
 struct SliderPanelLayout: View {
     var title: String
     var systemImage: String
+    var valueLabel: String
     @Binding var auto: Bool
     @Binding var value: Int
     var range: ClosedRange<Int>
@@ -23,7 +24,7 @@ struct SliderPanelLayout: View {
 
                     Spacer()
 
-                    Text(verbatim: "\(value)K")
+                    Text(verbatim: valueLabel)
                         .font(.caption.bold().monospacedDigit())
                         .opacity(0.8)
 

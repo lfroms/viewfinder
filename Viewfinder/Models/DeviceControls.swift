@@ -9,11 +9,15 @@ import Foundation
 import UVCKit
 
 final class DeviceControls: ObservableObject {
-    let whiteBalance: DeviceControl<UVCIntControl>
-    let whiteBalanceAuto: DeviceControl<UVCBoolControl>
+    private let controls: UVCDeviceControls
+
+    lazy var whiteBalance = DeviceControl(control: controls.whiteBalance)
+    lazy var whiteBalanceAuto = DeviceControl(control: controls.whiteBalanceAuto)
+    lazy var brightness = DeviceControl(control: controls.brightness)
+    lazy var contrast = DeviceControl(control: controls.contrast)
+    lazy var contrastAuto = DeviceControl(control: controls.contrastAuto)
 
     init(controls: UVCDeviceControls) {
-        self.whiteBalance = DeviceControl(control: controls.whiteBalance)
-        self.whiteBalanceAuto = DeviceControl(control: controls.whiteBalanceAuto)
+        self.controls = controls
     }
 }

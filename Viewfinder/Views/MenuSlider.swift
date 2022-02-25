@@ -10,15 +10,16 @@ import SwiftUI
 struct MenuSlider: View {
     @Environment(\.isEnabled) var isEnabled: Bool
 
-    @State var percentage: Double = 0
+    @State var percentage: Double
     @Binding var value: Int
     var bounds: ClosedRange<Int>
+
+    @State var isDragging: Bool = false
 
     init(value: Binding<Int>, in bounds: ClosedRange<Int>) {
         self._value = value
         self.bounds = bounds
-
-        self.percentage = convertToPercentage(absolute: value.wrappedValue)
+        self.percentage = convertToPercentage(absolute: value.wrappedValue, in: bounds)
     }
 
     var body: some View {
@@ -35,26 +36,29 @@ struct MenuSlider: View {
                             return
                         }
 
+                        if !isDragging {
+                            isDragging = true
+                        }
+
                         percentage = calculatePercentage(dragX: drag.location.x, totalWidth: proxy.size.width)
+                    }
+                    .onEnded { _ in
+                        isDragging = false
                     }
             )
         }
         .onChange(of: value) { newValue in
+            guard !isDragging else {
+                return
+            }
+
             withAnimation {
-                self.percentage = convertToPercentage(absolute: newValue)
+                self.percentage = convertToPercentage(absolute: newValue, in: bounds)
             }
         }
         .onChange(of: percentage) { newValue in
-            self.value = convertToAbsolute(percentage: newValue)
+            self.value = convertToAbsolute(percentage: newValue, in: bounds)
         }
-    }
-
-    private func convertToPercentage(absolute absoluteValue: Int) -> Double {
-        Double(absoluteValue - bounds.lowerBound) / Double(bounds.upperBound - bounds.lowerBound)
-    }
-
-    private func convertToAbsolute(percentage: Double) -> Int {
-        Int(Float(bounds.lowerBound) + (Float(bounds.upperBound - bounds.lowerBound) * Float(percentage)))
     }
 
     private func handleOutlineOpacity(totalWidth: CGFloat) -> CGFloat {
@@ -75,4 +79,12 @@ struct MenuSlider: View {
     private func calculatePercentage(dragX: CGFloat, totalWidth: CGFloat) -> Double {
         return min(max((dragX - 11) / (totalWidth - 22), 0), 1)
     }
+}
+
+private func convertToPercentage(absolute absoluteValue: Int, in bounds: ClosedRange<Int>) -> Double {
+    Double(absoluteValue - bounds.lowerBound) / Double(bounds.upperBound - bounds.lowerBound)
+}
+
+private func convertToAbsolute(percentage: Double, in bounds: ClosedRange<Int>) -> Int {
+    Int(Float(bounds.lowerBound) + (Float(bounds.upperBound - bounds.lowerBound) * Float(percentage)))
 }

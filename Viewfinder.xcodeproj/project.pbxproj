@@ -19,6 +19,10 @@
 		8044385A27C83E5700715373 /* AutoBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385927C83E5700715373 /* AutoBadge.swift */; };
 		8044385C27C83E8600715373 /* PlainToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385B27C83E8600715373 /* PlainToggle.swift */; };
 		8044385E27C8586800715373 /* SliderPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385D27C8586800715373 /* SliderPanelLayout.swift */; };
+		8044386027C8670600715373 /* BrightnessPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385F27C8670600715373 /* BrightnessPanel.swift */; };
+		8044386227C8740A00715373 /* Int+Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386127C8740A00715373 /* Int+Percentage.swift */; };
+		8044386427C8742A00715373 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386327C8742A00715373 /* Double+Round.swift */; };
+		8044386627C8745300715373 /* ContrastPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386527C8745300715373 /* ContrastPanel.swift */; };
 		806867B427B1EDB20000C64D /* UVCSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B327B1EDB20000C64D /* UVCSelector.swift */; };
 		806867B727B1EF880000C64D /* UVCDescriptorSubtype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */; };
 		806867B927B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */; };
@@ -101,6 +105,10 @@
 		8044385927C83E5700715373 /* AutoBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBadge.swift; sourceTree = "<group>"; };
 		8044385B27C83E8600715373 /* PlainToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainToggle.swift; sourceTree = "<group>"; };
 		8044385D27C8586800715373 /* SliderPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPanelLayout.swift; sourceTree = "<group>"; };
+		8044385F27C8670600715373 /* BrightnessPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessPanel.swift; sourceTree = "<group>"; };
+		8044386127C8740A00715373 /* Int+Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Percentage.swift"; sourceTree = "<group>"; };
+		8044386327C8742A00715373 /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
+		8044386527C8745300715373 /* ContrastPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrastPanel.swift; sourceTree = "<group>"; };
 		806867B327B1EDB20000C64D /* UVCSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCSelector.swift; sourceTree = "<group>"; };
 		806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDescriptorSubtype.swift; sourceTree = "<group>"; };
 		806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCVideoInterfaceClassCode.swift; sourceTree = "<group>"; };
@@ -312,6 +320,8 @@
 			children = (
 				80C4482327AF2A6C0059150C /* PreviewPanel.swift */,
 				80CF9BE827BDCC9E001C0E0A /* WhiteBalancePanel.swift */,
+				8044385F27C8670600715373 /* BrightnessPanel.swift */,
+				8044386527C8745300715373 /* ContrastPanel.swift */,
 			);
 			path = Panels;
 			sourceTree = "<group>";
@@ -320,6 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				80C4482B27AF5A6E0059150C /* View+ReverseMask.swift */,
+				8044386127C8740A00715373 /* Int+Percentage.swift */,
+				8044386327C8742A00715373 /* Double+Round.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -480,18 +492,22 @@
 			files = (
 				80C4481B27AF1A9E0059150C /* AppDelegate.swift in Sources */,
 				80CF9BE927BDCC9E001C0E0A /* WhiteBalancePanel.swift in Sources */,
+				8044386427C8742A00715373 /* Double+Round.swift in Sources */,
 				8044385A27C83E5700715373 /* AutoBadge.swift in Sources */,
+				8044386627C8745300715373 /* ContrastPanel.swift in Sources */,
 				8044385E27C8586800715373 /* SliderPanelLayout.swift in Sources */,
 				80C4482427AF2A6C0059150C /* PreviewPanel.swift in Sources */,
 				8044385C27C83E8600715373 /* PlainToggle.swift in Sources */,
 				80CF9BE727BB27B4001C0E0A /* MenuSliderControls.swift in Sources */,
 				80C4481F27AF28B40059150C /* PreviewView.swift in Sources */,
 				809127AB27B5E37200C38C0A /* Device.swift in Sources */,
+				8044386227C8740A00715373 /* Int+Percentage.swift in Sources */,
 				8044385127C5998400715373 /* CameraControl.swift in Sources */,
 				80CF9BE527BB1EDA001C0E0A /* Notifications.swift in Sources */,
 				8044385827C6EEC200715373 /* DeviceControls.swift in Sources */,
 				809127A927B5DE8C00C38C0A /* DeviceManager.swift in Sources */,
 				8078968527AC8D3300179CA2 /* ContentView.swift in Sources */,
+				8044386027C8670600715373 /* BrightnessPanel.swift in Sources */,
 				8078968327AC8D3300179CA2 /* ViewfinderApp.swift in Sources */,
 				80C4482927AF32650059150C /* Panel.swift in Sources */,
 				80C4482127AF298B0059150C /* PreviewContainer.swift in Sources */,

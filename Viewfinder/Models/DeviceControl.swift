@@ -18,6 +18,8 @@ final class DeviceControl<ControlType: UVCControllable>: ObservableObject {
     @Published private var displayValue: ValueType
     @Published private var rangeInternal: ClosedRange<Int> = 0 ... 0
 
+    @Published var defaultValue: ValueType
+
     var value: ValueType {
         get {
             displayValue
@@ -37,7 +39,10 @@ final class DeviceControl<ControlType: UVCControllable>: ObservableObject {
 
     init(control: ControlType) {
         self.control = control
-        self.displayValue = control.value
+
+        let defaultValue = control.defaultValue
+        self.displayValue = defaultValue
+        self.defaultValue = defaultValue
 
         subscribeToNotifications()
     }
@@ -45,7 +50,10 @@ final class DeviceControl<ControlType: UVCControllable>: ObservableObject {
     // TODO: Currently only supports integer ranges, make it support any kind of control with a range.
     init(control: ControlType) where ControlType: UVCRangeControllable, ValueType == Int {
         self.control = control
-        self.displayValue = control.value
+
+        let defaultValue = control.defaultValue
+        self.displayValue = defaultValue
+        self.defaultValue = defaultValue
 
         self.rangeInternal = control.minimum ... control.maximum
 
