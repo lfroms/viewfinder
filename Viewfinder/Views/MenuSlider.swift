@@ -43,6 +43,7 @@ struct MenuSlider: View {
                     }
             )
         }
+        .frame(height: 22) // Value defined in MenuSliderControls
         .onChange(of: value) { newValue in
             guard !isDragging else {
                 return

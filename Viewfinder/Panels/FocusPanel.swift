@@ -12,13 +12,16 @@ struct FocusPanel: View {
     @CameraControl(\.focusAuto) var focusAuto: DeviceControl
 
     var body: some View {
-        SliderPanelLayout(
-            title: "Focus",
-            systemImage: "cube.transparent",
-            valueLabel: "",
-            auto: $focusAuto.value,
-            value: $focus.value,
-            range: focus.range
-        )
+        Panel {
+            SliderPanelLayout(
+                title: "Focus",
+                systemImage: "cube.transparent",
+                valueLabel: "",
+                auto: $focusAuto.value,
+                value: $focus.value,
+                range: focus.range
+            )
+            .padding(12)
+        }
     }
 }

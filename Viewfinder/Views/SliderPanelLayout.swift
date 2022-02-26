@@ -16,36 +16,24 @@ struct SliderPanelLayout: View {
     var range: ClosedRange<Int>
 
     var body: some View {
-        Panel {
-            VStack(alignment: .center, spacing: 8) {
-                HStack(alignment: .firstTextBaseline) {
-                    HStack(alignment: .firstTextBaseline, spacing: 6) {
-                        Image(systemName: systemImage)
-                            .frame(width: 20)
+        ControlLayout(
+            title: PanelTitle(text: title, systemImage: systemImage),
+            accessories: {
+                Text(verbatim: valueLabel)
+                    .font(.caption.bold().monospacedDigit())
+                    .opacity(0.8)
 
-                        Text(title)
-                    }
-                    .font(.body.bold())
-
-                    Spacer()
-
-                    Text(verbatim: valueLabel)
-                        .font(.caption.bold().monospacedDigit())
-                        .opacity(0.8)
-
-                    if auto {
-                        AutoBadge()
-                            .transition(.opacity)
-                    }
-                }
-
-                HStack(spacing: 8) {
-                    PlainToggle(isOn: $auto.animation())
-                    MenuSlider(value: $value, in: range)
-                        .disabled(auto)
+                if auto {
+                    AutoBadge()
+                        .transition(.opacity)
                 }
             }
-            .padding(12)
+        ) {
+            HStack(spacing: 8) {
+                PlainToggle(isOn: $auto.animation())
+                MenuSlider(value: $value, in: range)
+                    .disabled(auto)
+            }
         }
     }
 }

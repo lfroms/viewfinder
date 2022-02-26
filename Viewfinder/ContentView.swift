@@ -18,12 +18,15 @@ struct ContentView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 if deviceManager.devices.first != nil {
                     VStack(spacing: 12) {
+                        ExposurePanel()
                         WhiteBalancePanel()
                         BrightnessPanel()
                         ContrastPanel()
                         SaturationPanel()
                         SharpnessPanel()
                         FocusPanel()
+                        ZoomPanel()
+                        HDRPanel()
                     }
                     .padding(12)
                 }

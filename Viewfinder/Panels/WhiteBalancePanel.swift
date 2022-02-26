@@ -12,13 +12,16 @@ struct WhiteBalancePanel: View {
     @CameraControl(\.whiteBalanceAuto) var whiteBalanceAuto: DeviceControl
 
     var body: some View {
-        SliderPanelLayout(
-            title: "White Balance",
-            systemImage: "slider.horizontal.3",
-            valueLabel: "\(whiteBalance.value)K",
-            auto: $whiteBalanceAuto.value,
-            value: $whiteBalance.value,
-            range: whiteBalance.range
-        )
+        Panel {
+            SliderPanelLayout(
+                title: "White Balance",
+                systemImage: "lightbulb.fill",
+                valueLabel: "\(whiteBalance.value)K",
+                auto: $whiteBalanceAuto.value,
+                value: $whiteBalance.value,
+                range: whiteBalance.range
+            )
+            .padding(12)
+        }
     }
 }

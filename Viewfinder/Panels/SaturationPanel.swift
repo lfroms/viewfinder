@@ -12,14 +12,17 @@ struct SaturationPanel: View {
     @State var auto: Bool = true
 
     var body: some View {
-        SliderPanelLayout(
-            title: "Saturation",
-            systemImage: "drop.fill",
-            valueLabel: valueLabel,
-            auto: $auto,
-            value: $saturation.value,
-            range: saturation.range
-        )
+        Panel {
+            SliderPanelLayout(
+                title: "Saturation",
+                systemImage: "drop.fill",
+                valueLabel: valueLabel,
+                auto: $auto,
+                value: $saturation.value,
+                range: saturation.range
+            )
+            .padding(12)
+        }
         .onChange(of: saturation.value) { newValue in
             if newValue != saturation.defaultValue {
                 auto = false

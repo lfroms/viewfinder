@@ -12,14 +12,17 @@ struct SharpnessPanel: View {
     @State var auto: Bool = true
 
     var body: some View {
-        SliderPanelLayout(
-            title: "Sharpness",
-            systemImage: "triangle.fill",
-            valueLabel: valueLabel,
-            auto: $auto,
-            value: $sharpness.value,
-            range: sharpness.range
-        )
+        Panel {
+            SliderPanelLayout(
+                title: "Sharpness",
+                systemImage: "triangle.fill",
+                valueLabel: valueLabel,
+                auto: $auto,
+                value: $sharpness.value,
+                range: sharpness.range
+            )
+            .padding(12)
+        }
         .onChange(of: sharpness.value) { newValue in
             if newValue != sharpness.defaultValue {
                 auto = false

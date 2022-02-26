@@ -12,14 +12,17 @@ struct ContrastPanel: View {
     @State var auto: Bool = true
 
     var body: some View {
-        SliderPanelLayout(
-            title: "Contrast",
-            systemImage: "circle.lefthalf.filled",
-            valueLabel: valueLabel,
-            auto: $auto,
-            value: $contrast.value,
-            range: contrast.range
-        )
+        Panel {
+            SliderPanelLayout(
+                title: "Contrast",
+                systemImage: "circle.lefthalf.filled",
+                valueLabel: valueLabel,
+                auto: $auto,
+                value: $contrast.value,
+                range: contrast.range
+            )
+            .padding(12)
+        }
         .onChange(of: contrast.value) { newValue in
             if newValue != contrast.defaultValue {
                 auto = false

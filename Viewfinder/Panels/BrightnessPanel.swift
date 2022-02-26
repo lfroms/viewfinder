@@ -12,14 +12,17 @@ struct BrightnessPanel: View {
     @State var auto: Bool = true
 
     var body: some View {
-        SliderPanelLayout(
-            title: "Brightness",
-            systemImage: "sun.max",
-            valueLabel: valueLabel,
-            auto: $auto,
-            value: $brightness.value,
-            range: brightness.range
-        )
+        Panel {
+            SliderPanelLayout(
+                title: "Brightness",
+                systemImage: "sun.max.fill",
+                valueLabel: valueLabel,
+                auto: $auto,
+                value: $brightness.value,
+                range: brightness.range
+            )
+            .padding(12)
+        }
         .onChange(of: brightness.value) { newValue in
             if newValue != brightness.defaultValue {
                 auto = false
