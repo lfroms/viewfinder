@@ -27,6 +27,7 @@
 		8044386A27C8776600715373 /* SharpnessPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386927C8776600715373 /* SharpnessPanel.swift */; };
 		8044386C27C87BF500715373 /* FocusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386B27C87BF500715373 /* FocusPanel.swift */; };
 		8044386E27C87F5D00715373 /* DataRefreshService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386D27C87F5D00715373 /* DataRefreshService.swift */; };
+		8044387427CA98B200715373 /* Double+PercentageToAbsolute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387327CA98B200715373 /* Double+PercentageToAbsolute.swift */; };
 		806867B427B1EDB20000C64D /* UVCSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B327B1EDB20000C64D /* UVCSelector.swift */; };
 		806867B727B1EF880000C64D /* UVCDescriptorSubtype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */; };
 		806867B927B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */; };
@@ -117,6 +118,7 @@
 		8044386927C8776600715373 /* SharpnessPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpnessPanel.swift; sourceTree = "<group>"; };
 		8044386B27C87BF500715373 /* FocusPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusPanel.swift; sourceTree = "<group>"; };
 		8044386D27C87F5D00715373 /* DataRefreshService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRefreshService.swift; sourceTree = "<group>"; };
+		8044387327CA98B200715373 /* Double+PercentageToAbsolute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+PercentageToAbsolute.swift"; sourceTree = "<group>"; };
 		806867B327B1EDB20000C64D /* UVCSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCSelector.swift; sourceTree = "<group>"; };
 		806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDescriptorSubtype.swift; sourceTree = "<group>"; };
 		806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCVideoInterfaceClassCode.swift; sourceTree = "<group>"; };
@@ -333,9 +335,10 @@
 		80C4482A27AF5A660059150C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				80C4482B27AF5A6E0059150C /* View+ReverseMask.swift */,
-				8044386127C8740A00715373 /* Int+Percentage.swift */,
+				8044387327CA98B200715373 /* Double+PercentageToAbsolute.swift */,
 				8044386327C8742A00715373 /* Double+Round.swift */,
+				8044386127C8740A00715373 /* Int+Percentage.swift */,
+				80C4482B27AF5A6E0059150C /* View+ReverseMask.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				8044386227C8740A00715373 /* Int+Percentage.swift in Sources */,
 				8044385127C5998400715373 /* CameraControl.swift in Sources */,
 				80CF9BE527BB1EDA001C0E0A /* Notifications.swift in Sources */,
+				8044387427CA98B200715373 /* Double+PercentageToAbsolute.swift in Sources */,
 				8044385827C6EEC200715373 /* DeviceControls.swift in Sources */,
 				809127A927B5DE8C00C38C0A /* DeviceManager.swift in Sources */,
 				8078968527AC8D3300179CA2 /* ContentView.swift in Sources */,

@@ -14,12 +14,12 @@ struct MenuSlider: View {
     @Binding var value: Int
     var bounds: ClosedRange<Int>
 
-    @State var isDragging: Bool = false
+    @GestureState var isDragging: Bool = false
 
     init(value: Binding<Int>, in bounds: ClosedRange<Int>) {
         self._value = value
         self.bounds = bounds
-        self.percentage = convertToPercentage(absolute: value.wrappedValue, in: bounds)
+        self.percentage = value.wrappedValue.percentage(in: bounds)
     }
 
     var body: some View {
@@ -31,19 +31,15 @@ struct MenuSlider: View {
             .opacity(isEnabled ? 1 : 0.35)
             .gesture(
                 DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                    .updating($isDragging) { _, state, _ in
+                        state = true
+                    }
                     .onChanged { drag in
                         guard isEnabled else {
                             return
                         }
 
-                        if !isDragging {
-                            isDragging = true
-                        }
-
                         percentage = calculatePercentage(dragX: drag.location.x, totalWidth: proxy.size.width)
-                    }
-                    .onEnded { _ in
-                        isDragging = false
                     }
             )
         }
@@ -53,11 +49,11 @@ struct MenuSlider: View {
             }
 
             withAnimation {
-                self.percentage = convertToPercentage(absolute: newValue, in: bounds)
+                self.percentage = newValue.percentage(in: bounds)
             }
         }
         .onChange(of: percentage) { newValue in
-            self.value = convertToAbsolute(percentage: newValue, in: bounds)
+            self.value = newValue.percentageToAbsolute(in: bounds)
         }
     }
 
@@ -79,12 +75,4 @@ struct MenuSlider: View {
     private func calculatePercentage(dragX: CGFloat, totalWidth: CGFloat) -> Double {
         return min(max((dragX - 11) / (totalWidth - 22), 0), 1)
     }
-}
-
-private func convertToPercentage(absolute absoluteValue: Int, in bounds: ClosedRange<Int>) -> Double {
-    Double(absoluteValue - bounds.lowerBound) / Double(bounds.upperBound - bounds.lowerBound)
-}
-
-private func convertToAbsolute(percentage: Double, in bounds: ClosedRange<Int>) -> Int {
-    Int(Float(bounds.lowerBound) + (Float(bounds.upperBound - bounds.lowerBound) * Float(percentage)))
 }
