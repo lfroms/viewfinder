@@ -23,7 +23,7 @@ enum UVCRequest {
             length: UInt16(length)
         )
 
-        return Int(value)
+        return value
     }
 
     static func write(
@@ -42,7 +42,7 @@ enum UVCRequest {
             value: UInt16(selector.value<<8),
             index: UInt16(selector.unitId<<8) | UInt16(interface.id),
             length: UInt16(length),
-            data: UInt16(value)
+            data: value
         )
 
         return Int(value)
@@ -55,8 +55,8 @@ enum UVCRequest {
         value: UInt16,
         index: UInt16,
         length: UInt16,
-        data: UInt16 = 0
-    ) throws -> UInt16 {
+        data: Int = 0
+    ) throws -> Int {
         var data = data
 
         try withUnsafeMutablePointer(to: &data) { data in
