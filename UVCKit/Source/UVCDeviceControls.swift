@@ -6,30 +6,29 @@
 //
 
 public class UVCDeviceControls {
-    public var scanningMode: UVCBoolControl
-    public var exposureMode: UVCBitmapControl<UVCAutoExposureMode>
-    public var exposurePriority: UVCIntControl
-    public var exposureTime: UVCIntControl
-    public var focusAbsolute: UVCIntControl
-    public var focusAuto: UVCBoolControl
-    public var irisAbsolute: UVCIntControl
-    public var zoomAbsolute: UVCIntControl
-    public var panTiltAbsolute: UVCCoordinateControl
-    public var rollAbsolute: UVCIntControl
+    public let scanningMode: UVCBoolControl
+    public let exposureMode: UVCBitmapControl<UVCAutoExposureMode>
+    public let exposurePriority: UVCIntControl
+    public let exposureTime: UVCIntControl
+    public let focusAbsolute: UVCIntControl
+    public let focusAuto: UVCBoolControl
+    public let irisAbsolute: UVCIntControl
+    public let zoomAbsolute: UVCIntControl
+    public let rollAbsolute: UVCIntControl
 
-    public var backlightCompensation: UVCIntControl
-    public var brightness: UVCIntControl
-    public var contrast: UVCIntControl
-    public var contrastAuto: UVCBoolControl
-    public var gain: UVCIntControl
-    public var powerLineFrequency: UVCIntControl
-    public var hue: UVCIntControl
-    public var hueAuto: UVCBoolControl
-    public var saturation: UVCIntControl
-    public var sharpness: UVCIntControl
-    public var gamma: UVCIntControl
-    public var whiteBalance: UVCIntControl
-    public var whiteBalanceAuto: UVCBoolControl
+    public let backlightCompensation: UVCIntControl
+    public let brightness: UVCIntControl
+    public let contrast: UVCIntControl
+    public let contrastAuto: UVCBoolControl
+    public let gain: UVCIntControl
+    public let powerLineFrequency: UVCIntControl
+    public let hue: UVCIntControl
+    public let hueAuto: UVCBoolControl
+    public let saturation: UVCIntControl
+    public let sharpness: UVCIntControl
+    public let gamma: UVCIntControl
+    public let whiteBalance: UVCIntControl
+    public let whiteBalanceAuto: UVCBoolControl
 
     init(interface: USBInterface, descriptor: UVCDeviceDescriptor) {
         let cameraTerminal: (UVCCameraTerminalSelector) -> UVCSelector = { selector in
@@ -81,11 +80,6 @@ public class UVCDeviceControls {
             interface: interface,
             length: 2,
             selector: cameraTerminal(.zoomAbsolute)
-        )
-        panTiltAbsolute = UVCCoordinateControl(
-            interface: interface,
-            length: 8,
-            selector: cameraTerminal(.panTiltAbsolute)
         )
         rollAbsolute = UVCIntControl(
             interface: interface,

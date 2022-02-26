@@ -11,7 +11,7 @@
 		802D194027B35425001A5B25 /* USBInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D193F27B35425001A5B25 /* USBInterface.swift */; };
 		802D194427B35FAF001A5B25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194327B35FAF001A5B25 /* Constants.swift */; };
 		802D194627B3651E001A5B25 /* SignedInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194527B3651E001A5B25 /* SignedInteger+Bytes.swift */; };
-		802D194827B3656B001A5B25 /* SignedInteger+EightBitByteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194727B3656B001A5B25 /* SignedInteger+EightBitByteArray.swift */; };
+		802D194827B3656B001A5B25 /* SignedInteger+ByteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194727B3656B001A5B25 /* SignedInteger+ByteArray.swift */; };
 		8044385127C5998400715373 /* CameraControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385027C5998400715373 /* CameraControl.swift */; };
 		8044385427C6EA4600715373 /* UVCControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385327C6EA4600715373 /* UVCControllable.swift */; };
 		8044385627C6EA6F00715373 /* UVCRangeControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385527C6EA6F00715373 /* UVCRangeControllable.swift */; };
@@ -68,7 +68,6 @@
 		80D067B627B082D80007BCF8 /* UVCProcessingUnitSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066F227B07C830007BCF8 /* UVCProcessingUnitSelector.swift */; };
 		80D067BA27B082D80007BCF8 /* UVCDeviceDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066E427B07C830007BCF8 /* UVCDeviceDescriptor.swift */; };
 		80D067BE27B082D80007BCF8 /* UVCControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066DF27B07C830007BCF8 /* UVCControl.swift */; };
-		80D067C027B082D80007BCF8 /* UVCCoordinateControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066E127B07C830007BCF8 /* UVCCoordinateControl.swift */; };
 		80D067C327B082D80007BCF8 /* UVCRequestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066EF27B07C830007BCF8 /* UVCRequestCode.swift */; };
 		80D067C827B0A8B30007BCF8 /* UVCDeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D067C727B0A8B30007BCF8 /* UVCDeviceInformation.swift */; };
 /* End PBXBuildFile section */
@@ -102,7 +101,7 @@
 		802D193F27B35425001A5B25 /* USBInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBInterface.swift; sourceTree = "<group>"; };
 		802D194327B35FAF001A5B25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		802D194527B3651E001A5B25 /* SignedInteger+Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignedInteger+Bytes.swift"; sourceTree = "<group>"; };
-		802D194727B3656B001A5B25 /* SignedInteger+EightBitByteArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignedInteger+EightBitByteArray.swift"; sourceTree = "<group>"; };
+		802D194727B3656B001A5B25 /* SignedInteger+ByteArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignedInteger+ByteArray.swift"; sourceTree = "<group>"; };
 		8044385027C5998400715373 /* CameraControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControl.swift; sourceTree = "<group>"; };
 		8044385327C6EA4600715373 /* UVCControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCControllable.swift; sourceTree = "<group>"; };
 		8044385527C6EA6F00715373 /* UVCRangeControllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCRangeControllable.swift; sourceTree = "<group>"; };
@@ -150,7 +149,6 @@
 		80D066DE27B07C830007BCF8 /* UVCBoolControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCBoolControl.swift; sourceTree = "<group>"; };
 		80D066DF27B07C830007BCF8 /* UVCControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCControl.swift; sourceTree = "<group>"; };
 		80D066E027B07C830007BCF8 /* UVCBitmapControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCBitmapControl.swift; sourceTree = "<group>"; };
-		80D066E127B07C830007BCF8 /* UVCCoordinateControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCCoordinateControl.swift; sourceTree = "<group>"; };
 		80D066E227B07C830007BCF8 /* UVCIntControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCIntControl.swift; sourceTree = "<group>"; };
 		80D066E327B07C830007BCF8 /* UVCDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCDevice.swift; sourceTree = "<group>"; };
 		80D066E427B07C830007BCF8 /* UVCDeviceDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCDeviceDescriptor.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 				80D066DF27B07C830007BCF8 /* UVCControl.swift */,
 				80D066E027B07C830007BCF8 /* UVCBitmapControl.swift */,
 				80D066DE27B07C830007BCF8 /* UVCBoolControl.swift */,
-				80D066E127B07C830007BCF8 /* UVCCoordinateControl.swift */,
 				80D066E227B07C830007BCF8 /* UVCIntControl.swift */,
 			);
 			path = Controls;
@@ -378,7 +375,7 @@
 				80D066EA27B07C830007BCF8 /* io_service_t+IoCreatePublicInterface.swift */,
 				80D066EB27B07C830007BCF8 /* IOUSBConfigurationDescriptorPtr+Descriptor.swift */,
 				802D194527B3651E001A5B25 /* SignedInteger+Bytes.swift */,
-				802D194727B3656B001A5B25 /* SignedInteger+EightBitByteArray.swift */,
+				802D194727B3656B001A5B25 /* SignedInteger+ByteArray.swift */,
 				80D066ED27B07C830007BCF8 /* UnsafeMutablePointer+GetInterface.swift */,
 				806867BE27B1F6160000C64D /* UnsafeMutablePointer+Iterate.swift */,
 			);
@@ -557,12 +554,11 @@
 				80D067B127B082D80007BCF8 /* UVCBitmapControl.swift in Sources */,
 				806867BF27B1F6160000C64D /* UnsafeMutablePointer+Iterate.swift in Sources */,
 				806867BD27B1F0D90000C64D /* UVCVideoClassDescriptorType.swift in Sources */,
-				80D067C027B082D80007BCF8 /* UVCCoordinateControl.swift in Sources */,
 				806867BB27B1F0670000C64D /* UVCVideoInterfaceSubclassCode.swift in Sources */,
 				8078839427B4937E003BBA1A /* UVCAutoExposureMode.swift in Sources */,
 				802D193E27B34936001A5B25 /* UVCRequest.swift in Sources */,
 				80D067A527B082D80007BCF8 /* io_service_t+IoCreatePublicInterface.swift in Sources */,
-				802D194827B3656B001A5B25 /* SignedInteger+EightBitByteArray.swift in Sources */,
+				802D194827B3656B001A5B25 /* SignedInteger+ByteArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

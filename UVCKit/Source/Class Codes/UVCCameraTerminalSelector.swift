@@ -9,10 +9,6 @@
 //
 
 enum UVCCameraTerminalSelector: Int {
-    var value: Int {
-        rawValue
-    }
-
     case scanningMode = 0x01
     case aeMode = 0x02
     case aePriority = 0x03
