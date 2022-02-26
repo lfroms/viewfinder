@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PreviewPanel: View {
-    @EnvironmentObject var deviceService: DeviceManager
+    @EnvironmentObject var deviceManager: DeviceManager
 
     var body: some View {
         Panel {
@@ -18,10 +18,8 @@ struct PreviewPanel: View {
                     .tint(.white)
                     .transition(.opacity)
 
-                if let captureSession = deviceService.captureSession {
-                    PreviewContainer(captureSession: captureSession)
-                        .aspectRatio(16 / 9, contentMode: .fit)
-                }
+                PreviewContainer(captureSession: deviceManager.captureSession)
+                    .aspectRatio(16 / 9, contentMode: .fit)
             }
         }
     }

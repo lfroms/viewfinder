@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
+    private let dataRefreshService = DataRefreshService()
     private var statusBarItem: NSStatusItem?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -25,7 +26,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         let menu = NSMenu()
         menu.delegate = self
+
+        let quitItem = NSMenuItem(title: "Quit", action: #selector(NSApplication.shared.terminate(_:)), keyEquivalent: "")
+        quitItem.isAlternate = true
+        quitItem.keyEquivalentModifierMask = .option
+
         menu.addItem(menuItem)
+        menu.addItem(quitItem)
 
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         self.statusBarItem?.menu = menu
@@ -36,9 +43,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     func menuWillOpen(_ menu: NSMenu) {
         DeviceManager.shared.startCaptureSession()
+        self.dataRefreshService.refreshPeriodically()
     }
 
     func menuDidClose(_ menu: NSMenu) {
+        self.dataRefreshService.pauseRefreshingPeriodically()
         DeviceManager.shared.stopCaptureSession()
     }
 }

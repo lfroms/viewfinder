@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @EnvironmentObject var deviceManager: DeviceManager
 
     var body: some View {
         VStack(spacing: 0) {
@@ -16,20 +16,17 @@ struct ContentView: View {
                 .padding(12)
 
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 12) {
-                    WhiteBalancePanel()
-                    BrightnessPanel()
-                    ContrastPanel()
-                    SaturationPanel()
-                    SharpnessPanel()
-                    FocusPanel()
+                if deviceManager.devices.first != nil {
+                    VStack(spacing: 12) {
+                        WhiteBalancePanel()
+                        BrightnessPanel()
+                        ContrastPanel()
+                        SaturationPanel()
+                        SharpnessPanel()
+                        FocusPanel()
+                    }
+                    .padding(12)
                 }
-                .padding(12)
-            }
-        }
-        .onReceive(timer) { _ in
-            Task {
-                NotificationCenter.default.post(name: .readCameraValues, object: nil)
             }
         }
     }

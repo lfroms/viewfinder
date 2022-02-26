@@ -9,17 +9,17 @@ import AVFoundation
 import SwiftUI
 
 final class PreviewContainer: NSViewRepresentable {
-    typealias NSViewType = PreviewView
-
     private let captureSession: AVCaptureSession
 
     init(captureSession: AVCaptureSession) {
         self.captureSession = captureSession
     }
 
-    func makeNSView(context: Context) -> NSViewType {
+    func makeNSView(context: Context) -> PreviewView {
         return PreviewView(captureSession: captureSession)
     }
 
-    func updateNSView(_ nsView: NSViewType, context: Context) {}
+    func updateNSView(_ previewView: PreviewView, context: Context) {
+        previewView.setCaptureSession(to: captureSession)
+    }
 }

@@ -13,7 +13,7 @@ struct CameraControl<T: UVCControllable>: DynamicProperty {
     @ObservedObject private var deviceControl: DeviceControl<T>
 
     init(_ keyPath: KeyPath<DeviceControls, DeviceControl<T>>) {
-        guard let primaryDevice = DeviceManager.shared.primaryDevice else {
+        guard let primaryDevice = DeviceManager.shared.devices.first else {
             // Controls that use these values should not be rendered anyways.
             fatalError("No primary device found.")
         }

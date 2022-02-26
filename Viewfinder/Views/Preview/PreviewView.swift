@@ -9,20 +9,19 @@ import AppKit
 import AVFoundation
 
 class PreviewView: NSView {
-    private var previewLayer: AVCaptureVideoPreviewLayer
+    private var previewLayer = AVCaptureVideoPreviewLayer()
 
     init(captureSession: AVCaptureSession) {
-        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.session = captureSession
+        previewLayer.connection?.automaticallyAdjustsVideoMirroring = false
 
         super.init(frame: .zero)
 
-        setupLayer()
+        layer = previewLayer
     }
 
-    func setupLayer() {
-        previewLayer.frame = frame
-        previewLayer.connection?.automaticallyAdjustsVideoMirroring = false
-        layer = previewLayer
+    func setCaptureSession(to captureSession: AVCaptureSession) {
+        previewLayer.session = captureSession
     }
 
     @available(*, unavailable)

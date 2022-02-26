@@ -26,6 +26,7 @@
 		8044386827C876D300715373 /* SaturationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386727C876D300715373 /* SaturationPanel.swift */; };
 		8044386A27C8776600715373 /* SharpnessPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386927C8776600715373 /* SharpnessPanel.swift */; };
 		8044386C27C87BF500715373 /* FocusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386B27C87BF500715373 /* FocusPanel.swift */; };
+		8044386E27C87F5D00715373 /* DataRefreshService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386D27C87F5D00715373 /* DataRefreshService.swift */; };
 		806867B427B1EDB20000C64D /* UVCSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B327B1EDB20000C64D /* UVCSelector.swift */; };
 		806867B727B1EF880000C64D /* UVCDescriptorSubtype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */; };
 		806867B927B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */; };
@@ -115,6 +116,7 @@
 		8044386727C876D300715373 /* SaturationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationPanel.swift; sourceTree = "<group>"; };
 		8044386927C8776600715373 /* SharpnessPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpnessPanel.swift; sourceTree = "<group>"; };
 		8044386B27C87BF500715373 /* FocusPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusPanel.swift; sourceTree = "<group>"; };
+		8044386D27C87F5D00715373 /* DataRefreshService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRefreshService.swift; sourceTree = "<group>"; };
 		806867B327B1EDB20000C64D /* UVCSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCSelector.swift; sourceTree = "<group>"; };
 		806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDescriptorSubtype.swift; sourceTree = "<group>"; };
 		806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCVideoInterfaceClassCode.swift; sourceTree = "<group>"; };
@@ -256,10 +258,9 @@
 			isa = PBXGroup;
 			children = (
 				809127AC27B5E5D500C38C0A /* Models */,
-				809127A727B5DE8300C38C0A /* Services */,
 				80C4481C27AF28990059150C /* Views */,
-				80C4482A27AF5A660059150C /* Extensions */,
 				80C4482227AF2A640059150C /* Panels */,
+				80C4482A27AF5A660059150C /* Extensions */,
 				80B67A2627B057C3008E7EE2 /* Utilities */,
 				8078968227AC8D3300179CA2 /* ViewfinderApp.swift */,
 				8078968427AC8D3300179CA2 /* ContentView.swift */,
@@ -269,14 +270,6 @@
 				80C4481A27AF1A9D0059150C /* AppDelegate.swift */,
 			);
 			path = Viewfinder;
-			sourceTree = "<group>";
-		};
-		809127A727B5DE8300C38C0A /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				809127A827B5DE8C00C38C0A /* DeviceManager.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		809127AC27B5E5D500C38C0A /* Models */ = {
@@ -292,8 +285,10 @@
 		80B67A2627B057C3008E7EE2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				80CF9BE427BB1EDA001C0E0A /* Notifications.swift */,
 				8044385027C5998400715373 /* CameraControl.swift */,
+				8044386D27C87F5D00715373 /* DataRefreshService.swift */,
+				809127A827B5DE8C00C38C0A /* DeviceManager.swift */,
+				80CF9BE427BB1EDA001C0E0A /* Notifications.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -500,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80C4481B27AF1A9E0059150C /* AppDelegate.swift in Sources */,
+				8044386E27C87F5D00715373 /* DataRefreshService.swift in Sources */,
 				80CF9BE927BDCC9E001C0E0A /* WhiteBalancePanel.swift in Sources */,
 				8044386A27C8776600715373 /* SharpnessPanel.swift in Sources */,
 				8044386427C8742A00715373 /* Double+Round.swift in Sources */,

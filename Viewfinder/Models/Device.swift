@@ -10,19 +10,18 @@ import UVCKit
 
 struct Device {
     private let uvc: UVCDevice
-    let input: AVCaptureDeviceInput
+    let id: String
     let controls: DeviceControls
+    let avCaptureDevice: AVCaptureDevice
 
     init?(device: AVCaptureDevice) {
-        guard
-            let input = try? AVCaptureDeviceInput(device: device),
-            let uvcDevice = UVCDevice(captureDevice: device)
-        else {
+        guard let uvcDevice = UVCDevice(captureDevice: device) else {
             return nil
         }
 
-        self.input = input
+        self.id = device.uniqueID
         self.uvc = uvcDevice
         self.controls = DeviceControls(controls: uvc.controls)
+        self.avCaptureDevice = device
     }
 }
