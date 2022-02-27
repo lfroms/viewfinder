@@ -30,13 +30,13 @@ public class UVCDeviceControls {
     public let whiteBalance: UVCIntControl
     public let whiteBalanceAuto: UVCBoolControl
 
-    init(interface: USBInterface, descriptor: UVCDeviceDescriptor) {
+    init(interface: USBInterface, descriptor: UVCVideoControlInterfaceDescriptors) {
         let cameraTerminal: (UVCCameraTerminalSelector) -> UVCSelector = { selector in
-            .cameraTerminal(selector, unitId: descriptor.cameraTerminalId)
+            .cameraTerminal(selector, unitId: descriptor.cameraTerminal.id)
         }
 
         let processingUnit: (UVCProcessingUnitSelector) -> UVCSelector = { selector in
-            .processingUnit(selector, unitId: descriptor.processingUnitId)
+            .processingUnit(selector, unitId: descriptor.processingUnit.id)
         }
 
         // MARK: Camera Terminal

@@ -13,10 +13,13 @@ class DeviceManager: ObservableObject {
     static let shared = DeviceManager()
 
     @Published private(set) var devices: [Device] = []
+    let captureSession = AVCaptureSession()
 
     private var cancellables = Set<AnyCancellable>()
 
-    let captureSession = AVCaptureSession()
+    var currentDevice: Device? {
+        devices.first
+    }
 
     init() {
         subscribeToDeviceNotifications()
@@ -40,7 +43,7 @@ class DeviceManager: ObservableObject {
     func startCaptureSession() {
         Task {
             guard
-                let device = devices.first,
+                let device = currentDevice,
                 let input = try? AVCaptureDeviceInput(device: device.avCaptureDevice)
             else {
                 return

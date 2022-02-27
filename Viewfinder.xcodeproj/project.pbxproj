@@ -33,6 +33,9 @@
 		8044387C27CAE30B00715373 /* PanelTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387B27CAE30B00715373 /* PanelTitle.swift */; };
 		8044387E27CAE57E00715373 /* ControlLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387D27CAE57E00715373 /* ControlLayout.swift */; };
 		8044388027CB051800715373 /* HDRPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387F27CB051800715373 /* HDRPanel.swift */; };
+		8044388227CB116100715373 /* BinaryInteger+Bit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044388127CB116100715373 /* BinaryInteger+Bit.swift */; };
+		8044388427CB117500715373 /* UVCCameraTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044388327CB117500715373 /* UVCCameraTerminal.swift */; };
+		8044388627CB119200715373 /* UVCProcessingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044388527CB119200715373 /* UVCProcessingUnit.swift */; };
 		806867B427B1EDB20000C64D /* UVCSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B327B1EDB20000C64D /* UVCSelector.swift */; };
 		806867B727B1EF880000C64D /* UVCDescriptorSubtype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */; };
 		806867B927B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */; };
@@ -71,7 +74,7 @@
 		80D067B127B082D80007BCF8 /* UVCBitmapControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066E027B07C830007BCF8 /* UVCBitmapControl.swift */; };
 		80D067B327B082D80007BCF8 /* UVCCameraTerminalSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066F027B07C830007BCF8 /* UVCCameraTerminalSelector.swift */; };
 		80D067B627B082D80007BCF8 /* UVCProcessingUnitSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066F227B07C830007BCF8 /* UVCProcessingUnitSelector.swift */; };
-		80D067BA27B082D80007BCF8 /* UVCDeviceDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066E427B07C830007BCF8 /* UVCDeviceDescriptor.swift */; };
+		80D067BA27B082D80007BCF8 /* UVCVideoControlInterfaceDescriptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066E427B07C830007BCF8 /* UVCVideoControlInterfaceDescriptors.swift */; };
 		80D067BE27B082D80007BCF8 /* UVCControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066DF27B07C830007BCF8 /* UVCControl.swift */; };
 		80D067C327B082D80007BCF8 /* UVCRequestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066EF27B07C830007BCF8 /* UVCRequestCode.swift */; };
 		80D067C827B0A8B30007BCF8 /* UVCDeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D067C727B0A8B30007BCF8 /* UVCDeviceInformation.swift */; };
@@ -128,6 +131,9 @@
 		8044387B27CAE30B00715373 /* PanelTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTitle.swift; sourceTree = "<group>"; };
 		8044387D27CAE57E00715373 /* ControlLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlLayout.swift; sourceTree = "<group>"; };
 		8044387F27CB051800715373 /* HDRPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRPanel.swift; sourceTree = "<group>"; };
+		8044388127CB116100715373 /* BinaryInteger+Bit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryInteger+Bit.swift"; sourceTree = "<group>"; };
+		8044388327CB117500715373 /* UVCCameraTerminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCCameraTerminal.swift; sourceTree = "<group>"; };
+		8044388527CB119200715373 /* UVCProcessingUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCProcessingUnit.swift; sourceTree = "<group>"; };
 		806867B327B1EDB20000C64D /* UVCSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCSelector.swift; sourceTree = "<group>"; };
 		806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDescriptorSubtype.swift; sourceTree = "<group>"; };
 		806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCVideoInterfaceClassCode.swift; sourceTree = "<group>"; };
@@ -161,7 +167,7 @@
 		80D066E027B07C830007BCF8 /* UVCBitmapControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCBitmapControl.swift; sourceTree = "<group>"; };
 		80D066E227B07C830007BCF8 /* UVCIntControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCIntControl.swift; sourceTree = "<group>"; };
 		80D066E327B07C830007BCF8 /* UVCDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCDevice.swift; sourceTree = "<group>"; };
-		80D066E427B07C830007BCF8 /* UVCDeviceDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCDeviceDescriptor.swift; sourceTree = "<group>"; };
+		80D066E427B07C830007BCF8 /* UVCVideoControlInterfaceDescriptors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UVCVideoControlInterfaceDescriptors.swift; sourceTree = "<group>"; };
 		80D066E527B07C830007BCF8 /* USBHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBHeaders.h; sourceTree = "<group>"; };
 		80D066EA27B07C830007BCF8 /* io_service_t+IoCreatePublicInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "io_service_t+IoCreatePublicInterface.swift"; sourceTree = "<group>"; };
 		80D066EB27B07C830007BCF8 /* IOUSBConfigurationDescriptorPtr+Descriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IOUSBConfigurationDescriptorPtr+Descriptor.swift"; sourceTree = "<group>"; };
@@ -370,16 +376,18 @@
 			children = (
 				806867B527B1EE690000C64D /* Class Codes */,
 				806867AE27B1E6310000C64D /* Controls */,
-				8044385227C6EA3500715373 /* Protocols */,
 				80D067C927B0AB760007BCF8 /* Extensions */,
+				8044385227C6EA3500715373 /* Protocols */,
 				802D194327B35FAF001A5B25 /* Constants.swift */,
 				802D193F27B35425001A5B25 /* USBInterface.swift */,
+				8044388327CB117500715373 /* UVCCameraTerminal.swift */,
 				80D066E327B07C830007BCF8 /* UVCDevice.swift */,
 				80D066DC27B07C830007BCF8 /* UVCDeviceControls.swift */,
-				80D066E427B07C830007BCF8 /* UVCDeviceDescriptor.swift */,
 				80D067C727B0A8B30007BCF8 /* UVCDeviceInformation.swift */,
+				8044388527CB119200715373 /* UVCProcessingUnit.swift */,
 				802D193D27B34936001A5B25 /* UVCRequest.swift */,
 				806867B327B1EDB20000C64D /* UVCSelector.swift */,
+				80D066E427B07C830007BCF8 /* UVCVideoControlInterfaceDescriptors.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -393,6 +401,7 @@
 				802D194727B3656B001A5B25 /* SignedInteger+ByteArray.swift */,
 				80D066ED27B07C830007BCF8 /* UnsafeMutablePointer+GetInterface.swift */,
 				806867BE27B1F6160000C64D /* UnsafeMutablePointer+Iterate.swift */,
+				8044388127CB116100715373 /* BinaryInteger+Bit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -561,6 +570,7 @@
 				80D067B327B082D80007BCF8 /* UVCCameraTerminalSelector.swift in Sources */,
 				80D067A727B082D80007BCF8 /* UnsafeMutablePointer+GetInterface.swift in Sources */,
 				80D067C827B0A8B30007BCF8 /* UVCDeviceInformation.swift in Sources */,
+				8044388427CB117500715373 /* UVCCameraTerminal.swift in Sources */,
 				802D194027B35425001A5B25 /* USBInterface.swift in Sources */,
 				806867B927B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift in Sources */,
 				80D067AF27B082D80007BCF8 /* UVCBoolControl.swift in Sources */,
@@ -569,7 +579,7 @@
 				8044385427C6EA4600715373 /* UVCControllable.swift in Sources */,
 				802D194627B3651E001A5B25 /* SignedInteger+Bytes.swift in Sources */,
 				80D067B627B082D80007BCF8 /* UVCProcessingUnitSelector.swift in Sources */,
-				80D067BA27B082D80007BCF8 /* UVCDeviceDescriptor.swift in Sources */,
+				80D067BA27B082D80007BCF8 /* UVCVideoControlInterfaceDescriptors.swift in Sources */,
 				80D067C327B082D80007BCF8 /* UVCRequestCode.swift in Sources */,
 				80D067B127B082D80007BCF8 /* UVCBitmapControl.swift in Sources */,
 				806867BF27B1F6160000C64D /* UnsafeMutablePointer+Iterate.swift in Sources */,
@@ -577,6 +587,8 @@
 				806867BB27B1F0670000C64D /* UVCVideoInterfaceSubclassCode.swift in Sources */,
 				8078839427B4937E003BBA1A /* UVCAutoExposureMode.swift in Sources */,
 				802D193E27B34936001A5B25 /* UVCRequest.swift in Sources */,
+				8044388227CB116100715373 /* BinaryInteger+Bit.swift in Sources */,
+				8044388627CB119200715373 /* UVCProcessingUnit.swift in Sources */,
 				80D067A527B082D80007BCF8 /* io_service_t+IoCreatePublicInterface.swift in Sources */,
 				802D194827B3656B001A5B25 /* SignedInteger+ByteArray.swift in Sources */,
 			);

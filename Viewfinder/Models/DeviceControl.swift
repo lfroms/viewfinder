@@ -18,7 +18,7 @@ final class DeviceControl<ControlType: UVCControllable>: ObservableObject {
     @Published private var displayValue: ValueType
     @Published private var rangeInternal: ClosedRange<Int> = 0 ... 0
 
-    @Published var defaultValue: ValueType
+    @Published private(set) var defaultValue: ValueType
 
     var value: ValueType {
         get {

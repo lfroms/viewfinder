@@ -39,7 +39,7 @@ struct UVC_CameraTerminalDescriptor {
     uint16_t wObjectiveFocalLengthMax;
     uint16_t wOcularFocalLength;
     uint8_t  bControlSize;
-    uint8_t  bmControls[];
+    uint32_t bmControls;
 } __attribute__((packed));
 
 struct UVC_ProcessingUnitDescriptor {
@@ -50,5 +50,5 @@ struct UVC_ProcessingUnitDescriptor {
     uint8_t  bSourceID;
     uint16_t wMaxMultiplier;
     uint8_t  bControlSize;
-    uint8_t  bmControls[];
+    uint32_t bmControls;
 } __attribute__((packed));

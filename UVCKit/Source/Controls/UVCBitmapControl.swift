@@ -23,7 +23,7 @@ public class UVCBitmapControl<BitmapValue: UVCBitmapValue>: UVCControl, UVCContr
                 let value = try? read(requestType: .getCurrent, length: length),
                 let bitmapValue = BitmapValue(rawValue: value)
             else {
-                return BitmapValue(rawValue: 0)!
+                return defaultValue
             }
 
             return bitmapValue

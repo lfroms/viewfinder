@@ -9,7 +9,7 @@ import AVFoundation
 import UVCKit
 
 struct Device {
-    private let uvc: UVCDevice
+    let uvc: UVCDevice
     let id: String
     let controls: DeviceControls
     let avCaptureDevice: AVCaptureDevice

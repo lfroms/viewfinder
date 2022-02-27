@@ -16,17 +16,43 @@ struct ContentView: View {
                 .padding(12)
 
             ScrollView(.vertical, showsIndicators: false) {
-                if deviceManager.devices.first != nil {
+                if let uvc = deviceManager.currentDevice?.uvc {
                     VStack(spacing: 12) {
-                        ExposurePanel()
-                        WhiteBalancePanel()
-                        BrightnessPanel()
-                        ContrastPanel()
-                        SaturationPanel()
-                        SharpnessPanel()
-                        FocusPanel()
-                        ZoomPanel()
-                        HDRPanel()
+                        if uvc.cameraTerminalCapabilities.exposureTimeAbsolute {
+                            ExposurePanel()
+                        }
+
+                        if uvc.processingUnitCapabilities.whiteBalanceTemperature {
+                            WhiteBalancePanel()
+                        }
+                        
+                        if uvc.processingUnitCapabilities.brightness {
+                            BrightnessPanel()
+                        }
+                        
+                        if uvc.processingUnitCapabilities.contrast {
+                            ContrastPanel()
+                        }
+                        
+                        if uvc.processingUnitCapabilities.saturation {
+                            SaturationPanel()
+                        }
+                        
+                        if uvc.processingUnitCapabilities.saturation {
+                            SharpnessPanel()
+                        }
+                        
+                        if uvc.cameraTerminalCapabilities.focusAbsolute {
+                            FocusPanel()
+                        }
+                        
+                        if uvc.cameraTerminalCapabilities.zoomAbsolute {
+                            ZoomPanel()
+                        }
+                        
+                        if uvc.processingUnitCapabilities.backlightCompensation {
+                            HDRPanel()
+                        }
                     }
                     .padding(12)
                 }

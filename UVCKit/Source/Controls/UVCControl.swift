@@ -11,11 +11,6 @@ public class UVCControl {
     private let interface: USBInterface
     private let selector: UVCSelector
 
-    public lazy var available: Bool = {
-        let value = try? read(requestType: .getInfo, length: 1) != 0
-        return value ?? false
-    }()
-
     init(
         interface: USBInterface,
         length: Int,

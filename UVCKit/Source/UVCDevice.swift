@@ -12,6 +12,8 @@ import IOKit.usb
 public class UVCDevice {
     private let interface: USBInterface
     public let controls: UVCDeviceControls
+    public let cameraTerminalCapabilities: UVCCameraTerminal.Capabilities
+    public let processingUnitCapabilities: UVCProcessingUnit.Capabilities
 
     public init?(captureDevice: AVCaptureDevice) {
         guard let cameraInformation = UVCDeviceInformation(modelId: captureDevice.modelID) else {
@@ -76,5 +78,7 @@ public class UVCDevice {
 
         self.interface = USBInterface(pointer: usbInterface)
         self.controls = UVCDeviceControls(interface: interface, descriptor: descriptor)
+        self.cameraTerminalCapabilities = descriptor.cameraTerminal.capabilities
+        self.processingUnitCapabilities = descriptor.processingUnit.capabilities
     }
 }

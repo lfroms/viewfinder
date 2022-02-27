@@ -15,27 +15,31 @@ typealias ProcessingUnitDescriptorPointer = UnsafeMutablePointer<UVC_ProcessingU
 typealias CameraTerminalDescriptorPointer = UnsafeMutablePointer<UVC_CameraTerminalDescriptor>
 
 extension IOUSBConfigurationDescriptorPtr {
-    var descriptor: UVCDeviceDescriptor {
-        var processingUnitID = -1
-        var cameraTerminalID = -1
+    var descriptor: UVCVideoControlInterfaceDescriptors {
+        var processingUnitId = -1
+        var cameraTerminalId = -1
+        var processingUnitBmControls = -1
+        var cameraTerminalBmControls = -1
 
         let remaining = self.pointee.wTotalLength - UInt16(self.pointee.bLength)
         var pointer = UnsafeMutablePointer<UInt8>(OpaquePointer(self))
         pointer = pointer.advanced(by: Int(self.pointee.bLength))
 
-        self.browseDescriptor(remaining, pointer, &processingUnitID, &cameraTerminalID)
+        self.browseDescriptor(remaining, pointer, &processingUnitId, &cameraTerminalId, &processingUnitBmControls, &cameraTerminalBmControls)
 
-        return UVCDeviceDescriptor(
-            cameraTerminalId: cameraTerminalID,
-            processingUnitId: processingUnitID
+        return UVCVideoControlInterfaceDescriptors(
+            cameraTerminal: UVCCameraTerminal(id: cameraTerminalId, bmControls: cameraTerminalBmControls),
+            processingUnit: UVCProcessingUnit(id: processingUnitId, bmControls: processingUnitBmControls)
         )
     }
 
     private func browseDescriptor(
         _ memory: UInt16,
         _ pointer: UnsafeMutablePointer<UInt8>,
-        _ processingUnitID: inout Int,
-        _ cameraTerminalID: inout Int
+        _ processingUnitId: inout Int,
+        _ cameraTerminalId: inout Int,
+        _ processingUnitBmControls: inout Int,
+        _ cameraTerminalBmControls: inout Int
     ) {
         var remaining = memory
         var currentPointer = pointer
@@ -78,9 +82,16 @@ extension IOUSBConfigurationDescriptorPtr {
                             break
                         }
 
-                        self.getDeviceId(descriptorPointer, currentPointer, &processingUnitID, &cameraTerminalID)
+                        self.parseDescriptor(
+                            descriptorPointer,
+                            currentPointer,
+                            &processingUnitId,
+                            &cameraTerminalId,
+                            &processingUnitBmControls,
+                            &cameraTerminalBmControls
+                        )
 
-                        if processingUnitID != -1, cameraTerminalID != -1 {
+                        if processingUnitId != -1, cameraTerminalId != -1, processingUnitBmControls != -1, cameraTerminalBmControls != -1 {
                             // Found all necessary data, exit
                             // Fix for WB7022 Camera
                             return
@@ -102,21 +113,27 @@ extension IOUSBConfigurationDescriptorPtr {
         }
     }
 
-    private func getDeviceId(
+    private func parseDescriptor(
         _ descriptorPointer: InterfaceDescriptorPointer,
         _ currentPointer: UnsafeMutablePointer<UInt8>,
-        _ processingUnitID: inout Int,
-        _ cameraTerminalID: inout Int
+        _ processingUnitId: inout Int,
+        _ cameraTerminalId: inout Int,
+        _ processingUnitBmControls: inout Int,
+        _ cameraTerminalBmControls: inout Int
     ) {
         let unitType = UVCDescriptorSubtype(rawValue: descriptorPointer.pointee.bDescriptorSubType)
 
         switch unitType {
         case .processingUnit:
             let puPointer = ProcessingUnitDescriptorPointer(OpaquePointer(currentPointer))
-            processingUnitID = Int(puPointer.pointee.bUnitID)
+            processingUnitId = Int(puPointer.pointee.bUnitID)
+            processingUnitBmControls = Int((puPointer.pointee.bmControls << 8) >> 8)
+
         case .inputTerminal:
             let ctPointer = CameraTerminalDescriptorPointer(OpaquePointer(currentPointer))
-            cameraTerminalID = Int(ctPointer.pointee.bTerminalID)
+            cameraTerminalId = Int(ctPointer.pointee.bTerminalID)
+            cameraTerminalBmControls = Int((ctPointer.pointee.bmControls << 8) >> 8)
+
         case .none:
             break
         case .selectorUnit:
