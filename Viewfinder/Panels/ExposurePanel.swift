@@ -64,6 +64,11 @@ struct ExposurePanel: View {
 
     var shutterSpeedLabel: String {
         let microseconds = exposureTime.value * 100
+
+        guard microseconds > 0 else {
+            return ""
+        }
+
         let denominator = 1_000_000 / microseconds
 
         return denominator <= 1

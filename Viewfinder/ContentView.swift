@@ -12,11 +12,13 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            PreviewPanel()
-                .padding(12)
-
-            ScrollView(.vertical, showsIndicators: false) {
-                if let uvc = deviceManager.currentDevice?.uvc {
+            if deviceManager.currentDevice != nil {
+                PreviewPanel()
+                    .padding(12)
+            }
+            
+            if let uvc = deviceManager.currentDevice?.uvc {
+                ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 12) {
                         if uvc.cameraTerminalCapabilities.exposureTimeAbsolute {
                             ExposurePanel()
@@ -55,6 +57,20 @@ struct ContentView: View {
                         }
                     }
                     .padding(12)
+                }
+            } else {
+                VStack(spacing: 3) {
+                    Spacer()
+                        
+                    Text("No UVC Webcam Found")
+                        .font(.title2.bold())
+                        .opacity(0.6)
+                        
+                    Text("Connect a UVC-compliant webcam to control its settings.")
+                        .font(.caption.bold())
+                        .opacity(0.6)
+                        
+                    Spacer()
                 }
             }
         }

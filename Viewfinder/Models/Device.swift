@@ -9,19 +9,21 @@ import AVFoundation
 import UVCKit
 
 struct Device {
-    let uvc: UVCDevice
+    let uvc: UVCDevice?
     let id: String
-    let controls: DeviceControls
+    let controls: DeviceControls?
     let avCaptureDevice: AVCaptureDevice
 
-    init?(device: AVCaptureDevice) {
-        guard let uvcDevice = UVCDevice(captureDevice: device) else {
-            return nil
+    init(device: AVCaptureDevice) {
+        self.id = device.uniqueID
+        self.uvc = UVCDevice(captureDevice: device)
+
+        if let uvc = uvc {
+            self.controls = DeviceControls(controls: uvc.controls)
+        } else {
+            self.controls = nil
         }
 
-        self.id = device.uniqueID
-        self.uvc = uvcDevice
-        self.controls = DeviceControls(controls: uvc.controls)
         self.avCaptureDevice = device
     }
 }

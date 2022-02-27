@@ -13,12 +13,12 @@ struct CameraControl<T: UVCControllable>: DynamicProperty {
     @ObservedObject private var deviceControl: DeviceControl<T>
 
     init(_ keyPath: KeyPath<DeviceControls, DeviceControl<T>>) {
-        guard let primaryDevice = DeviceManager.shared.currentDevice else {
+        guard let primaryDeviceControls = DeviceManager.shared.currentDevice?.controls else {
             // Controls that use these values should not be rendered anyways.
-            fatalError("No primary device found.")
+            fatalError("No primary device found, or, primary device does not support UVC.")
         }
 
-        self.deviceControl = primaryDevice.controls[keyPath: keyPath]
+        self.deviceControl = primaryDeviceControls[keyPath: keyPath]
     }
 
     var wrappedValue: DeviceControl<T> {

@@ -12,10 +12,11 @@ import SwiftUI
 class DeviceManager: ObservableObject {
     static let shared = DeviceManager()
 
-    @Published private(set) var devices: [Device] = []
+    private var cancellables = Set<AnyCancellable>()
+
     let captureSession = AVCaptureSession()
 
-    private var cancellables = Set<AnyCancellable>()
+    @Published private var devices: [Device] = []
 
     var currentDevice: Device? {
         devices.first
@@ -85,15 +86,20 @@ class DeviceManager: ObservableObject {
             .sink { [self] notification in
                 guard
                     let avCaptureDevice = notification.object as? AVCaptureDevice,
-                    !devices.contains(where: { $0.id == avCaptureDevice.uniqueID }),
-                    let device = Device(device: avCaptureDevice)
+                    !devices.contains(where: { $0.id == avCaptureDevice.uniqueID })
                 else {
                     return
                 }
 
-                self.devices.append(device)
+                let device = Device(device: avCaptureDevice)
 
-                restartCaptureSession()
+                let previousId = currentDevice?.id
+
+                devices.append(device)
+
+                if previousId != currentDevice?.id {
+                    restartCaptureSession()
+                }
             }
             .store(in: &cancellables)
 
@@ -107,7 +113,13 @@ class DeviceManager: ObservableObject {
                     return
                 }
 
+                let previousId = currentDevice?.id
+
                 self.devices.removeAll { $0.id == avCaptureDevice.uniqueID }
+
+                if previousId != currentDevice?.id {
+                    restartCaptureSession()
+                }
             }
             .store(in: &cancellables)
     }
