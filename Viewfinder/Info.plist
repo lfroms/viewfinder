@@ -4,5 +4,13 @@
 <dict>
 	<key>LSUIElement</key>
 	<true/>
+	<key>SUEnableDownloaderService</key>
+	<true/>
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/lfroms/viewfinder/main/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>i4vFlZKHAQyC6XVpK//tOrReqQ0rpaTYnK0vxnWr6M0=</string>
 </dict>
 </plist>
