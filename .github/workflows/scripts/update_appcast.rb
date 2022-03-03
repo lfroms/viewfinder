@@ -65,5 +65,5 @@ if appcast.xpath('//item').count > 1
 end
 
 File.open(APPCAST_FILENAME, 'w') do |file|
-  file.write(builder.to_xml)
+  file.write(appcast.to_xml)
 end
