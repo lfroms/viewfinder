@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespace/sparkle" version="2.0">
+  <channel>
+    <title>Viewfinder</title>
+    <item>
+      <title>Hello World 2</title>
+      <link>https://github.com/lfroms/viewfinder</link>
+      <sparkle:version>0.0.21</sparkle:version>
+      <description><![CDATA[<p>Hello!</p>
+
+<ul>
+<li>One</li>
+<li>Two</li>
+</ul>
+
+<p>Thanks 🎉</p>
+]]></description>
+      <pubDate>Thu, 3 Mar 2022 23:48:45 +0000</pubDate>
+      <enclosure url="https://github.com/lfroms/viewfinder/releases/download/0.0.21/TextEdit.1.17.dmg" length="9" type="application/octet-stream" sparkle:edSignature="nJxM4hW2gQp8Xt5Tb7wDGe9Wp8QuHOSTK+bKWA76+vcgTUt4H8utGVv8pnqRmNWoQomuqqbzjBC9kwIaf2ljAw=="/>
+    </item>
+  </channel>
+</rss>
