@@ -1,0 +1,65 @@
+name: Update Appcast
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update_appcast:
+    name: Update Appcast
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.1
+          bundler-cache: true
+
+      - name: Prepare Environment
+        env:
+          RELEASE: ${{ toJSON(github.event.release) }}
+        run: |
+          echo "Adding asset information to GitHub Actions environment..."
+          ruby .github/workflows/scripts/parse_release_assets.rb
+
+      - name: Install Dependencies
+        run: |
+          gem install nokogiri:1.13.3 redcarpet:3.5.1
+          xcodebuild -resolvePackageDependencies -clonedSourcePackagesDirPath ${{ runner.temp }}
+
+          echo "Adding Sparkle binary path to PATH..."
+          echo "${{ runner.temp }}/artifacts/Sparkle/bin" >> $GITHUB_PATH
+
+      - name: Fetch Release Disk Image
+        run: |
+          DOWNLOADED_ASSET_PATH="${{ runner.temp }}/${{ env.asset_filename }}"
+
+          echo "Downloading asset from release..."
+          curl -L ${{ env.asset_url }} > $DOWNLOADED_ASSET_PATH
+
+          echo "downloaded_asset_path=$DOWNLOADED_ASSET_PATH" >> $GITHUB_ENV
+
+      - name: Sign Update
+        run: |
+          echo "signature_data<<EOF" >> $GITHUB_ENV
+          sign_update -s ${{ secrets.SPARKLE_SIGNING_SECRET }} ${{ env.downloaded_asset_path }} >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Update Appcast XML File
+        env:
+          RELEASE: ${{ toJSON(github.event.release) }}
+        run: |
+          ruby .github/workflows/scripts/update_appcast.rb
+
+      - name: Commit and Push Updated Appcast
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add appcast.xml
+          git commit -am 'Update Appcast'
+          git push
