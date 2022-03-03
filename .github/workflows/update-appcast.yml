@@ -65,7 +65,7 @@ jobs:
           git checkout -b $BRANCH_NAME
           git add appcast.xml
           git commit -am 'Update Appcast'
-          git push
+          git push --set-upstream origin $BRANCH_NAME
 
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
 
