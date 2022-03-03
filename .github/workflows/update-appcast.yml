@@ -58,8 +58,42 @@ jobs:
 
       - name: Commit and Push Updated Appcast
         run: |
+          BRANCH_NAME="appcast-${{ github.event.release.tag_name }}"
+
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git checkout -b $BRANCH_NAME
           git add appcast.xml
           git commit -am 'Update Appcast'
           git push
+
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { repo, owner } = context.repo;
+
+            const result = await github.rest.pulls.create({
+              title: 'Update Appcast for ${{ github.event.release_tag_name }}',
+              owner,
+              repo,
+              head: '${{ env.branch_name }}',
+              base: 'main',
+              body: 'This auto-generated PR updates the Appcast for version ${{ github.event.release_tag_name }}.'
+            });
+
+            github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: result.data.number,
+              labels: ['appcast']
+            });
+
+            github.rest.pulls.requestReviewers({
+              owner,
+              repo,
+              pull_number: result.data.number,
+              reviewers: ['lfroms']
+            });
