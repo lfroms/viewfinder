@@ -6,11 +6,18 @@
 //
 
 import Foundation
+import Sparkle
 import SwiftUI
 
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private let dataRefreshService = DataRefreshService()
     private var statusBarItem: NSStatusItem?
+
+    private let updaterController = SPUStandardUpdaterController(
+        startingUpdater: true,
+        updaterDelegate: nil,
+        userDriverDelegate: nil
+    )
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let contentView = HostingView(
@@ -27,11 +34,27 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         let menu = NSMenu()
         menu.delegate = self
 
-        let quitItem = NSMenuItem(title: "Quit", action: #selector(NSApplication.shared.terminate(_:)), keyEquivalent: "")
+        let hiddenItem = NSMenuItem()
+        hiddenItem.view = .init(frame: .zero)
+        hiddenItem.isHidden = true
+
+        let hiddenItem2 = NSMenuItem()
+        hiddenItem2.view = .init(frame: .zero)
+        hiddenItem2.isHidden = true
+
+        let updateItem = NSMenuItem(title: "Check for Updates…", action: #selector(SPUStandardUpdaterController.checkForUpdates(_:)), keyEquivalent: "")
+        updateItem.target = self.updaterController
+        updateItem.isAlternate = true
+        updateItem.keyEquivalentModifierMask = .option
+
+        let quitItem = NSMenuItem(title: "Quit Viewfinder", action: #selector(NSApplication.shared.terminate(_:)), keyEquivalent: "")
         quitItem.isAlternate = true
         quitItem.keyEquivalentModifierMask = .option
 
         menu.addItem(menuItem)
+        menu.addItem(hiddenItem)
+        menu.addItem(updateItem)
+        menu.addItem(hiddenItem2)
         menu.addItem(quitItem)
 
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
