@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespace/sparkle" version="2.0">
+  <channel>
+    <title>Viewfinder</title>
+    <item>
+      <title>Forgot to Push</title>
+      <link>https://github.com/lfroms/viewfinder</link>
+      <sparkle:version>0.0.27</sparkle:version>
+      <description><![CDATA[<h2>Welcome!</h2><p>This is the first (test) release. Here are some <strong>key</strong> new features:<br>Newline item.</p><ul><li>Automated release signing and Appcast updating.</li><li>It uses Ruby scripts, therefore it is the best.</li><li>Not sure what else to say!</li></ul><p>Here&#39;s another paragraph, just for fun. And an emoji. 🚀</p>]]></description>
+      <pubDate>Fri, 4 Mar 2022 00:23:02 +0000</pubDate>
+      <enclosure url="https://github.com/lfroms/viewfinder/releases/download/0.0.27/TextEdit.1.17.dmg" length="9" type="application/octet-stream" sparkle:edSignature="nJxM4hW2gQp8Xt5Tb7wDGe9Wp8QuHOSTK+bKWA76+vcgTUt4H8utGVv8pnqRmNWoQomuqqbzjBC9kwIaf2ljAw=="/>
+    </item>
+  </channel>
+</rss>
