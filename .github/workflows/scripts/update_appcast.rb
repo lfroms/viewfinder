@@ -32,7 +32,7 @@ parsed_signature_data = Nokogiri::XML::DocumentFragment
 
 unless File.file?(APPCAST_FILENAME)
   builder = Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
-    xml.rss('xmlns:sparkle' => 'http://www.andymatuschak.org/xml-namespace/sparkle', 'version' => '2.0') {
+    xml.rss('xmlns:sparkle' => 'http://www.andymatuschak.org/xml-namespaces/sparkle', 'version' => '2.0') {
       xml.channel {
         xml.title 'Viewfinder'
       }
