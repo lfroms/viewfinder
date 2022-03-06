@@ -20,6 +20,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     )
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        Task {
+            DeviceManager.shared.refreshDevices()
+        }
+
         let contentView = HostingView(
             rootView: ContentView()
                 .environmentObject(DeviceManager.shared)
@@ -65,11 +69,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     // MARK: - NSMenuDelegate
 
     func menuWillOpen(_ menu: NSMenu) {
+        DeviceManager.shared.appIsInForeground = true
         DeviceManager.shared.startCaptureSession()
         self.dataRefreshService.refreshPeriodically()
     }
 
     func menuDidClose(_ menu: NSMenu) {
+        DeviceManager.shared.appIsInForeground = false
         self.dataRefreshService.pauseRefreshingPeriodically()
         DeviceManager.shared.stopCaptureSession()
     }

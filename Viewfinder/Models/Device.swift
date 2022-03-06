@@ -8,7 +8,7 @@
 import AVFoundation
 import UVCKit
 
-struct Device {
+struct Device: Identifiable {
     let uvc: UVCDevice?
     let id: String
     let controls: DeviceControls?

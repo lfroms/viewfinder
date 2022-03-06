@@ -23,7 +23,7 @@ struct ZoomPanel: View {
                 }
             ) {
                 HStack(spacing: 8) {
-                    PlainToggle(isOn: $useDefault)
+                    PlainToggle(isOn: $useDefault.animation())
                     MenuSlider(value: $zoom.value, in: zoom.range)
                         .disabled(useDefault)
                 }

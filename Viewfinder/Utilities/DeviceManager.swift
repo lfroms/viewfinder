@@ -12,22 +12,29 @@ import SwiftUI
 class DeviceManager: ObservableObject {
     static let shared = DeviceManager()
 
-    private var cancellables = Set<AnyCancellable>()
+    @AppStorage("selectedDeviceId") private var selectedDeviceId: String?
 
     let captureSession = AVCaptureSession()
+    var appIsInForeground = false
 
-    @Published private var devices: [Device] = []
+    private var cancellables = Set<AnyCancellable>()
 
-    var currentDevice: Device? {
-        devices.first
+    @Published private(set) var devices: [Device] = []
+
+    @Published var currentDevice: Device? {
+        didSet {
+            if oldValue?.id != currentDevice?.id {
+                selectedDeviceId = currentDevice?.id
+                restartCaptureSession()
+            }
+        }
     }
 
     init() {
         subscribeToDeviceNotifications()
-        refreshDevices()
     }
 
-    private func refreshDevices() {
+    func refreshDevices() {
         let discoverySession = AVCaptureDevice.DiscoverySession(
             deviceTypes: [.externalUnknown, .builtInWideAngleCamera],
             mediaType: nil,
@@ -39,9 +46,15 @@ class DeviceManager: ObservableObject {
             .compactMap { Device(device: $0) }
             .collect()
             .assign(to: &$devices)
+
+        selectDevice()
     }
 
     func startCaptureSession() {
+        guard appIsInForeground else {
+            return
+        }
+
         Task {
             guard
                 let device = currentDevice,
@@ -68,6 +81,12 @@ class DeviceManager: ObservableObject {
         }
     }
 
+    private func selectDevice() {
+        currentDevice = devices.first { device in
+            device.id == selectedDeviceId
+        } ?? devices.first
+    }
+
     private func restartCaptureSession() {
         Task {
             captureSession.stopRunning()
@@ -91,14 +110,10 @@ class DeviceManager: ObservableObject {
                     return
                 }
 
-                let device = Device(device: avCaptureDevice)
+                devices.append(.init(device: avCaptureDevice))
 
-                let previousId = currentDevice?.id
-
-                devices.append(device)
-
-                if previousId != currentDevice?.id {
-                    restartCaptureSession()
+                if devices.count == 1 {
+                    selectDevice()
                 }
             }
             .store(in: &cancellables)
@@ -113,12 +128,10 @@ class DeviceManager: ObservableObject {
                     return
                 }
 
-                let previousId = currentDevice?.id
-
                 self.devices.removeAll { $0.id == avCaptureDevice.uniqueID }
 
-                if previousId != currentDevice?.id {
-                    restartCaptureSession()
+                if !devices.contains(where: { $0.id == selectedDeviceId }) {
+                    selectDevice()
                 }
             }
             .store(in: &cancellables)
