@@ -9,14 +9,15 @@
 
 <p align="center">
   <a href="https://github.com/lfroms/viewfinder/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/lfroms/viewfinder"></a>
-  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/lfroms/viewfinder">
+  <a href="https://github.com/lfroms/viewfinder/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/lfroms/viewfinder"></a>
   <a href="https://github.com/lfroms/viewfinder/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lfroms/viewfinder"></a>
-  <a href="https://github.com/lfroms/viewfinder"><img alt="GitHub license" src="https://img.shields.io/github/license/lfroms/viewfinder"></a>
-  <img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-orange">
+  <a href="https://github.com/lfroms/viewfinder/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/lfroms/viewfinder"></a>
+  <img alt="Contributions welcome" src="https://img.shields.io/badge/contributions-welcome-green">
 </p>
 
 <p align="center">
   <a href="#about">About</a> •
+  <a href="#download">Download</a> •
   <a href="#getting-started">Getting Started</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#license">License</a>
@@ -33,6 +34,14 @@ Viewfinder aims to provide a more native-feeling alternative to, let's face it, 
 Viewfinder is written in [SwiftUI](https://developer.apple.com/xcode/swiftui/), a declarative framework for building user interfaces for macOS.
 
 > 📝 **Note:** Viewfinder is currently _beta software_, so it's possible that you'll run into issues. Many of these issues should begin to disappear once the codebase matures.
+
+## Download
+
+You can download the latest version of Viewfinder [here](https://github.com/lfroms/viewfinder/releases/latest) by downloading the `*.dmg` file. A full list of releases is available [here](https://github.com/lfroms/viewfinder/releases).
+
+Viewfinder will automatically check for updates and let you know if a new one is available.
+
+> 💡 **Tip:** Hold the Option <kbd>⌥</kbd> key while Viewfinder is open to access the "Check for Updates" and "Quit" options.
 
 ## Getting Started
 
