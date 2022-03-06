@@ -3,6 +3,15 @@
   <channel>
     <title>Viewfinder</title>
     <item>
+      <title>0.1.1</title>
+      <link>https://github.com/lfroms/viewfinder</link>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+      <description><![CDATA[<p>This update contains no changes to the application. This update exists solely to test the auto-update feature.</p>]]></description>
+      <pubDate>Sun, 6 Mar 2022 21:55:23 +0000</pubDate>
+      <enclosure url="https://github.com/lfroms/viewfinder/releases/download/0.1.1/Viewfinder-0.1.1-2.dmg" length="3401952" type="application/octet-stream" sparkle:edSignature="/vIUpVRy4gJ4LKCrLp+rhOB4OZkOaYV4eu4VPl8bAS7yXEWCfrechzs3Xftii6yX3iysjMW6TxVcLgduSVM0CQ=="/>
+    </item>
+    <item>
       <title>0.1.0</title>
       <link>https://github.com/lfroms/viewfinder</link>
       <sparkle:version>1</sparkle:version>
