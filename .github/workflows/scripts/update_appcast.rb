@@ -32,7 +32,7 @@ parsed_signature_data = Nokogiri::XML::DocumentFragment
 
 unless File.file?(APPCAST_FILENAME)
   builder = Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
-    xml.rss('xmlns:sparkle' => 'http://www.andymatuschak.org/xml-namespace/sparkle', 'version' => '2.0') {
+    xml.rss('xmlns:sparkle' => 'http://www.andymatuschak.org/xml-namespaces/sparkle', 'version' => '2.0') {
       xml.channel {
         xml.title 'Viewfinder'
       }
@@ -46,13 +46,16 @@ end
 
 appcast = Nokogiri::XML.parse(File.read(APPCAST_FILENAME)) { |x| x.noblanks }
 
+_, version, build_number = File.basename(asset_filename, '.*').split('-')
+
 published_date = DateTime.parse(release[:published_at]).rfc2822
 
 Nokogiri::XML::Builder.with(appcast.at('channel')) do |xml|
   xml.item {
     xml.title release[:name]
     xml.link 'https://github.com/lfroms/viewfinder'
-    xml['sparkle'].version release[:tag_name]
+    xml['sparkle'].version build_number
+    xml['sparkle'].shortVersionString version
     xml.description {
       xml.cdata markdown.render(release[:body]).delete("\n")
     }
