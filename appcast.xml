@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespace/sparkle" version="2.0">
+  <channel>
+    <title>Viewfinder</title>
+    <item>
+      <title>0.1.0</title>
+      <link>https://github.com/lfroms/viewfinder</link>
+      <sparkle:version>0.1.0</sparkle:version>
+      <description><![CDATA[<p>Welcome! This is the first release of Viewfinder.</p>]]></description>
+      <pubDate>Sun, 6 Mar 2022 20:08:31 +0000</pubDate>
+      <enclosure url="https://github.com/lfroms/viewfinder/releases/download/0.1.0/Viewfinder-0.1.0.dmg" length="3401943" type="application/octet-stream" sparkle:edSignature="0HtptAKkBSit70lf/QWL19klxyvOTUaCeXlpmC5h2hIq9JpWZW1BjgaUt+ZmXzFI4f7rWezCafkINYYbXWpYCQ=="/>
+    </item>
+  </channel>
+</rss>
