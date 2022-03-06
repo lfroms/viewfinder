@@ -3,6 +3,7 @@
 //  UVCKit
 //
 //  Created by Lukas Romsicki on 2022-02-07.
+//  Copyright © 2022 Lukas Romsicki. All rights reserved.
 //
 //  UVC Video Class-Specific VC Interface Descriptor Subtypes
 //  https://www.usb.org/document-library/video-class-v15-document-set

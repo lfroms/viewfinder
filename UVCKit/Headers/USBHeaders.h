@@ -3,9 +3,7 @@
 //  UVCKit
 //
 //  Created by Lukas Romsicki on 2022-02-07.
-//
-//  Originally written by Itay Brenner on 2020-07-20. Adapted from:
-//  https://github.com/Itaybre/CameraController/blob/50747fb07880a15e175cd4d98adfa028df7ebe42/CameraController/UVC/Models/USBHeaders.h
+//  Copyright © 2022 Lukas Romsicki. All rights reserved.
 //
 
 #include <stdint.h>

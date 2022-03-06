@@ -3,6 +3,7 @@
 //  Viewfinder
 //
 //  Created by Lukas Romsicki on 2022-02-24.
+//  Copyright © 2022 Lukas Romsicki. All rights reserved.
 //
 
 import SwiftUI

@@ -3,9 +3,12 @@
 //  UVCKit
 //
 //  Created by Lukas Romsicki on 2022-02-06.
+//  Copyright © 2020 Itaysoft. All rights reserved.
+//  Copyright © 2022 Lukas Romsicki.
 //
-//  Originally written by Itay Brenner on 2020-07-20. Code has been lightly refactord. Adapted from:
+//  Originally written by Itay Brenner on 2020-07-20. Code has been modified from its original form. Adapted from:
 //  https://github.com/Itaybre/CameraController/blob/50747fb07880a15e175cd4d98adfa028df7ebe42/CameraController/UVC/Extensions/IOUSBConfigurationDescriptorPtr+UVC.swift
+//  Licensed under GPL-3.0.
 //
 
 import IOKit
