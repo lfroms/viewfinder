@@ -23,6 +23,11 @@ struct BrightnessPanel: View {
             )
             .padding(12)
         }
+        .task {
+            if brightness.value != brightness.defaultValue {
+                auto = false
+            }
+        }
         .onChange(of: brightness.value) { newValue in
             if newValue != brightness.defaultValue {
                 auto = false

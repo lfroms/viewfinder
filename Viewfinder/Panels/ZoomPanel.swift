@@ -30,6 +30,11 @@ struct ZoomPanel: View {
             }
             .padding(12)
         }
+        .task {
+            if zoom.value != zoom.defaultValue {
+                useDefault = false
+            }
+        }
         .onChange(of: zoom.value) { newValue in
             if newValue != zoom.defaultValue {
                 useDefault = false

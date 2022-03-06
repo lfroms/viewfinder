@@ -23,6 +23,11 @@ struct SaturationPanel: View {
             )
             .padding(12)
         }
+        .task {
+            if saturation.value != saturation.defaultValue {
+                auto = false
+            }
+        }
         .onChange(of: saturation.value) { newValue in
             if newValue != saturation.defaultValue {
                 auto = false

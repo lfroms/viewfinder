@@ -23,6 +23,11 @@ struct ContrastPanel: View {
             )
             .padding(12)
         }
+        .task {
+            if contrast.value != contrast.defaultValue {
+                auto = false
+            }
+        }
         .onChange(of: contrast.value) { newValue in
             if newValue != contrast.defaultValue {
                 auto = false

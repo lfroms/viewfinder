@@ -23,6 +23,11 @@ struct SharpnessPanel: View {
             )
             .padding(12)
         }
+        .task {
+            if sharpness.value != sharpness.defaultValue {
+                auto = false
+            }
+        }
         .onChange(of: sharpness.value) { newValue in
             if newValue != sharpness.defaultValue {
                 auto = false
