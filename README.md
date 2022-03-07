@@ -39,7 +39,7 @@ Viewfinder is written in [SwiftUI](https://developer.apple.com/xcode/swiftui/), 
 
 You can download the latest version of Viewfinder [here](https://github.com/lfroms/viewfinder/releases/latest) by downloading the `*.dmg` file. A full list of releases is available [here](https://github.com/lfroms/viewfinder/releases).
 
-Viewfinder will automatically check for updates and let you know if a new one is available.
+Viewfinder will automatically check for updates and let you know if a new one is available. You'll be prompted to enable automatic update checks the second time the app is launched.
 
 > 💡 **Tip:** Hold the Option <kbd>⌥</kbd> key while Viewfinder is open to access the "Check for Updates" and "Quit" options.
 
