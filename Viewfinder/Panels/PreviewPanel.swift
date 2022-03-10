@@ -14,14 +14,23 @@ struct PreviewPanel: View {
     var body: some View {
         Panel {
             ZStack {
-                ProgressView()
-                    .progressViewStyle(.circular)
-                    .tint(.white)
-                    .transition(.opacity)
+                PreviewStateEmptyState(state: previewState)
 
                 PreviewContainer(captureSession: deviceManager.captureSession)
                     .aspectRatio(16 / 9, contentMode: .fit)
             }
         }
+    }
+
+    private var previewState: PreviewState {
+        guard let currentDevice = deviceManager.currentDevice else {
+            return .noDevice
+        }
+
+        if currentDevice.avCaptureDevice.isSuspended {
+            return .suspended(deviceName: currentDevice.avCaptureDevice.localizedName)
+        }
+
+        return .initializing
     }
 }

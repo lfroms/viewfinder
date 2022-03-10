@@ -48,6 +48,8 @@
 		8078968527AC8D3300179CA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078968427AC8D3300179CA2 /* ContentView.swift */; };
 		8078968727AC8D3400179CA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8078968627AC8D3400179CA2 /* Assets.xcassets */; };
 		808706F227D84676006213BA /* UpdaterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808706F127D84676006213BA /* UpdaterDelegate.swift */; };
+		808706FA27D99F20006213BA /* PreviewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808706F927D99F20006213BA /* PreviewState.swift */; };
+		808706FC27D99F38006213BA /* PreviewStateEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808706FB27D99F38006213BA /* PreviewStateEmptyState.swift */; };
 		809127A927B5DE8C00C38C0A /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809127A827B5DE8C00C38C0A /* DeviceManager.swift */; };
 		809127AB27B5E37200C38C0A /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809127AA27B5E37200C38C0A /* Device.swift */; };
 		8097A4DE27AF78750003BB23 /* MenuSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097A4DD27AF78750003BB23 /* MenuSlider.swift */; };
@@ -159,6 +161,8 @@
 		8078968627AC8D3400179CA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8078968B27AC8D3400179CA2 /* Viewfinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Viewfinder.entitlements; sourceTree = "<group>"; };
 		808706F127D84676006213BA /* UpdaterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterDelegate.swift; sourceTree = "<group>"; };
+		808706F927D99F20006213BA /* PreviewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewState.swift; sourceTree = "<group>"; };
+		808706FB27D99F38006213BA /* PreviewStateEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewStateEmptyState.swift; sourceTree = "<group>"; };
 		809127A827B5DE8C00C38C0A /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		809127AA27B5E37200C38C0A /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		8097A4DD27AF78750003BB23 /* MenuSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSlider.swift; sourceTree = "<group>"; };
@@ -323,6 +327,7 @@
 				809127AA27B5E37200C38C0A /* Device.swift */,
 				80CF9BEA27BF29BB001C0E0A /* DeviceControl.swift */,
 				8044385727C6EEC200715373 /* DeviceControls.swift */,
+				808706F927D99F20006213BA /* PreviewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				8044387B27CAE30B00715373 /* PanelTitle.swift */,
 				8044385B27C83E8600715373 /* PlainToggle.swift */,
 				80C4481D27AF28A30059150C /* Preview */,
+				808706FB27D99F38006213BA /* PreviewStateEmptyState.swift */,
 				80D936A027D40AD900232BAD /* SectionHeaderTextStyle.swift */,
 				8044385D27C8586800715373 /* SliderPanelLayout.swift */,
 				80D936A427D4468000232BAD /* UnsupportedWebcamEmptyState.swift */,
@@ -606,10 +612,12 @@
 				8078968527AC8D3300179CA2 /* ContentView.swift in Sources */,
 				8044386027C8670600715373 /* BrightnessPanel.swift in Sources */,
 				8078968327AC8D3300179CA2 /* ViewfinderApp.swift in Sources */,
+				808706FA27D99F20006213BA /* PreviewState.swift in Sources */,
 				80D936A127D40AD900232BAD /* SectionHeaderTextStyle.swift in Sources */,
 				80C4482927AF32650059150C /* Panel.swift in Sources */,
 				80C4482127AF298B0059150C /* PreviewContainer.swift in Sources */,
 				80C4482C27AF5A6E0059150C /* View+ReverseMask.swift in Sources */,
+				808706FC27D99F38006213BA /* PreviewStateEmptyState.swift in Sources */,
 				80D9369827D3DB6200232BAD /* CameraPicker.swift in Sources */,
 				8044387C27CAE30B00715373 /* PanelTitle.swift in Sources */,
 				80D936A527D4468000232BAD /* UnsupportedWebcamEmptyState.swift in Sources */,
