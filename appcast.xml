@@ -3,6 +3,15 @@
   <channel>
     <title>Viewfinder</title>
     <item>
+      <title>0.1.1</title>
+      <link>https://github.com/lfroms/viewfinder</link>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+      <description><![CDATA[<p>Thanks for using Viewfinder! This update contains bug fixes and minor improvements:</p><ul><li>Fixed an issue where the selected camera option was cleared when the camera was disconnected.</li><li>Improved error messages for different camera states.</li></ul>]]></description>
+      <pubDate>Thu, 10 Mar 2022 03:33:13 +0000</pubDate>
+      <enclosure url="https://github.com/lfroms/viewfinder/releases/download/0.1.1/Viewfinder-0.1.1-2.dmg" length="3410125" type="application/octet-stream" sparkle:edSignature="Ij2AK7EbLqY9mZbeI6PbCQxcQtoWwwmJkr+CBEcJXJJSv4moAXZyt/sau2KZM3DbukKcWwr5vAEYIyvCRoPmCA=="/>
+    </item>
+    <item>
       <title>0.1.0</title>
       <link>https://github.com/lfroms/viewfinder</link>
       <sparkle:version>1</sparkle:version>
