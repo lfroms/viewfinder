@@ -18,7 +18,7 @@
 <p align="center">
   <a href="#about">About</a> •
   <a href="#download">Download</a> •
-  <a href="#getting-started">Getting Started</a> •
+  <a href="#building-from-source">Building from Source</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#license">License</a>
 </p>
@@ -37,15 +37,19 @@ Viewfinder is written in [SwiftUI](https://developer.apple.com/xcode/swiftui/), 
 
 ## Download
 
-You can download the latest version of Viewfinder [here](https://github.com/lfroms/viewfinder/releases/latest) by downloading the `*.dmg` file. A full list of releases is available [here](https://github.com/lfroms/viewfinder/releases).
+You can download a pre-built **Apple notarized** universal binary of the latest version of Viewfinder from the latest GitHub release. Click the button below to jump to it, then download the `.dmg` file:
 
-Viewfinder will automatically check for updates and let you know if a new one is available. You'll be prompted to enable automatic update checks the second time the app is launched.
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lfroms/viewfinder?color=black&label=download%20latest&logo=github&sort=semver&style=for-the-badge)](https://github.com/lfroms/viewfinder/releases/latest)
+
+A full list of releases is available [here](https://github.com/lfroms/viewfinder/releases).
+
+Viewfinder will automatically check for updates and let you know if a new one is available. You'll be prompted to enable automatic update checks when you first launch the app.
 
 > 💡 **Tip:** Hold the Option <kbd>⌥</kbd> key while Viewfinder is open to access the "Check for Updates" and "Quit" options.
 
-## Getting Started
+## Building from Source
 
-To get started, you'll need to pull the source code. Find yourself a working directory, and clone this repo to it. I recommend using [GitHub Desktop](https://desktop.github.com).
+To open and build the project in Xcode on your local machine, you'll need to pull the source code. Find yourself a working directory, and clone this repo to it. I recommend using [GitHub Desktop](https://desktop.github.com).
 
 Alternatively, pull it using the `git` CLI:
 
