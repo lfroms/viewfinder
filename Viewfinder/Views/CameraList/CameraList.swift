@@ -13,12 +13,12 @@ struct CameraList: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            ForEach(deviceManager.devices, id: \.id) { device in
+            ForEach(deviceManager.connectedDevices, id: \.id) { device in
                 CameraListItem(
                     name: device.avCaptureDevice.localizedName,
                     selected: deviceManager.currentDevice?.id == device.id,
                     action: {
-                        deviceManager.currentDevice = device
+                        deviceManager.switchCurrentDevice(to: device)
                     }
                 )
                 .fixedSize(horizontal: false, vertical: true)

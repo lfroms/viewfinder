@@ -20,7 +20,7 @@ struct ContentView: View {
 
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
-                    if deviceManager.devices.count > 1 {
+                    if deviceManager.connectedDevices.count > 1 {
                         CameraPicker()
                     }
 

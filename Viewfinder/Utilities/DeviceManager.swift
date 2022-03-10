@@ -12,30 +12,32 @@ import SwiftUI
 
 class DeviceManager: ObservableObject {
     static let shared = DeviceManager()
-
-    @AppStorage("selectedDeviceId") private var selectedDeviceId: String?
-
-    let captureSession = AVCaptureSession()
-    var appIsInForeground = false
-
     private var cancellables = Set<AnyCancellable>()
 
-    @Published private(set) var devices: [Device] = []
+    @AppStorage("selectedDeviceId") private var userSelectedDeviceId: String?
 
-    @Published var currentDevice: Device? {
+    let captureSession = AVCaptureSession()
+    var menuIsOpen: Bool = false
+
+    @Published private(set) var connectedDevices: [Device] = []
+    @Published private(set) var currentDevice: Device? {
         didSet {
-            if oldValue?.id != currentDevice?.id {
-                selectedDeviceId = currentDevice?.id
+            guard menuIsOpen, oldValue?.id != currentDevice?.id else {
+                return
+            }
+
+            Task {
                 restartCaptureSession()
             }
         }
     }
 
-    init() {
+    private init() {
         subscribeToDeviceNotifications()
     }
 
-    func refreshDevices() {
+    /// Finds all connected devices then selects and starts the capture session if an appropriate device was found.
+    func discoverConnectedDevices() {
         let discoverySession = AVCaptureDevice.DiscoverySession(
             deviceTypes: [.externalUnknown, .builtInWideAngleCamera],
             mediaType: nil,
@@ -46,76 +48,80 @@ class DeviceManager: ObservableObject {
             .publisher
             .compactMap { Device(device: $0) }
             .collect()
-            .assign(to: &$devices)
+            .assign(to: &$connectedDevices)
 
-        selectDevice()
+        selectAvailableDevice()
+    }
+
+    /// Switches to and activates the capture session for the provided `Device`.
+    /// - Parameter device: The `Device` to switch to.
+    func switchCurrentDevice(to device: Device) {
+        userSelectedDeviceId = device.id
+        currentDevice = device
     }
 
     func startCaptureSession() {
-        guard appIsInForeground else {
+        guard
+            menuIsOpen,
+            let device = currentDevice,
+            let input = try? AVCaptureDeviceInput(device: device.avCaptureDevice)
+        else {
             return
         }
 
-        Task {
-            guard
-                let device = currentDevice,
-                let input = try? AVCaptureDeviceInput(device: device.avCaptureDevice)
-            else {
-                return
-            }
-
-            if captureSession.canAddInput(input) {
-                captureSession.addInput(input)
-            }
-
+        if captureSession.canAddInput(input) {
+            captureSession.addInput(input)
             captureSession.startRunning()
         }
     }
 
     func stopCaptureSession() {
-        Task {
-            captureSession.stopRunning()
+        captureSession.stopRunning()
 
-            captureSession.inputs.forEach { input in
-                captureSession.removeInput(input)
-            }
+        captureSession.inputs.forEach { input in
+            captureSession.removeInput(input)
         }
-    }
-
-    private func selectDevice() {
-        currentDevice = devices.first { device in
-            device.id == selectedDeviceId
-        } ?? devices.first
     }
 
     private func restartCaptureSession() {
-        Task {
-            captureSession.stopRunning()
+        stopCaptureSession()
+        startCaptureSession()
+    }
 
-            captureSession.inputs.forEach { input in
-                captureSession.removeInput(input)
-            }
+    /// Switches to the user-selected device, if available, otherwise the next available device, if any.
+    private func selectAvailableDevice() {
+        let userSelectedDevice = connectedDevices.first { $0.id == userSelectedDeviceId }
+        let firstExternalDevice = connectedDevices.first { $0.avCaptureDevice.deviceType == .externalUnknown }
+        let firstAvailableDevice = connectedDevices.first
 
-            startCaptureSession()
+        guard
+            let deviceToSwitchTo = userSelectedDevice ?? firstExternalDevice ?? firstAvailableDevice,
+            deviceToSwitchTo.id != currentDevice?.id
+        else {
+            return
+        }
+
+        currentDevice = deviceToSwitchTo
+
+        if userSelectedDeviceId == nil {
+            // If the user hasn't set anything, pre-select the camera for them so it's consistent between launches.
+            userSelectedDeviceId = deviceToSwitchTo.id
         }
     }
 
-    func subscribeToDeviceNotifications() {
+    private func subscribeToDeviceNotifications() {
         NotificationCenter.default
             .publisher(for: .AVCaptureDeviceWasConnected)
             .sink { [self] notification in
                 guard
-                    let avCaptureDevice = notification.object as? AVCaptureDevice,
-                    !devices.contains(where: { $0.id == avCaptureDevice.uniqueID })
+                    let avCaptureDevice = avCaptureDevice(in: notification),
+                    !isConnected(device: avCaptureDevice)
                 else {
                     return
                 }
 
-                devices.append(.init(device: avCaptureDevice))
-
-                if devices.count == 1 {
-                    selectDevice()
-                }
+                connectedDevices.append(Device(device: avCaptureDevice))
+                selectAvailableDevice()
             }
             .store(in: &cancellables)
 
@@ -123,18 +129,25 @@ class DeviceManager: ObservableObject {
             .publisher(for: .AVCaptureDeviceWasDisconnected)
             .sink { [self] notification in
                 guard
-                    let avCaptureDevice = notification.object as? AVCaptureDevice,
-                    devices.contains(where: { $0.id == avCaptureDevice.uniqueID })
+                    let avCaptureDevice = avCaptureDevice(in: notification),
+                    isConnected(device: avCaptureDevice)
                 else {
                     return
                 }
 
-                self.devices.removeAll { $0.id == avCaptureDevice.uniqueID }
-
-                if !devices.contains(where: { $0.id == selectedDeviceId }) {
-                    selectDevice()
-                }
+                self.connectedDevices.removeAll { $0.id == avCaptureDevice.uniqueID }
+                selectAvailableDevice()
             }
             .store(in: &cancellables)
+    }
+
+    private func isConnected(device avCaptureDevice: AVCaptureDevice) -> Bool {
+        connectedDevices.contains { connectedDevice in
+            connectedDevice.id == avCaptureDevice.uniqueID
+        }
+    }
+
+    private func avCaptureDevice(in notification: NotificationCenter.Publisher.Output) -> AVCaptureDevice? {
+        notification.object as? AVCaptureDevice
     }
 }
