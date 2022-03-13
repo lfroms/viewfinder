@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8010494427DE5E3600688A86 /* StatusBarApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010494327DE5E3600688A86 /* StatusBarApplication.swift */; };
+		8010494627DE5E4900688A86 /* StatusBarApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010494527DE5E4900688A86 /* StatusBarApplicationDelegate.swift */; };
+		8010494827DE62F400688A86 /* MainStatusBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010494727DE62F400688A86 /* MainStatusBarMenu.swift */; };
+		8010494A27DE630E00688A86 /* StatusBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010494927DE630E00688A86 /* StatusBarMenu.swift */; };
+		8010494C27DE639100688A86 /* AdvancedStatusBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010494B27DE639100688A86 /* AdvancedStatusBarMenu.swift */; };
+		8010494E27DE63FE00688A86 /* AdvancedStatusBarMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010494D27DE63FE00688A86 /* AdvancedStatusBarMenuDelegate.swift */; };
+		8010495127DE66D400688A86 /* KeyHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010495027DE66D400688A86 /* KeyHostingView.swift */; };
+		8010495527DE680D00688A86 /* MainStatusBarMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010495427DE680D00688A86 /* MainStatusBarMenuDelegate.swift */; };
 		802D193E27B34936001A5B25 /* UVCRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D193D27B34936001A5B25 /* UVCRequest.swift */; };
 		802D194027B35425001A5B25 /* USBInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D193F27B35425001A5B25 /* USBInterface.swift */; };
 		802D194427B35FAF001A5B25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194327B35FAF001A5B25 /* Constants.swift */; };
@@ -36,6 +44,8 @@
 		8044388227CB116100715373 /* BinaryInteger+Bit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044388127CB116100715373 /* BinaryInteger+Bit.swift */; };
 		8044388427CB117500715373 /* UVCCameraTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044388327CB117500715373 /* UVCCameraTerminal.swift */; };
 		8044388627CB119200715373 /* UVCProcessingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044388527CB119200715373 /* UVCProcessingUnit.swift */; };
+		806221A127DC28EA007125C0 /* CollapsibleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806221A027DC28EA007125C0 /* CollapsibleSection.swift */; };
+		806221A427DC3611007125C0 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806221A327DC3611007125C0 /* Dimension.swift */; };
 		806867B427B1EDB20000C64D /* UVCSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B327B1EDB20000C64D /* UVCSelector.swift */; };
 		806867B727B1EF880000C64D /* UVCDescriptorSubtype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */; };
 		806867B927B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */; };
@@ -118,6 +128,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8010494327DE5E3600688A86 /* StatusBarApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarApplication.swift; sourceTree = "<group>"; };
+		8010494527DE5E4900688A86 /* StatusBarApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarApplicationDelegate.swift; sourceTree = "<group>"; };
+		8010494727DE62F400688A86 /* MainStatusBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatusBarMenu.swift; sourceTree = "<group>"; };
+		8010494927DE630E00688A86 /* StatusBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarMenu.swift; sourceTree = "<group>"; };
+		8010494B27DE639100688A86 /* AdvancedStatusBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedStatusBarMenu.swift; sourceTree = "<group>"; };
+		8010494D27DE63FE00688A86 /* AdvancedStatusBarMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedStatusBarMenuDelegate.swift; sourceTree = "<group>"; };
+		8010495027DE66D400688A86 /* KeyHostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyHostingView.swift; sourceTree = "<group>"; };
+		8010495427DE680D00688A86 /* MainStatusBarMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatusBarMenuDelegate.swift; sourceTree = "<group>"; };
 		802D193D27B34936001A5B25 /* UVCRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCRequest.swift; sourceTree = "<group>"; };
 		802D193F27B35425001A5B25 /* USBInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBInterface.swift; sourceTree = "<group>"; };
 		802D194327B35FAF001A5B25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -147,6 +165,8 @@
 		8044388127CB116100715373 /* BinaryInteger+Bit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryInteger+Bit.swift"; sourceTree = "<group>"; };
 		8044388327CB117500715373 /* UVCCameraTerminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCCameraTerminal.swift; sourceTree = "<group>"; };
 		8044388527CB119200715373 /* UVCProcessingUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCProcessingUnit.swift; sourceTree = "<group>"; };
+		806221A027DC28EA007125C0 /* CollapsibleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleSection.swift; sourceTree = "<group>"; };
+		806221A327DC3611007125C0 /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
 		806867B327B1EDB20000C64D /* UVCSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCSelector.swift; sourceTree = "<group>"; };
 		806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDescriptorSubtype.swift; sourceTree = "<group>"; };
 		806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCVideoInterfaceClassCode.swift; sourceTree = "<group>"; };
@@ -225,6 +245,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8010493627DD8EA000688A86 /* Status Bar */ = {
+			isa = PBXGroup;
+			children = (
+				8010495327DE671400688A86 /* Protocols */,
+				8010494F27DE66CD00688A86 /* Views */,
+				8010494327DE5E3600688A86 /* StatusBarApplication.swift */,
+				8010494727DE62F400688A86 /* MainStatusBarMenu.swift */,
+				8010494B27DE639100688A86 /* AdvancedStatusBarMenu.swift */,
+			);
+			path = "Status Bar";
+			sourceTree = "<group>";
+		};
+		8010494F27DE66CD00688A86 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8010495027DE66D400688A86 /* KeyHostingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8010495327DE671400688A86 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8010494927DE630E00688A86 /* StatusBarMenu.swift */,
+				8010495427DE680D00688A86 /* MainStatusBarMenuDelegate.swift */,
+				8010494D27DE63FE00688A86 /* AdvancedStatusBarMenuDelegate.swift */,
+				8010494527DE5E4900688A86 /* StatusBarApplicationDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		8044385227C6EA3500715373 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,27 +349,28 @@
 		8078968127AC8D3300179CA2 /* Viewfinder */ = {
 			isa = PBXGroup;
 			children = (
-				809127AC27B5E5D500C38C0A /* Models */,
-				80C4481C27AF28990059150C /* Views */,
-				80C4482227AF2A640059150C /* Panels */,
 				80C4482A27AF5A660059150C /* Extensions */,
+				809127AC27B5E5D500C38C0A /* Models */,
+				80C4482227AF2A640059150C /* Panels */,
+				8010493627DD8EA000688A86 /* Status Bar */,
 				80B67A2627B057C3008E7EE2 /* Utilities */,
 				8078968227AC8D3300179CA2 /* ViewfinderApp.swift */,
 				8078968427AC8D3300179CA2 /* ContentView.swift */,
-				8078968627AC8D3400179CA2 /* Assets.xcassets */,
-				80C4481927AF1A5C0059150C /* Info.plist */,
-				8078968B27AC8D3400179CA2 /* Viewfinder.entitlements */,
 				80C4481A27AF1A9D0059150C /* AppDelegate.swift */,
+				80C4481927AF1A5C0059150C /* Info.plist */,
+				8078968627AC8D3400179CA2 /* Assets.xcassets */,
+				8078968B27AC8D3400179CA2 /* Viewfinder.entitlements */,
+				80C4481C27AF28990059150C /* Views */,
 			);
 			path = Viewfinder;
 			sourceTree = "<group>";
 		};
-		808706F027D84664006213BA /* Updates */ = {
+		808706F027D84664006213BA /* Updater */ = {
 			isa = PBXGroup;
 			children = (
 				808706F127D84676006213BA /* UpdaterDelegate.swift */,
 			);
-			path = Updates;
+			path = Updater;
 			sourceTree = "<group>";
 		};
 		809127AC27B5E5D500C38C0A /* Models */ = {
@@ -335,11 +387,12 @@
 		80B67A2627B057C3008E7EE2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				808706F027D84664006213BA /* Updates */,
+				808706F027D84664006213BA /* Updater */,
 				8044385027C5998400715373 /* CameraControl.swift */,
 				8044386D27C87F5D00715373 /* DataRefreshService.swift */,
 				809127A827B5DE8C00C38C0A /* DeviceManager.swift */,
 				80CF9BE427BB1EDA001C0E0A /* Notifications.swift */,
+				806221A327DC3611007125C0 /* Dimension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -350,6 +403,7 @@
 				8044385927C83E5700715373 /* AutoBadge.swift */,
 				80D9369F27D4056D00232BAD /* CameraList */,
 				80D9369727D3DB6200232BAD /* CameraPicker.swift */,
+				806221A027DC28EA007125C0 /* CollapsibleSection.swift */,
 				8044387D27CAE57E00715373 /* ControlLayout.swift */,
 				80D9369B27D402A700232BAD /* MenuItemButtonStyle.swift */,
 				8097A4DD27AF78750003BB23 /* MenuSlider.swift */,
@@ -587,7 +641,9 @@
 				8044386427C8742A00715373 /* Double+Round.swift in Sources */,
 				8044385A27C83E5700715373 /* AutoBadge.swift in Sources */,
 				8044386627C8745300715373 /* ContrastPanel.swift in Sources */,
+				8010495127DE66D400688A86 /* KeyHostingView.swift in Sources */,
 				8044386C27C87BF500715373 /* FocusPanel.swift in Sources */,
+				806221A127DC28EA007125C0 /* CollapsibleSection.swift in Sources */,
 				8044387A27CAC92D00715373 /* ZoomPanel.swift in Sources */,
 				8044385E27C8586800715373 /* SliderPanelLayout.swift in Sources */,
 				80C4482427AF2A6C0059150C /* PreviewPanel.swift in Sources */,
@@ -597,9 +653,14 @@
 				8044386827C876D300715373 /* SaturationPanel.swift in Sources */,
 				80D9369A27D3F5F400232BAD /* CameraList.swift in Sources */,
 				80DC4DFE27D19B69009DBCC3 /* NoWebcamEmptyState.swift in Sources */,
+				806221A427DC3611007125C0 /* Dimension.swift in Sources */,
+				8010494827DE62F400688A86 /* MainStatusBarMenu.swift in Sources */,
 				80C4481F27AF28B40059150C /* PreviewView.swift in Sources */,
+				8010495527DE680D00688A86 /* MainStatusBarMenuDelegate.swift in Sources */,
 				808706F227D84676006213BA /* UpdaterDelegate.swift in Sources */,
+				8010494C27DE639100688A86 /* AdvancedStatusBarMenu.swift in Sources */,
 				809127AB27B5E37200C38C0A /* Device.swift in Sources */,
+				8010494427DE5E3600688A86 /* StatusBarApplication.swift in Sources */,
 				8044386227C8740A00715373 /* Int+Percentage.swift in Sources */,
 				8044385127C5998400715373 /* CameraControl.swift in Sources */,
 				8044388027CB051800715373 /* HDRPanel.swift in Sources */,
@@ -607,11 +668,13 @@
 				8044387E27CAE57E00715373 /* ControlLayout.swift in Sources */,
 				80D9369C27D402A700232BAD /* MenuItemButtonStyle.swift in Sources */,
 				8044387427CA98B200715373 /* Double+PercentageToAbsolute.swift in Sources */,
+				8010494627DE5E4900688A86 /* StatusBarApplicationDelegate.swift in Sources */,
 				8044385827C6EEC200715373 /* DeviceControls.swift in Sources */,
 				809127A927B5DE8C00C38C0A /* DeviceManager.swift in Sources */,
 				8078968527AC8D3300179CA2 /* ContentView.swift in Sources */,
 				8044386027C8670600715373 /* BrightnessPanel.swift in Sources */,
 				8078968327AC8D3300179CA2 /* ViewfinderApp.swift in Sources */,
+				8010494A27DE630E00688A86 /* StatusBarMenu.swift in Sources */,
 				808706FA27D99F20006213BA /* PreviewState.swift in Sources */,
 				80D936A127D40AD900232BAD /* SectionHeaderTextStyle.swift in Sources */,
 				80C4482927AF32650059150C /* Panel.swift in Sources */,
@@ -622,6 +685,7 @@
 				8044387C27CAE30B00715373 /* PanelTitle.swift in Sources */,
 				80D936A527D4468000232BAD /* UnsupportedWebcamEmptyState.swift in Sources */,
 				8097A4DE27AF78750003BB23 /* MenuSlider.swift in Sources */,
+				8010494E27DE63FE00688A86 /* AdvancedStatusBarMenuDelegate.swift in Sources */,
 				80CF9BEB27BF29BB001C0E0A /* DeviceControl.swift in Sources */,
 				80D9369427D3D05C00232BAD /* View+OnBackgroundHover.swift in Sources */,
 			);

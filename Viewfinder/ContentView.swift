@@ -15,58 +15,59 @@ struct ContentView: View {
         VStack(spacing: 0) {
             if deviceManager.currentDevice != nil {
                 PreviewPanel()
-                    .padding(12)
+                    .padding(Dimension.Menu.inset)
             }
 
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 0) {
-                    if deviceManager.connectedDevices.count > 1 {
-                        CameraPicker()
-                    }
+            if deviceManager.connectedDevices.count > 1 {
+                CameraPicker()
+                    .padding([.horizontal, .bottom], Dimension.Menu.margin)
+            }
 
-                    if let uvc = deviceManager.currentDevice?.uvc {
-                        VStack(spacing: 12) {
-                            if uvc.cameraTerminalCapabilities.exposureTimeAbsolute {
-                                ExposurePanel()
-                            }
+            Divider()
+                .padding(.horizontal, Dimension.Divider.width)
 
-                            if uvc.processingUnitCapabilities.whiteBalanceTemperature {
-                                WhiteBalancePanel()
-                            }
-
-                            if uvc.processingUnitCapabilities.brightness {
-                                BrightnessPanel()
-                            }
-
-                            if uvc.processingUnitCapabilities.contrast {
-                                ContrastPanel()
-                            }
-
-                            if uvc.processingUnitCapabilities.saturation {
-                                SaturationPanel()
-                            }
-
-                            if uvc.processingUnitCapabilities.saturation {
-                                SharpnessPanel()
-                            }
-
-                            if uvc.cameraTerminalCapabilities.focusAbsolute {
-                                FocusPanel()
-                            }
-
-                            if uvc.cameraTerminalCapabilities.zoomAbsolute {
-                                ZoomPanel()
-                            }
-
-                            if uvc.processingUnitCapabilities.backlightCompensation {
-                                HDRPanel()
-                            }
+            if let uvc = deviceManager.currentDevice?.uvc {
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: Dimension.Menu.inset) {
+                        if uvc.cameraTerminalCapabilities.exposureTimeAbsolute {
+                            ExposurePanel()
                         }
-                        .padding(12)
+
+                        if uvc.processingUnitCapabilities.whiteBalanceTemperature {
+                            WhiteBalancePanel()
+                        }
+
+                        if uvc.processingUnitCapabilities.brightness {
+                            BrightnessPanel()
+                        }
+
+                        if uvc.processingUnitCapabilities.contrast {
+                            ContrastPanel()
+                        }
+
+                        if uvc.processingUnitCapabilities.saturation {
+                            SaturationPanel()
+                        }
+
+                        if uvc.processingUnitCapabilities.saturation {
+                            SharpnessPanel()
+                        }
+
+                        if uvc.cameraTerminalCapabilities.focusAbsolute {
+                            FocusPanel()
+                        }
+
+                        if uvc.cameraTerminalCapabilities.zoomAbsolute {
+                            ZoomPanel()
+                        }
+
+                        if uvc.processingUnitCapabilities.backlightCompensation {
+                            HDRPanel()
+                        }
                     }
+                    .padding(Dimension.Menu.inset)
                 }
             }
-            .fixedSize(horizontal: false, vertical: deviceManager.currentDevice?.uvc == nil)
 
             if deviceManager.currentDevice == nil {
                 NoWebcamEmptyState()
@@ -75,6 +76,10 @@ struct ContentView: View {
             if deviceManager.currentDevice != nil, deviceManager.currentDevice?.uvc == nil {
                 UnsupportedWebcamEmptyState()
             }
+
+            Divider()
+                .padding(.horizontal, Dimension.Divider.width)
+                .padding(.bottom, Dimension.Menu.margin - Dimension.Divider.width)
         }
     }
 }

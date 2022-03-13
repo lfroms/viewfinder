@@ -13,8 +13,9 @@ struct MenuItemButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .padding(.horizontal, 7)
             .padding(.vertical, 4)
+            .padding(.horizontal, 7)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .background(
                 Color.primary
                     .opacity(hovering ? 0.15 : 0)

@@ -6,13 +6,14 @@
 //  Copyright © 2022 Lukas Romsicki. All rights reserved.
 //
 
-import Foundation
+import AppKit
 import Sparkle
-import SwiftUI
 
-final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate {
+    private let deviceManager = DeviceManager.shared
     private let dataRefreshService = DataRefreshService()
-    private var statusBarItem: NSStatusItem?
+
+    private var statusBarApplication: StatusBarApplication?
 
     private let updaterController = SPUStandardUpdaterController(
         startingUpdater: true,
@@ -20,80 +21,49 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         userDriverDelegate: nil
     )
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    func applicationDidFinishLaunching(_ notification: Notification) {
         Task {
-            DeviceManager.shared.discoverConnectedDevices()
+            deviceManager.discoverConnectedDevices()
         }
 
-        let contentView = HostingView(
-            rootView: ContentView()
-                .environmentObject(DeviceManager.shared)
-                .padding(.top, -4) // Compensate for internal margins.
-        )
-
-        contentView.frame = NSRect(x: 0, y: 0, width: 380, height: 640)
-
-        let menuItem = NSMenuItem()
-        menuItem.view = contentView
-
-        let menu = NSMenu()
-        menu.delegate = self
-
-        let hiddenItem = NSMenuItem()
-        hiddenItem.view = .init(frame: .zero)
-        hiddenItem.isHidden = true
-
-        let hiddenItem2 = NSMenuItem()
-        hiddenItem2.view = .init(frame: .zero)
-        hiddenItem2.isHidden = true
-
-        let updateItem = NSMenuItem(title: "Check for Updates…", action: #selector(SPUStandardUpdaterController.checkForUpdates(_:)), keyEquivalent: "")
-        updateItem.target = self.updaterController
-        updateItem.isAlternate = true
-        updateItem.keyEquivalentModifierMask = .option
-
-        let quitItem = NSMenuItem(title: "Quit Viewfinder", action: #selector(NSApplication.shared.terminate(_:)), keyEquivalent: "")
-        quitItem.isAlternate = true
-        quitItem.keyEquivalentModifierMask = .option
-
-        menu.addItem(menuItem)
-        menu.addItem(hiddenItem)
-        menu.addItem(updateItem)
-        menu.addItem(hiddenItem2)
-        menu.addItem(quitItem)
-
-        self.statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        self.statusBarItem?.menu = menu
-        self.statusBarItem?.button?.image = NSImage(systemSymbolName: "camera.fill", accessibilityDescription: nil)
+        self.statusBarApplication = StatusBarApplication()
+        self.statusBarApplication?.delegate = self
     }
+}
 
-    // MARK: - NSMenuDelegate
+// MARK: - StatusBarApplicationDelegate
 
-    func menuWillOpen(_ menu: NSMenu) {
-        DeviceManager.shared.menuIsOpen = true
+extension AppDelegate: StatusBarApplicationDelegate {
+    func menuWillOpen() {
+        self.deviceManager.menuIsOpen = true
 
         Task {
-            DeviceManager.shared.startCaptureSession()
+            deviceManager.startCaptureSession()
         }
 
         self.dataRefreshService.refreshPeriodically()
     }
 
-    func menuDidClose(_ menu: NSMenu) {
+    func menuDidClose() {
         self.dataRefreshService.pauseRefreshingPeriodically()
 
         Task {
-            DeviceManager.shared.stopCaptureSession()
+            deviceManager.stopCaptureSession()
         }
 
-        DeviceManager.shared.menuIsOpen = false
+        self.deviceManager.menuIsOpen = false
     }
-}
 
-class HostingView<Content: View>: NSHostingView<Content> {
-    override func viewDidMoveToWindow() {
-        super.viewDidMoveToWindow()
-        // Ensure that the menu receives and propagates clicks.
-        window?.becomeKey()
+    func didPressAboutItem(_ sender: Any?) {
+        NSApp.activate(ignoringOtherApps: true)
+        NSApp.orderFrontStandardAboutPanel(sender)
+    }
+
+    func didPressCheckForUpdatesItem(_ sender: Any?) {
+        self.updaterController.checkForUpdates(sender)
+    }
+
+    func didPressQuitItem(_ sender: Any?) {
+        NSApplication.shared.terminate(sender)
     }
 }
