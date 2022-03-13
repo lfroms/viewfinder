@@ -8,6 +8,10 @@
 
 extension Int {
     func percentage(in range: ClosedRange<Self>) -> Double {
+        guard range.upperBound - range.lowerBound > 0 else {
+            return 0
+        }
+
         return Double(self - range.lowerBound) / Double(range.upperBound - range.lowerBound)
     }
 }

@@ -56,7 +56,9 @@ final class DeviceControl<ControlType: UVCControllable>: ObservableObject {
         self.displayValue = defaultValue
         self.defaultValue = defaultValue
 
-        self.rangeInternal = control.minimum ... control.maximum
+        if control.minimum <= control.maximum {
+            self.rangeInternal = control.minimum ... control.maximum
+        }
 
         subscribeToNotifications()
     }
@@ -65,14 +67,20 @@ final class DeviceControl<ControlType: UVCControllable>: ObservableObject {
         // Forcibly overwrite the current display value with the one from the device.
         NotificationCenter.default
             .publisher(for: .readCameraValues, object: nil)
+            .receive(on: DispatchQueue.global(qos: .background))
             .sink { [self] _ in
-                displayValue = control.value
+                let value = control.value
+
+                DispatchQueue.main.async {
+                    displayValue = value
+                }
             }
             .store(in: &cancellables)
 
         // Forcibly update the device to match what is displayed in the UI.
         NotificationCenter.default
             .publisher(for: .writeCameraValues, object: nil)
+            .receive(on: DispatchQueue.global(qos: .background))
             .sink { [self] _ in
                 control.value = value
             }
