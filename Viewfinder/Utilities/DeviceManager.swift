@@ -94,16 +94,15 @@ class DeviceManager: ObservableObject {
         let firstExternalDevice = connectedDevices.first { $0.avCaptureDevice.deviceType == .externalUnknown }
         let firstAvailableDevice = connectedDevices.first
 
-        guard
-            let deviceToSwitchTo = userSelectedDevice ?? firstExternalDevice ?? firstAvailableDevice,
-            deviceToSwitchTo.id != currentDevice?.id
-        else {
+        let deviceToSwitchTo = userSelectedDevice ?? firstExternalDevice ?? firstAvailableDevice
+
+        guard deviceToSwitchTo?.id != currentDevice?.id else {
             return
         }
 
         currentDevice = deviceToSwitchTo
 
-        if userSelectedDeviceId == nil {
+        if userSelectedDeviceId == nil, let deviceToSwitchTo = deviceToSwitchTo {
             // If the user hasn't set anything, pre-select the camera for them so it's consistent between launches.
             userSelectedDeviceId = deviceToSwitchTo.id
         }
