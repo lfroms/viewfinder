@@ -14,9 +14,9 @@ struct CameraList: View {
     var body: some View {
         VStack(spacing: 0) {
             ForEach(deviceManager.connectedDevices, id: \.id) { device in
-                CameraListItem(
-                    name: device.avCaptureDevice.localizedName,
-                    selected: deviceManager.currentDevice?.id == device.id,
+                ToggleableRow(
+                    title: Text(device.avCaptureDevice.localizedName),
+                    icon: ToggleableRowIcon(systemName: "camera.fill", selected: isSelected(device: device)),
                     action: {
                         deviceManager.switchCurrentDevice(to: device)
                     }
@@ -24,5 +24,9 @@ struct CameraList: View {
                 .fixedSize(horizontal: false, vertical: true)
             }
         }
+    }
+
+    private func isSelected(device: Device) -> Bool {
+        deviceManager.currentDevice?.id == device.id
     }
 }

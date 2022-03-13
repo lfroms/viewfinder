@@ -34,7 +34,7 @@
 		8044386827C876D300715373 /* SaturationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386727C876D300715373 /* SaturationPanel.swift */; };
 		8044386A27C8776600715373 /* SharpnessPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386927C8776600715373 /* SharpnessPanel.swift */; };
 		8044386C27C87BF500715373 /* FocusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386B27C87BF500715373 /* FocusPanel.swift */; };
-		8044386E27C87F5D00715373 /* DataRefreshService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386D27C87F5D00715373 /* DataRefreshService.swift */; };
+		8044386E27C87F5D00715373 /* DataRefreshNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044386D27C87F5D00715373 /* DataRefreshNotifier.swift */; };
 		8044387427CA98B200715373 /* Double+PercentageToAbsolute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387327CA98B200715373 /* Double+PercentageToAbsolute.swift */; };
 		8044387627CABAC300715373 /* ExposurePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387527CABAC300715373 /* ExposurePanel.swift */; };
 		8044387A27CAC92D00715373 /* ZoomPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387927CAC92C00715373 /* ZoomPanel.swift */; };
@@ -92,12 +92,12 @@
 		80D067BE27B082D80007BCF8 /* UVCControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066DF27B07C830007BCF8 /* UVCControl.swift */; };
 		80D067C327B082D80007BCF8 /* UVCRequestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D066EF27B07C830007BCF8 /* UVCRequestCode.swift */; };
 		80D067C827B0A8B30007BCF8 /* UVCDeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D067C727B0A8B30007BCF8 /* UVCDeviceInformation.swift */; };
-		80D9369227D31A4C00232BAD /* CameraListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9369127D31A4C00232BAD /* CameraListItem.swift */; };
+		80D9369227D31A4C00232BAD /* ToggleableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9369127D31A4C00232BAD /* ToggleableRow.swift */; };
 		80D9369427D3D05C00232BAD /* View+OnBackgroundHover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9369327D3D05C00232BAD /* View+OnBackgroundHover.swift */; };
 		80D9369827D3DB6200232BAD /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9369727D3DB6200232BAD /* CameraPicker.swift */; };
 		80D9369A27D3F5F400232BAD /* CameraList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9369927D3F5F400232BAD /* CameraList.swift */; };
 		80D9369C27D402A700232BAD /* MenuItemButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9369B27D402A700232BAD /* MenuItemButtonStyle.swift */; };
-		80D9369E27D4051900232BAD /* CameraListItemIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9369D27D4051900232BAD /* CameraListItemIcon.swift */; };
+		80D9369E27D4051900232BAD /* ToggleableRowIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9369D27D4051900232BAD /* ToggleableRowIcon.swift */; };
 		80D936A127D40AD900232BAD /* SectionHeaderTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D936A027D40AD900232BAD /* SectionHeaderTextStyle.swift */; };
 		80D936A527D4468000232BAD /* UnsupportedWebcamEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D936A427D4468000232BAD /* UnsupportedWebcamEmptyState.swift */; };
 		80DC4DFE27D19B69009DBCC3 /* NoWebcamEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC4DFD27D19B69009DBCC3 /* NoWebcamEmptyState.swift */; };
@@ -155,7 +155,7 @@
 		8044386727C876D300715373 /* SaturationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationPanel.swift; sourceTree = "<group>"; };
 		8044386927C8776600715373 /* SharpnessPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpnessPanel.swift; sourceTree = "<group>"; };
 		8044386B27C87BF500715373 /* FocusPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusPanel.swift; sourceTree = "<group>"; };
-		8044386D27C87F5D00715373 /* DataRefreshService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRefreshService.swift; sourceTree = "<group>"; };
+		8044386D27C87F5D00715373 /* DataRefreshNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRefreshNotifier.swift; sourceTree = "<group>"; };
 		8044387327CA98B200715373 /* Double+PercentageToAbsolute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+PercentageToAbsolute.swift"; sourceTree = "<group>"; };
 		8044387527CABAC300715373 /* ExposurePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposurePanel.swift; sourceTree = "<group>"; };
 		8044387927CAC92C00715373 /* ZoomPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomPanel.swift; sourceTree = "<group>"; };
@@ -187,11 +187,11 @@
 		809127AA27B5E37200C38C0A /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		8097A4DD27AF78750003BB23 /* MenuSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSlider.swift; sourceTree = "<group>"; };
 		80C4481927AF1A5C0059150C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		80C4481A27AF1A9D0059150C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../viewfinder/Viewfinder/AppDelegate.swift; sourceTree = "<group>"; };
+		80C4481A27AF1A9D0059150C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80C4481E27AF28B40059150C /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewView.swift; path = ../../../../viewfinder/Viewfinder/Views/Preview/PreviewView.swift; sourceTree = "<group>"; };
 		80C4482027AF298B0059150C /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewContainer.swift; path = ../../../../viewfinder/Viewfinder/Views/Preview/PreviewContainer.swift; sourceTree = "<group>"; };
 		80C4482327AF2A6C0059150C /* PreviewPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPanel.swift; sourceTree = "<group>"; };
-		80C4482827AF32650059150C /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Panel.swift; path = ../../../viewfinder/Viewfinder/Views/Panel.swift; sourceTree = "<group>"; };
+		80C4482827AF32650059150C /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		80C4482B27AF5A6E0059150C /* View+ReverseMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "View+ReverseMask.swift"; path = "../../../viewfinder/Viewfinder/Extensions/View+ReverseMask.swift"; sourceTree = "<group>"; };
 		80CF9BE427BB1EDA001C0E0A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		80CF9BE627BB27B4001C0E0A /* MenuSliderControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSliderControls.swift; sourceTree = "<group>"; };
@@ -214,12 +214,12 @@
 		80D0679827B082A60007BCF8 /* UVCKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UVCKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D0679A27B082A60007BCF8 /* UVCKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UVCKit.h; sourceTree = "<group>"; };
 		80D067C727B0A8B30007BCF8 /* UVCDeviceInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDeviceInformation.swift; sourceTree = "<group>"; };
-		80D9369127D31A4C00232BAD /* CameraListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraListItem.swift; sourceTree = "<group>"; };
+		80D9369127D31A4C00232BAD /* ToggleableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleableRow.swift; sourceTree = "<group>"; };
 		80D9369327D3D05C00232BAD /* View+OnBackgroundHover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+OnBackgroundHover.swift"; sourceTree = "<group>"; };
 		80D9369727D3DB6200232BAD /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 		80D9369927D3F5F400232BAD /* CameraList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraList.swift; sourceTree = "<group>"; };
 		80D9369B27D402A700232BAD /* MenuItemButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemButtonStyle.swift; sourceTree = "<group>"; };
-		80D9369D27D4051900232BAD /* CameraListItemIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraListItemIcon.swift; sourceTree = "<group>"; };
+		80D9369D27D4051900232BAD /* ToggleableRowIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleableRowIcon.swift; sourceTree = "<group>"; };
 		80D936A027D40AD900232BAD /* SectionHeaderTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderTextStyle.swift; sourceTree = "<group>"; };
 		80D936A427D4468000232BAD /* UnsupportedWebcamEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsupportedWebcamEmptyState.swift; sourceTree = "<group>"; };
 		80DC4DFD27D19B69009DBCC3 /* NoWebcamEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoWebcamEmptyState.swift; sourceTree = "<group>"; };
@@ -274,6 +274,68 @@
 				8010494527DE5E4900688A86 /* StatusBarApplicationDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8010495827DE877C00688A86 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8010495A27DE893D00688A86 /* MenuSlider */,
+				8010495927DE891C00688A86 /* Modifiers */,
+				806221A027DC28EA007125C0 /* CollapsibleSection.swift */,
+				80C4482827AF32650059150C /* Panel.swift */,
+				8044387B27CAE30B00715373 /* PanelTitle.swift */,
+				8044385B27C83E8600715373 /* PlainToggle.swift */,
+				80D9369127D31A4C00232BAD /* ToggleableRow.swift */,
+				80D9369D27D4051900232BAD /* ToggleableRowIcon.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		8010495927DE891C00688A86 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				80D936A027D40AD900232BAD /* SectionHeaderTextStyle.swift */,
+				80D9369B27D402A700232BAD /* MenuItemButtonStyle.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		8010495A27DE893D00688A86 /* MenuSlider */ = {
+			isa = PBXGroup;
+			children = (
+				8097A4DD27AF78750003BB23 /* MenuSlider.swift */,
+				80CF9BE627BB27B4001C0E0A /* MenuSliderControls.swift */,
+			);
+			path = MenuSlider;
+			sourceTree = "<group>";
+		};
+		8010495B27DE8A0E00688A86 /* Empty States */ = {
+			isa = PBXGroup;
+			children = (
+				80DC4DFD27D19B69009DBCC3 /* NoWebcamEmptyState.swift */,
+				80D936A427D4468000232BAD /* UnsupportedWebcamEmptyState.swift */,
+			);
+			path = "Empty States";
+			sourceTree = "<group>";
+		};
+		8010495C27DE8A3400688A86 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8010495D27DE8A6F00688A86 /* Constants */,
+				8010493627DD8EA000688A86 /* Status Bar */,
+				808706F027D84664006213BA /* Updater */,
+				8078968427AC8D3300179CA2 /* ContentView.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8010495D27DE8A6F00688A86 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				806221A327DC3611007125C0 /* Dimension.swift */,
+				80CF9BE427BB1EDA001C0E0A /* Notifications.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		8044385227C6EA3500715373 /* Protocols */ = {
@@ -349,18 +411,16 @@
 		8078968127AC8D3300179CA2 /* Viewfinder */ = {
 			isa = PBXGroup;
 			children = (
+				8010495C27DE8A3400688A86 /* Application */,
 				80C4482A27AF5A660059150C /* Extensions */,
 				809127AC27B5E5D500C38C0A /* Models */,
-				80C4482227AF2A640059150C /* Panels */,
-				8010493627DD8EA000688A86 /* Status Bar */,
 				80B67A2627B057C3008E7EE2 /* Utilities */,
-				8078968227AC8D3300179CA2 /* ViewfinderApp.swift */,
-				8078968427AC8D3300179CA2 /* ContentView.swift */,
+				80C4481C27AF28990059150C /* Views */,
 				80C4481A27AF1A9D0059150C /* AppDelegate.swift */,
+				8078968227AC8D3300179CA2 /* ViewfinderApp.swift */,
 				80C4481927AF1A5C0059150C /* Info.plist */,
 				8078968627AC8D3400179CA2 /* Assets.xcassets */,
 				8078968B27AC8D3400179CA2 /* Viewfinder.entitlements */,
-				80C4481C27AF28990059150C /* Views */,
 			);
 			path = Viewfinder;
 			sourceTree = "<group>";
@@ -387,12 +447,9 @@
 		80B67A2627B057C3008E7EE2 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				808706F027D84664006213BA /* Updater */,
 				8044385027C5998400715373 /* CameraControl.swift */,
-				8044386D27C87F5D00715373 /* DataRefreshService.swift */,
+				8044386D27C87F5D00715373 /* DataRefreshNotifier.swift */,
 				809127A827B5DE8C00C38C0A /* DeviceManager.swift */,
-				80CF9BE427BB1EDA001C0E0A /* Notifications.swift */,
-				806221A327DC3611007125C0 /* Dimension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -400,23 +457,15 @@
 		80C4481C27AF28990059150C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8044385927C83E5700715373 /* AutoBadge.swift */,
-				80D9369F27D4056D00232BAD /* CameraList */,
-				80D9369727D3DB6200232BAD /* CameraPicker.swift */,
-				806221A027DC28EA007125C0 /* CollapsibleSection.swift */,
-				8044387D27CAE57E00715373 /* ControlLayout.swift */,
-				80D9369B27D402A700232BAD /* MenuItemButtonStyle.swift */,
-				8097A4DD27AF78750003BB23 /* MenuSlider.swift */,
-				80CF9BE627BB27B4001C0E0A /* MenuSliderControls.swift */,
-				80DC4DFD27D19B69009DBCC3 /* NoWebcamEmptyState.swift */,
-				80C4482827AF32650059150C /* Panel.swift */,
-				8044387B27CAE30B00715373 /* PanelTitle.swift */,
-				8044385B27C83E8600715373 /* PlainToggle.swift */,
+				8010495B27DE8A0E00688A86 /* Empty States */,
+				8010495827DE877C00688A86 /* Menu */,
+				80C4482227AF2A640059150C /* Panels */,
 				80C4481D27AF28A30059150C /* Preview */,
-				808706FB27D99F38006213BA /* PreviewStateEmptyState.swift */,
-				80D936A027D40AD900232BAD /* SectionHeaderTextStyle.swift */,
+				8044385927C83E5700715373 /* AutoBadge.swift */,
+				80D9369927D3F5F400232BAD /* CameraList.swift */,
+				80D9369727D3DB6200232BAD /* CameraPicker.swift */,
+				8044387D27CAE57E00715373 /* ControlLayout.swift */,
 				8044385D27C8586800715373 /* SliderPanelLayout.swift */,
-				80D936A427D4468000232BAD /* UnsupportedWebcamEmptyState.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +473,7 @@
 		80C4481D27AF28A30059150C /* Preview */ = {
 			isa = PBXGroup;
 			children = (
+				808706FB27D99F38006213BA /* PreviewStateEmptyState.swift */,
 				80C4481E27AF28B40059150C /* PreviewView.swift */,
 				80C4482027AF298B0059150C /* PreviewContainer.swift */,
 			);
@@ -502,16 +552,6 @@
 				8044388127CB116100715373 /* BinaryInteger+Bit.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		80D9369F27D4056D00232BAD /* CameraList */ = {
-			isa = PBXGroup;
-			children = (
-				80D9369927D3F5F400232BAD /* CameraList.swift */,
-				80D9369127D31A4C00232BAD /* CameraListItem.swift */,
-				80D9369D27D4051900232BAD /* CameraListItemIcon.swift */,
-			);
-			path = CameraList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -634,9 +674,9 @@
 			files = (
 				80C4481B27AF1A9E0059150C /* AppDelegate.swift in Sources */,
 				8044387627CABAC300715373 /* ExposurePanel.swift in Sources */,
-				8044386E27C87F5D00715373 /* DataRefreshService.swift in Sources */,
+				8044386E27C87F5D00715373 /* DataRefreshNotifier.swift in Sources */,
 				80CF9BE927BDCC9E001C0E0A /* WhiteBalancePanel.swift in Sources */,
-				80D9369E27D4051900232BAD /* CameraListItemIcon.swift in Sources */,
+				80D9369E27D4051900232BAD /* ToggleableRowIcon.swift in Sources */,
 				8044386A27C8776600715373 /* SharpnessPanel.swift in Sources */,
 				8044386427C8742A00715373 /* Double+Round.swift in Sources */,
 				8044385A27C83E5700715373 /* AutoBadge.swift in Sources */,
@@ -649,7 +689,7 @@
 				80C4482427AF2A6C0059150C /* PreviewPanel.swift in Sources */,
 				8044385C27C83E8600715373 /* PlainToggle.swift in Sources */,
 				80CF9BE727BB27B4001C0E0A /* MenuSliderControls.swift in Sources */,
-				80D9369227D31A4C00232BAD /* CameraListItem.swift in Sources */,
+				80D9369227D31A4C00232BAD /* ToggleableRow.swift in Sources */,
 				8044386827C876D300715373 /* SaturationPanel.swift in Sources */,
 				80D9369A27D3F5F400232BAD /* CameraList.swift in Sources */,
 				80DC4DFE27D19B69009DBCC3 /* NoWebcamEmptyState.swift in Sources */,

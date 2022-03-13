@@ -1,5 +1,5 @@
 //
-//  DataRefreshService.swift
+//  DataRefreshNotifier.swift
 //  Viewfinder
 //
 //  Created by Lukas Romsicki on 2022-02-24.
@@ -9,7 +9,7 @@
 import Combine
 import Foundation
 
-final class DataRefreshService {
+final class DataRefreshNotifier {
     private var timer = Timer.publish(every: 1, tolerance: 0.5, on: .main, in: .common)
     private var cancellable: AnyCancellable?
 

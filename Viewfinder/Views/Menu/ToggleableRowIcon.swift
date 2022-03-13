@@ -1,5 +1,5 @@
 //
-//  CameraListItemIcon.swift
+//  ToggleableRowIcon.swift
 //  Viewfinder
 //
 //  Created by Lukas Romsicki on 2022-03-05.
@@ -8,10 +8,11 @@
 
 import SwiftUI
 
-struct CameraListItemIcon: View {
+struct ToggleableRowIcon: View {
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
     @Environment(\.buttonPressed) private var buttonPressed: Bool
 
+    let systemName: String
     let selected: Bool
 
     var body: some View {
@@ -19,7 +20,7 @@ struct CameraListItemIcon: View {
             Circle()
                 .foregroundColor(selected ? .blue : .primary.opacity(0.2))
 
-            Image(systemName: "camera.fill")
+            Image(systemName: systemName)
                 .font(.callout)
                 .foregroundColor(iconColor)
                 .padding(.bottom, 1)

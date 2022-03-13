@@ -11,7 +11,7 @@ import Sparkle
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private let deviceManager = DeviceManager.shared
-    private let dataRefreshService = DataRefreshService()
+    private let dataRefreshNotifier = DataRefreshNotifier()
 
     private var statusBarApplication: StatusBarApplication?
 
@@ -41,11 +41,11 @@ extension AppDelegate: StatusBarApplicationDelegate {
             deviceManager.startCaptureSession()
         }
 
-        self.dataRefreshService.refreshPeriodically()
+        self.dataRefreshNotifier.refreshPeriodically()
     }
 
     func menuDidClose() {
-        self.dataRefreshService.pauseRefreshingPeriodically()
+        self.dataRefreshNotifier.pauseRefreshingPeriodically()
 
         Task {
             deviceManager.stopCaptureSession()
