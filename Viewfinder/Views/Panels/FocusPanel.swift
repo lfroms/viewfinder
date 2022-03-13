@@ -15,7 +15,7 @@ struct FocusPanel: View {
     var body: some View {
         Panel {
             SliderPanelLayout(
-                title: "Focus",
+                title: Text("control.focus"),
                 systemImage: "cube.transparent",
                 valueLabel: "",
                 auto: $focusAuto.value,

@@ -23,14 +23,25 @@ final class AdvancedStatusBarMenu: StatusBarMenu {
     }
 
     private func setupAboutItem() {
-        menu.addItem(withTitle: "About Viewfinder", action: #selector(delegate?.didPressAboutItem(_:)), keyEquivalent: "")
+        let localizedString = NSLocalizedString("menu.advanced.about", comment: "About item in the Advanced menu.")
+        let title = String(format: localizedString, "Viewfinder")
+
+        menu.addItem(withTitle: title, action: #selector(delegate?.didPressAboutItem(_:)), keyEquivalent: "")
     }
 
     private func setupCheckForUpdatesItem() {
-        menu.addItem(withTitle: "Check for Updates…", action: #selector(delegate?.didPressCheckForUpdatesItem(_:)), keyEquivalent: "")
+        let title = NSLocalizedString(
+            "menu.advanced.check_for_updates",
+            comment: "Check for updates item in the Advanced menu."
+        )
+
+        menu.addItem(withTitle: title, action: #selector(delegate?.didPressCheckForUpdatesItem(_:)), keyEquivalent: "")
     }
 
     private func setupQuitItem() {
-        menu.addItem(withTitle: "Quit Viewfinder", action: #selector(delegate?.didPressQuitItem(_:)), keyEquivalent: "")
+        let localizedString = NSLocalizedString("menu.advanced.quit", comment: "Quit item in the Advanced menu.")
+        let title = String(format: localizedString, "Viewfinder")
+
+        menu.addItem(withTitle: title, action: #selector(delegate?.didPressQuitItem(_:)), keyEquivalent: "")
     }
 }

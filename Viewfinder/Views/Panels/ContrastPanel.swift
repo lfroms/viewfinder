@@ -15,7 +15,7 @@ struct ContrastPanel: View {
     var body: some View {
         Panel {
             SliderPanelLayout(
-                title: "Contrast",
+                title: Text("control.contrast"),
                 systemImage: "circle.lefthalf.filled",
                 valueLabel: valueLabel,
                 auto: $auto,

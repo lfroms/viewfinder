@@ -1,0 +1,63 @@
+/* Title for empty states where a camera is unavailable. */
+"%@ empty_state.camera_unavailable" = "%@ is unavailable";
+
+/* Title for the "All Cameras" collapsible section. */
+"all_cameras.title" = "All Cameras";
+
+/* Badges indented to denote that a control is "auto." */
+"badge.auto" = "Auto";
+
+/* (No Comment) */
+"control.brightness" = "Brightness";
+
+/* (No Comment) */
+"control.contrast" = "Contrast";
+
+/* (No Comment) */
+"control.focus" = "Focus";
+
+/* High dynamic range acronym. */
+"control.hdr" = "HDR";
+
+/* (No Comment) */
+"control.saturation" = "Saturation";
+
+/* (No Comment) */
+"control.sensor_gain" = "Sensor Gain";
+
+/* (No Comment) */
+"control.sharpness" = "Sharpness";
+
+/* (No Comment) */
+"control.shutter_speed" = "Shutter Speed";
+
+/* (No Comment) */
+"control.white_balance" = "White Balance";
+
+/* (No Comment) */
+"control.zoom" = "Zoom";
+
+/* Title for empty states where no camera is not selected. */
+"empty_state.no_camera_selected" = "No Camera Selected";
+
+/* Description for empty states where there are no UVC controls available. */
+"empty_state.no_camera.description" = "Connect a UVC-compliant camera to control its settings.";
+
+/* Title for empty states where a camera is not connected. */
+"empty_state.no_camera.title" = "No UVC Camera Found";
+
+/* Title for empty states where a camera is connected but it does not support UVC. */
+"empty_state.no_uvc.title" = "Unsupported Camera";
+
+/* Advanced menu title. */
+"menu.advanced" = "Advanced";
+
+/* About item in the Advanced menu. */
+"menu.advanced.about" = "About %@";
+
+/* Check for updates item in the Advanced menu. */
+"menu.advanced.check_for_updates" = "Check for Updates…";
+
+/* Quit item in the Advanced menu. */
+"menu.advanced.quit" = "Quit %@";
+

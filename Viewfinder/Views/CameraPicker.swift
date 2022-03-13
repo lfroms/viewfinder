@@ -12,7 +12,7 @@ struct CameraPicker: View {
     @State private var expanded = false
 
     var body: some View {
-        CollapsibleSection(label: Text("All Cameras"), expanded: $expanded) {
+        CollapsibleSection(label: Text("all_cameras.title"), expanded: $expanded) {
             CameraList()
         }
         .onAppear {

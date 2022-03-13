@@ -29,7 +29,10 @@ final class StatusBarApplication {
     }
 
     private func setupSubmenuItems() {
-        mainMenu.addSubmenu(withTitle: "Advanced", menu: advancedMenu)
+        mainMenu.addSubmenu(
+            withTitle: NSLocalizedString("menu.advanced", comment: "Advanced menu title."),
+            menu: advancedMenu
+        )
     }
 
     private func setupStatusBarItem() {

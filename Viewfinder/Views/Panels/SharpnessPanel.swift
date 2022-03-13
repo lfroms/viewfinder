@@ -15,7 +15,7 @@ struct SharpnessPanel: View {
     var body: some View {
         Panel {
             SliderPanelLayout(
-                title: "Sharpness",
+                title: Text("control.sharpness"),
                 systemImage: "triangle.fill",
                 valueLabel: valueLabel,
                 auto: $auto,

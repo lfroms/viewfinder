@@ -15,6 +15,8 @@
 		8010494E27DE63FE00688A86 /* AdvancedStatusBarMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010494D27DE63FE00688A86 /* AdvancedStatusBarMenuDelegate.swift */; };
 		8010495127DE66D400688A86 /* KeyHostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010495027DE66D400688A86 /* KeyHostingView.swift */; };
 		8010495527DE680D00688A86 /* MainStatusBarMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010495427DE680D00688A86 /* MainStatusBarMenuDelegate.swift */; };
+		8010498A27DE917E00688A86 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8010498C27DE917E00688A86 /* Localizable.strings */; };
+		8010499027DE926600688A86 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8010499227DE926700688A86 /* InfoPlist.strings */; };
 		802D193E27B34936001A5B25 /* UVCRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D193D27B34936001A5B25 /* UVCRequest.swift */; };
 		802D194027B35425001A5B25 /* USBInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D193F27B35425001A5B25 /* USBInterface.swift */; };
 		802D194427B35FAF001A5B25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194327B35FAF001A5B25 /* Constants.swift */; };
@@ -38,7 +40,7 @@
 		8044387427CA98B200715373 /* Double+PercentageToAbsolute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387327CA98B200715373 /* Double+PercentageToAbsolute.swift */; };
 		8044387627CABAC300715373 /* ExposurePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387527CABAC300715373 /* ExposurePanel.swift */; };
 		8044387A27CAC92D00715373 /* ZoomPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387927CAC92C00715373 /* ZoomPanel.swift */; };
-		8044387C27CAE30B00715373 /* PanelTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387B27CAE30B00715373 /* PanelTitle.swift */; };
+		8044387C27CAE30B00715373 /* PanelLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387B27CAE30B00715373 /* PanelLabel.swift */; };
 		8044387E27CAE57E00715373 /* ControlLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387D27CAE57E00715373 /* ControlLayout.swift */; };
 		8044388027CB051800715373 /* HDRPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044387F27CB051800715373 /* HDRPanel.swift */; };
 		8044388227CB116100715373 /* BinaryInteger+Bit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044388127CB116100715373 /* BinaryInteger+Bit.swift */; };
@@ -136,6 +138,10 @@
 		8010494D27DE63FE00688A86 /* AdvancedStatusBarMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedStatusBarMenuDelegate.swift; sourceTree = "<group>"; };
 		8010495027DE66D400688A86 /* KeyHostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyHostingView.swift; sourceTree = "<group>"; };
 		8010495427DE680D00688A86 /* MainStatusBarMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatusBarMenuDelegate.swift; sourceTree = "<group>"; };
+		8010498B27DE917E00688A86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8010499127DE926700688A86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8010499627DE9BB900688A86 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8010499727DE9BB900688A86 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		802D193D27B34936001A5B25 /* UVCRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCRequest.swift; sourceTree = "<group>"; };
 		802D193F27B35425001A5B25 /* USBInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBInterface.swift; sourceTree = "<group>"; };
 		802D194327B35FAF001A5B25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -159,7 +165,7 @@
 		8044387327CA98B200715373 /* Double+PercentageToAbsolute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+PercentageToAbsolute.swift"; sourceTree = "<group>"; };
 		8044387527CABAC300715373 /* ExposurePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposurePanel.swift; sourceTree = "<group>"; };
 		8044387927CAC92C00715373 /* ZoomPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomPanel.swift; sourceTree = "<group>"; };
-		8044387B27CAE30B00715373 /* PanelTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTitle.swift; sourceTree = "<group>"; };
+		8044387B27CAE30B00715373 /* PanelLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelLabel.swift; sourceTree = "<group>"; };
 		8044387D27CAE57E00715373 /* ControlLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlLayout.swift; sourceTree = "<group>"; };
 		8044387F27CB051800715373 /* HDRPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRPanel.swift; sourceTree = "<group>"; };
 		8044388127CB116100715373 /* BinaryInteger+Bit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryInteger+Bit.swift"; sourceTree = "<group>"; };
@@ -283,7 +289,7 @@
 				8010495927DE891C00688A86 /* Modifiers */,
 				806221A027DC28EA007125C0 /* CollapsibleSection.swift */,
 				80C4482827AF32650059150C /* Panel.swift */,
-				8044387B27CAE30B00715373 /* PanelTitle.swift */,
+				8044387B27CAE30B00715373 /* PanelLabel.swift */,
 				8044385B27C83E8600715373 /* PlainToggle.swift */,
 				80D9369127D31A4C00232BAD /* ToggleableRow.swift */,
 				80D9369D27D4051900232BAD /* ToggleableRowIcon.swift */,
@@ -336,6 +342,15 @@
 				80CF9BE427BB1EDA001C0E0A /* Notifications.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		8010498727DE912600688A86 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8010498C27DE917E00688A86 /* Localizable.strings */,
+				8010499227DE926700688A86 /* InfoPlist.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		8044385227C6EA3500715373 /* Protocols */ = {
@@ -414,6 +429,7 @@
 				8010495C27DE8A3400688A86 /* Application */,
 				80C4482A27AF5A660059150C /* Extensions */,
 				809127AC27B5E5D500C38C0A /* Models */,
+				8010498727DE912600688A86 /* Resources */,
 				80B67A2627B057C3008E7EE2 /* Utilities */,
 				80C4481C27AF28990059150C /* Views */,
 				80C4481A27AF1A9D0059150C /* AppDelegate.swift */,
@@ -633,7 +649,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				pl,
 			);
 			mainGroup = 8078967627AC8D3300179CA2;
 			packageReferences = (
@@ -655,6 +671,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8078968727AC8D3400179CA2 /* Assets.xcassets in Resources */,
+				8010499027DE926600688A86 /* InfoPlist.strings in Resources */,
+				8010498A27DE917E00688A86 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,7 +740,7 @@
 				80C4482C27AF5A6E0059150C /* View+ReverseMask.swift in Sources */,
 				808706FC27D99F38006213BA /* PreviewStateEmptyState.swift in Sources */,
 				80D9369827D3DB6200232BAD /* CameraPicker.swift in Sources */,
-				8044387C27CAE30B00715373 /* PanelTitle.swift in Sources */,
+				8044387C27CAE30B00715373 /* PanelLabel.swift in Sources */,
 				80D936A527D4468000232BAD /* UnsupportedWebcamEmptyState.swift in Sources */,
 				8097A4DE27AF78750003BB23 /* MenuSlider.swift in Sources */,
 				8010494E27DE63FE00688A86 /* AdvancedStatusBarMenuDelegate.swift in Sources */,
@@ -780,11 +798,33 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		8010498C27DE917E00688A86 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8010498B27DE917E00688A86 /* en */,
+				8010499627DE9BB900688A86 /* pl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		8010499227DE926700688A86 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8010499127DE926700688A86 /* en */,
+				8010499727DE9BB900688A86 /* pl */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		8078968C27AC8D3400179CA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -848,6 +888,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

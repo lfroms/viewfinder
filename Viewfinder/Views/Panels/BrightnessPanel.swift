@@ -15,7 +15,7 @@ struct BrightnessPanel: View {
     var body: some View {
         Panel {
             SliderPanelLayout(
-                title: "Brightness",
+                title: Text("control.brightness"),
                 systemImage: "sun.max.fill",
                 valueLabel: valueLabel,
                 auto: $auto,

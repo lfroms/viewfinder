@@ -1,5 +1,5 @@
 //
-//  PanelTitle.swift
+//  PanelLabel.swift
 //  Viewfinder
 //
 //  Created by Lukas Romsicki on 2022-02-26.
@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct PanelTitle: View {
-    let text: String
+struct PanelLabel: View {
+    let title: Text
     let systemImage: String
 
     var body: some View {
@@ -17,7 +17,7 @@ struct PanelTitle: View {
             Image(systemName: systemImage)
                 .frame(width: 20)
 
-            Text(text)
+            title
         }
         .font(.body.bold())
     }

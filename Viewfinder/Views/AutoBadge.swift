@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AutoBadge: View {
     var body: some View {
-        Text("Auto")
+        Text("badge.auto")
             .font(.caption.bold())
             .foregroundColor(.orange)
             .padding(.horizontal, 5)

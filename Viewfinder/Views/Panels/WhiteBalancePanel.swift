@@ -15,7 +15,7 @@ struct WhiteBalancePanel: View {
     var body: some View {
         Panel {
             SliderPanelLayout(
-                title: "White Balance",
+                title: Text("control.white_balance"),
                 systemImage: "lightbulb.fill",
                 valueLabel: "\(whiteBalance.value)K",
                 auto: $whiteBalanceAuto.value,

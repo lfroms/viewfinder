@@ -11,17 +11,6 @@ enum PreviewState {
     case initializing
     case noDevice
 
-    var text: String? {
-        switch self {
-        case .suspended(let deviceName):
-            return "\(deviceName) is unavailable"
-        case .noDevice:
-            return "No Device Selected"
-        case .initializing:
-            return nil
-        }
-    }
-
     var iconName: String? {
         switch self {
         case .suspended:

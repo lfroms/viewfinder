@@ -13,11 +13,11 @@ struct NoWebcamEmptyState: View {
         VStack(spacing: 3) {
             Spacer()
 
-            Text("No UVC Webcam Found")
+            Text("empty_state.no_camera.title")
                 .font(.title2.bold())
                 .opacity(0.6)
 
-            Text("Connect a UVC-compliant webcam to control its settings.")
+            Text("empty_state.no_camera.description")
                 .font(.caption.bold())
                 .opacity(0.6)
 

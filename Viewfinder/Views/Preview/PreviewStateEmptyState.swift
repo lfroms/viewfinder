@@ -28,11 +28,17 @@ struct PreviewStateEmptyState: View {
                     .opacity(0.6)
             }
 
-            if let text = state.text {
-                Text(text)
-                    .font(.callout.weight(.medium))
-                    .opacity(0.6)
+            Group {
+                if case .suspended(let deviceName) = state {
+                    Text("\(deviceName) empty_state.camera_unavailable")
+                }
+
+                if case .noDevice = state {
+                    Text("empty_state.no_camera_selected")
+                }
             }
+            .font(.callout.weight(.medium))
+            .opacity(0.6)
         }
     }
 }

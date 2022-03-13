@@ -15,7 +15,7 @@ struct SaturationPanel: View {
     var body: some View {
         Panel {
             SliderPanelLayout(
-                title: "Saturation",
+                title: Text("control.saturation"),
                 systemImage: "drop.fill",
                 valueLabel: valueLabel,
                 auto: $auto,

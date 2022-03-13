@@ -1,0 +1,9 @@
+/* Bundle name */
+"CFBundleName" = "Viewfinder";
+
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "Viewfinder potrzebuje dostęp do twojej kamery abyś mógł kontrolować jej ustawienia.";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "Copyright © 2022 Łukasz Romsicki, Powszechna Licencja Publiczna GNU.";
+

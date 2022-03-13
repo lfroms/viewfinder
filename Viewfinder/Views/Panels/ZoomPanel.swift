@@ -16,7 +16,7 @@ struct ZoomPanel: View {
     var body: some View {
         Panel {
             ControlLayout(
-                title: PanelTitle(text: "Zoom", systemImage: "plus.magnifyingglass"),
+                title: PanelLabel(title: Text("control.zoom"), systemImage: "plus.magnifyingglass"),
                 accessories: {
                     Text(verbatim: "\(zoom.value)")
                         .font(.caption.bold().monospacedDigit())

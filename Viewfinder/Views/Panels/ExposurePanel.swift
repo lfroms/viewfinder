@@ -17,7 +17,7 @@ struct ExposurePanel: View {
         Panel {
             VStack(spacing: 20) {
                 SliderPanelLayout(
-                    title: "Shutter Speed",
+                    title: Text("control.shutter_speed"),
                     systemImage: "clock.fill",
                     valueLabel: shutterSpeedLabel,
                     auto: auto,
@@ -32,7 +32,7 @@ struct ExposurePanel: View {
                             .hidden()
 
                         ControlLayout(
-                            title: PanelTitle(text: "Sensor Gain", systemImage: "bolt.fill"),
+                            title: PanelLabel(title: Text("control.sensor_gain"), systemImage: "bolt.fill"),
                             accessories: {
                                 Text(verbatim: "+ \(gain.value)")
                                     .font(.caption.bold().monospacedDigit())

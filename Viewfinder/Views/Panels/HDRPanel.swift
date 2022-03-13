@@ -14,7 +14,7 @@ struct HDRPanel: View {
     var body: some View {
         Panel {
             HStack(spacing: 8) {
-                PanelTitle(text: "HDR", systemImage: "square.stack.3d.up.fill")
+                PanelLabel(title: Text("control.hdr"), systemImage: "square.stack.3d.up.fill")
                 Spacer()
                 PlainToggle(isOn: enabled)
             }

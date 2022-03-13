@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SliderPanelLayout: View {
-    var title: String
+    var title: Text
     var systemImage: String
     var valueLabel: String
     @Binding var auto: Bool
@@ -18,7 +18,7 @@ struct SliderPanelLayout: View {
 
     var body: some View {
         ControlLayout(
-            title: PanelTitle(text: title, systemImage: systemImage),
+            title: PanelLabel(title: title, systemImage: systemImage),
             accessories: {
                 Text(verbatim: valueLabel)
                     .font(.caption.bold().monospacedDigit())
