@@ -3,6 +3,15 @@
   <channel>
     <title>Viewfinder</title>
     <item>
+      <title>0.2.0</title>
+      <link>https://github.com/lfroms/viewfinder</link>
+      <sparkle:version>3</sparkle:version>
+      <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
+      <description><![CDATA[<p>Thanks for using Viewfinder! This version includes a number of enhancements and bug fixes:</p><ul><li>Added an &quot;Advanced&quot; submenu to the bottom for quick access to app settings.</li><li>Added a gradient to the White Balance slider&#39;s track to better represent the control.</li><li>Separated the camera picker out of the scroll area to reduce clutter.</li><li>Moved camera permission request to right after the app launches for a smoother experience.</li><li>Fixed a bug where disconnecting all cameras left non-functioning sliders on screen.</li><li>Improved performance and stability for cameras with slower readouts.</li><li>Added support for the Polish language. 🇵🇱</li></ul>]]></description>
+      <pubDate>Mon, 14 Mar 2022 02:26:56 +0000</pubDate>
+      <enclosure url="https://github.com/lfroms/viewfinder/releases/download/0.2.0/Viewfinder-0.2.0-3.dmg" length="3452130" type="application/octet-stream" sparkle:edSignature="aPU2r9sOqwe+QvP8x3dN+eQ+az+6ruj9WsSXFCtqnt/FDqd7sclk+FqcKLEjL+QEZbQ6zFgQ+RpZquz5kWpYAg=="/>
+    </item>
+    <item>
       <title>0.1.1</title>
       <link>https://github.com/lfroms/viewfinder</link>
       <sparkle:version>2</sparkle:version>
