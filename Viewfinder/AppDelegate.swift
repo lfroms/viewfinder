@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import AVFoundation
 import Sparkle
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
@@ -28,6 +29,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         self.statusBarApplication = StatusBarApplication()
         self.statusBarApplication?.delegate = self
+
+        if AVCaptureDevice.authorizationStatus(for: .video) != .authorized {
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { _ in })
+        }
     }
 }
 
