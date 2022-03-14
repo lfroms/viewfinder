@@ -14,15 +14,34 @@ struct WhiteBalancePanel: View {
 
     var body: some View {
         Panel {
-            SliderPanelLayout(
-                title: Text("control.white_balance"),
-                systemImage: "lightbulb.fill",
-                valueLabel: "\(whiteBalance.value)K",
-                auto: $whiteBalanceAuto.value,
-                value: $whiteBalance.value,
-                range: whiteBalance.range
-            )
+            ControlLayout(
+                title: PanelLabel(title: Text("control.white_balance"), systemImage: "lightbulb.fill"),
+                accessories: {
+                    Text(verbatim: "\(whiteBalance.value)K")
+                        .font(.caption.bold().monospacedDigit())
+                        .opacity(0.8)
+
+                    if whiteBalanceAuto.value {
+                        AutoBadge()
+                            .transition(.opacity)
+                    }
+                }
+            ) {
+                HStack(spacing: 8) {
+                    PlainToggle(isOn: $whiteBalanceAuto.value.animation())
+                    MenuSlider(value: $whiteBalance.value, in: whiteBalance.range, trackStyle: .gradient(gradient))
+                        .disabled(whiteBalanceAuto.value)
+                }
+            }
             .padding(12)
         }
+    }
+
+    private var gradient: LinearGradient {
+        LinearGradient(
+            stops: [.init(color: .blue, location: 0), .init(color: .yellow, location: 0.5), .init(color: .orange, location: 1)],
+            startPoint: .leading,
+            endPoint: .trailing
+        )
     }
 }

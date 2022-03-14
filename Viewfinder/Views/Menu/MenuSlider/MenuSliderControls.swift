@@ -12,7 +12,8 @@ struct MenuSliderControls: View {
     @Environment(\.colorScheme) var colorScheme
 
     let offset: CGFloat
-    let handleOpacity: CGFloat
+    let isTracking: Bool
+    var trackStyle: TrackStyle = .standard
 
     var body: some View {
         ZStack(alignment: .leading) {
@@ -24,17 +25,27 @@ struct MenuSliderControls: View {
                     .strokeBorder(Color.black.opacity(0.1), lineWidth: 1)
             }
 
-            RoundedRectangle(cornerRadius: 10)
-                .fill(.white)
-                .frame(width: offset + 20, height: 20, alignment: .leading)
-                .padding(.leading, 1)
+            Group {
+                switch trackStyle {
+                case .standard:
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(.white)
+                        .frame(width: offset + 20, height: 20, alignment: .leading)
+
+                case .gradient(let gradient):
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(gradient)
+                        .frame(height: 20, alignment: .leading)
+                }
+            }
+            .padding(.horizontal, 1)
 
             Circle()
                 .strokeBorder(Color.black.opacity(0.13), lineWidth: 1)
                 .frame(width: 22, height: 22)
                 .background(
                     Circle()
-                        .fill(.white)
+                        .fill(isTracking ? Color(white: 0.94) : .white)
                         .frame(width: 20, height: 20, alignment: .center)
                         .shadow(color: .black.opacity(0.15), radius: 10, x: 0, y: 0)
                 )
@@ -42,5 +53,18 @@ struct MenuSliderControls: View {
                 .opacity(handleOpacity)
         }
         .frame(height: 22)
+    }
+
+    private var handleOpacity: CGFloat {
+        if case .gradient = trackStyle {
+            return 1
+        }
+
+        switch offset {
+        case 0 ... 16:
+            return offset / 16
+        default:
+            return 1
+        }
     }
 }

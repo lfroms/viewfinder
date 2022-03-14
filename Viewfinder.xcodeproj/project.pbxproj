@@ -17,6 +17,7 @@
 		8010495527DE680D00688A86 /* MainStatusBarMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010495427DE680D00688A86 /* MainStatusBarMenuDelegate.swift */; };
 		8010498A27DE917E00688A86 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8010498C27DE917E00688A86 /* Localizable.strings */; };
 		8010499027DE926600688A86 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8010499227DE926700688A86 /* InfoPlist.strings */; };
+		8010499F27DED1A000688A86 /* TrackStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010499E27DED1A000688A86 /* TrackStyle.swift */; };
 		802D193E27B34936001A5B25 /* UVCRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D193D27B34936001A5B25 /* UVCRequest.swift */; };
 		802D194027B35425001A5B25 /* USBInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D193F27B35425001A5B25 /* USBInterface.swift */; };
 		802D194427B35FAF001A5B25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194327B35FAF001A5B25 /* Constants.swift */; };
@@ -142,6 +143,7 @@
 		8010499127DE926700688A86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8010499627DE9BB900688A86 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8010499727DE9BB900688A86 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8010499E27DED1A000688A86 /* TrackStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackStyle.swift; sourceTree = "<group>"; };
 		802D193D27B34936001A5B25 /* UVCRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCRequest.swift; sourceTree = "<group>"; };
 		802D193F27B35425001A5B25 /* USBInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBInterface.swift; sourceTree = "<group>"; };
 		802D194327B35FAF001A5B25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 			children = (
 				8097A4DD27AF78750003BB23 /* MenuSlider.swift */,
 				80CF9BE627BB27B4001C0E0A /* MenuSliderControls.swift */,
+				8010499E27DED1A000688A86 /* TrackStyle.swift */,
 			);
 			path = MenuSlider;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				80C4482427AF2A6C0059150C /* PreviewPanel.swift in Sources */,
 				8044385C27C83E8600715373 /* PlainToggle.swift in Sources */,
 				80CF9BE727BB27B4001C0E0A /* MenuSliderControls.swift in Sources */,
+				8010499F27DED1A000688A86 /* TrackStyle.swift in Sources */,
 				80D9369227D31A4C00232BAD /* ToggleableRow.swift in Sources */,
 				8044386827C876D300715373 /* SaturationPanel.swift in Sources */,
 				80D9369A27D3F5F400232BAD /* CameraList.swift in Sources */,

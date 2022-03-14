@@ -11,23 +11,26 @@ import SwiftUI
 struct MenuSlider: View {
     @Environment(\.isEnabled) var isEnabled: Bool
 
-    @State var percentage: Double
-    @Binding var value: Int
-    var bounds: ClosedRange<Int>
+    @State private var percentage: Double
+    @Binding private var value: Int
+    private var bounds: ClosedRange<Int>
+    private var trackStyle: TrackStyle = .standard
 
-    @GestureState var isDragging: Bool = false
+    @GestureState private var isDragging: Bool = false
 
-    init(value: Binding<Int>, in bounds: ClosedRange<Int>) {
+    init(value: Binding<Int>, in bounds: ClosedRange<Int>, trackStyle: TrackStyle = .standard) {
         self._value = value
         self.bounds = bounds
         self.percentage = value.wrappedValue.percentage(in: bounds)
+        self.trackStyle = trackStyle
     }
 
     var body: some View {
         GeometryReader { proxy in
             MenuSliderControls(
                 offset: leftOffset(totalWidth: proxy.size.width),
-                handleOpacity: handleOutlineOpacity(totalWidth: proxy.size.width)
+                isTracking: isDragging,
+                trackStyle: trackStyle
             )
             .opacity(isEnabled ? 1 : 0.35)
             .gesture(
@@ -56,17 +59,6 @@ struct MenuSlider: View {
         }
         .onChange(of: percentage) { newValue in
             self.value = newValue.percentageToAbsolute(in: bounds)
-        }
-    }
-
-    private func handleOutlineOpacity(totalWidth: CGFloat) -> CGFloat {
-        let leftOffset = leftOffset(totalWidth: totalWidth)
-
-        switch leftOffset {
-        case 0 ... 16:
-            return leftOffset / 16
-        default:
-            return 1
         }
     }
 
