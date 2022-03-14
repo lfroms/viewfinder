@@ -37,15 +37,13 @@ Viewfinder is written in [SwiftUI](https://developer.apple.com/xcode/swiftui/), 
 
 ## Download
 
-You can download a pre-built **Apple notarized** universal binary of the latest version of Viewfinder from the latest GitHub release. Click the button below to jump to it, then download the `.dmg` file:
+You can download a pre-built **Apple notarized** universal binary of the latest version of Viewfinder from the latest GitHub release. Viewfinder supports macOS 12.0 and later. Click the button below to jump to it, then download the `.dmg` file:
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lfroms/viewfinder?color=black&label=download%20latest&logo=github&sort=semver&style=for-the-badge)](https://github.com/lfroms/viewfinder/releases/latest)
 
 A full list of releases is available [here](https://github.com/lfroms/viewfinder/releases).
 
 Viewfinder will automatically check for updates and let you know if a new one is available. You'll be prompted to enable automatic update checks when you first launch the app.
-
-> 💡 **Tip:** Hold the Option <kbd>⌥</kbd> key while Viewfinder is open to access the "Check for Updates" and "Quit" options.
 
 ## Building from Source
 
