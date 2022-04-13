@@ -13,38 +13,21 @@ extension View {
     /// - Parameter action: The action to perform whenever the pointer enters or exits this view’s frame. If the pointer is in the view’s frame, the action closure passes `true` as a parameter; otherwise, `false`.
     /// - Returns: A view that triggers `action` when the pointer enters or exits this view’s frame.
     func onBackgroundHover(perform action: @escaping (Bool) -> Void) -> some View {
-        TrackingAreaView(onHover: action) { self }
+        self.background(TrackingAreaRepresentable(onHover: action))
     }
 }
 
-struct TrackingAreaView<Content>: View where Content: View {
+struct TrackingAreaRepresentable: NSViewRepresentable {
     let onHover: (Bool) -> Void
-    let content: () -> Content
 
-    init(onHover: @escaping (Bool) -> Void, @ViewBuilder content: @escaping () -> Content) {
-        self.onHover = onHover
-        self.content = content
+    func makeNSView(context: Context) -> TrackingAreaView {
+        return TrackingAreaView(onHover: self.onHover)
     }
 
-    var body: some View {
-        TrackingAreaRepresentable(onHover: onHover, content: self.content())
-    }
+    func updateNSView(_ nsView: TrackingAreaView, context: Context) {}
 }
 
-struct TrackingAreaRepresentable<Content>: NSViewRepresentable where Content: View {
-    let onHover: (Bool) -> Void
-    let content: Content
-
-    func makeNSView(context: Context) -> NSHostingView<Content> {
-        return TrackingNSHostingView(onHover: self.onHover, rootView: self.content)
-    }
-
-    func updateNSView(_ nsView: NSHostingView<Content>, context: Context) {
-        nsView.rootView = self.content
-    }
-}
-
-class TrackingNSHostingView<Content>: NSHostingView<Content> where Content: View {
+class TrackingAreaView: NSView {
     private let onHover: (Bool) -> Void
 
     private var hovering: Bool = false {
@@ -57,16 +40,12 @@ class TrackingNSHostingView<Content>: NSHostingView<Content> where Content: View
         }
     }
 
-    init(onHover: @escaping (Bool) -> Void, rootView: Content) {
+    init(onHover: @escaping (Bool) -> Void) {
         self.onHover = onHover
 
-        super.init(rootView: rootView)
+        super.init(frame: .zero)
 
         self.setupTrackingArea()
-    }
-
-    required init(rootView: Content) {
-        fatalError("init(rootView:) has not been implemented")
     }
 
     @available(*, unavailable)
