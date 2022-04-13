@@ -3,6 +3,15 @@
   <channel>
     <title>Viewfinder</title>
     <item>
+      <title>0.3.0</title>
+      <link>https://github.com/lfroms/viewfinder</link>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
+      <description><![CDATA[<p>Thanks for using Viewfinder! This version contains some under-the-hood improvements, and:</p><ul><li>You can now mirror your camera preview by hovering over the preview panel and clicking the “flip” button.</li></ul>]]></description>
+      <pubDate>Wed, 13 Apr 2022 03:06:11 +0000</pubDate>
+      <enclosure url="https://github.com/lfroms/viewfinder/releases/download/0.3.0/Viewfinder-0.3.0-4.dmg" length="3458576" type="application/octet-stream" sparkle:edSignature="tLfKaMEuQqKg0nM+8SU44UN+FZ+4P9hIACNpV6IIxr/oXOqgxWZmNXODSXMV0zGJ3jCEKeBvCZ0LPP2gdHftCQ=="/>
+    </item>
+    <item>
       <title>0.2.0</title>
       <link>https://github.com/lfroms/viewfinder</link>
       <sparkle:version>3</sparkle:version>
