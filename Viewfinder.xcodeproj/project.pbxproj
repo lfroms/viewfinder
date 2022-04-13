@@ -18,6 +18,8 @@
 		8010498A27DE917E00688A86 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8010498C27DE917E00688A86 /* Localizable.strings */; };
 		8010499027DE926600688A86 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8010499227DE926700688A86 /* InfoPlist.strings */; };
 		8010499F27DED1A000688A86 /* TrackStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010499E27DED1A000688A86 /* TrackStyle.swift */; };
+		801FC6C228066AFB0005B930 /* PreviewPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801FC6C128066AFB0005B930 /* PreviewPanelViewModel.swift */; };
+		801FC6C428066B1C0005B930 /* FlipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801FC6C328066B1C0005B930 /* FlipButton.swift */; };
 		802D193E27B34936001A5B25 /* UVCRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D193D27B34936001A5B25 /* UVCRequest.swift */; };
 		802D194027B35425001A5B25 /* USBInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D193F27B35425001A5B25 /* USBInterface.swift */; };
 		802D194427B35FAF001A5B25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194327B35FAF001A5B25 /* Constants.swift */; };
@@ -144,6 +146,8 @@
 		8010499627DE9BB900688A86 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8010499727DE9BB900688A86 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8010499E27DED1A000688A86 /* TrackStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackStyle.swift; sourceTree = "<group>"; };
+		801FC6C128066AFB0005B930 /* PreviewPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPanelViewModel.swift; sourceTree = "<group>"; };
+		801FC6C328066B1C0005B930 /* FlipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipButton.swift; sourceTree = "<group>"; };
 		802D193D27B34936001A5B25 /* UVCRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCRequest.swift; sourceTree = "<group>"; };
 		802D193F27B35425001A5B25 /* USBInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBInterface.swift; sourceTree = "<group>"; };
 		802D194327B35FAF001A5B25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -356,6 +360,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		801FC6C028066AED0005B930 /* PreviewPanel */ = {
+			isa = PBXGroup;
+			children = (
+				80C4482327AF2A6C0059150C /* PreviewPanel.swift */,
+				801FC6C128066AFB0005B930 /* PreviewPanelViewModel.swift */,
+			);
+			path = PreviewPanel;
+			sourceTree = "<group>";
+		};
 		8044385227C6EA3500715373 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +497,7 @@
 				80D9369927D3F5F400232BAD /* CameraList.swift */,
 				80D9369727D3DB6200232BAD /* CameraPicker.swift */,
 				8044387D27CAE57E00715373 /* ControlLayout.swift */,
+				801FC6C328066B1C0005B930 /* FlipButton.swift */,
 				8044385D27C8586800715373 /* SliderPanelLayout.swift */,
 			);
 			path = Views;
@@ -502,7 +516,7 @@
 		80C4482227AF2A640059150C /* Panels */ = {
 			isa = PBXGroup;
 			children = (
-				80C4482327AF2A6C0059150C /* PreviewPanel.swift */,
+				801FC6C028066AED0005B930 /* PreviewPanel */,
 				8044387527CABAC300715373 /* ExposurePanel.swift */,
 				80CF9BE827BDCC9E001C0E0A /* WhiteBalancePanel.swift */,
 				8044385F27C8670600715373 /* BrightnessPanel.swift */,
@@ -698,6 +712,7 @@
 				8044387627CABAC300715373 /* ExposurePanel.swift in Sources */,
 				8044386E27C87F5D00715373 /* DataRefreshNotifier.swift in Sources */,
 				80CF9BE927BDCC9E001C0E0A /* WhiteBalancePanel.swift in Sources */,
+				801FC6C228066AFB0005B930 /* PreviewPanelViewModel.swift in Sources */,
 				80D9369E27D4051900232BAD /* ToggleableRowIcon.swift in Sources */,
 				8044386A27C8776600715373 /* SharpnessPanel.swift in Sources */,
 				8044386427C8742A00715373 /* Double+Round.swift in Sources */,
@@ -717,6 +732,7 @@
 				80D9369A27D3F5F400232BAD /* CameraList.swift in Sources */,
 				80DC4DFE27D19B69009DBCC3 /* NoWebcamEmptyState.swift in Sources */,
 				806221A427DC3611007125C0 /* Dimension.swift in Sources */,
+				801FC6C428066B1C0005B930 /* FlipButton.swift in Sources */,
 				8010494827DE62F400688A86 /* MainStatusBarMenu.swift in Sources */,
 				80C4481F27AF28B40059150C /* PreviewView.swift in Sources */,
 				8010495527DE680D00688A86 /* MainStatusBarMenuDelegate.swift in Sources */,

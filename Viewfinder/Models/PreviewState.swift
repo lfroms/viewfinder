@@ -6,7 +6,7 @@
 //  Copyright © 2022 Lukas Romsicki. All rights reserved.
 //
 
-enum PreviewState {
+enum PreviewState: Equatable {
     case suspended(deviceName: String)
     case initializing
     case noDevice
