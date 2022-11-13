@@ -3,6 +3,15 @@
   <channel>
     <title>Viewfinder</title>
     <item>
+      <title>0.4.0</title>
+      <link>https://github.com/lfroms/viewfinder</link>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>0.4.0</sparkle:shortVersionString>
+      <description><![CDATA[<p>Thanks for using Viewfinder! In this update:</p><ul><li>The app can now be configured to automatically launch at login on macOS Ventura.</li></ul>]]></description>
+      <pubDate>Sun, 13 Nov 2022 21:34:29 +0000</pubDate>
+      <enclosure url="https://github.com/lfroms/viewfinder/releases/download/0.4.0/Viewfinder-0.4.0-5.dmg" length="4285140" type="application/octet-stream" sparkle:edSignature="9cQ3Qous8nfHz10LbLwuG5DH7GjQZqAUK1pL1EfTe3uMGg5jbOGIMP+bbYq7pMP7kbKXBP9N5WAKmReAePrTBw=="/>
+    </item>
+    <item>
       <title>0.3.0</title>
       <link>https://github.com/lfroms/viewfinder</link>
       <sparkle:version>4</sparkle:version>
