@@ -13,12 +13,18 @@ final class AdvancedStatusBarMenu: StatusBarMenu {
 
     let menu: NSMenu
 
-    init() {
-        self.menu = NSMenu()
+    init(openAtLoginItemState: Bool) {
+        menu = NSMenu()
 
         setupAboutItem()
         setupCheckForUpdatesItem()
         menu.addItem(.separator())
+
+        if #available(macOS 13.0, *) {
+            setupOpenAtLoginItem(initialState: openAtLoginItemState)
+            menu.addItem(.separator())
+        }
+
         setupQuitItem()
     }
 
@@ -36,6 +42,19 @@ final class AdvancedStatusBarMenu: StatusBarMenu {
         )
 
         menu.addItem(withTitle: title, action: #selector(delegate?.didPressCheckForUpdatesItem(_:)), keyEquivalent: "")
+    }
+
+    @available(macOS 13.0, *)
+    private func setupOpenAtLoginItem(initialState: Bool) {
+        let title = NSLocalizedString(
+            "menu.advanced.open_at_login",
+            comment: "Open at login item in the Advanced menu."
+        )
+
+        let item = NSMenuItem(title: title, action: #selector(delegate?.didPressOpenAtLoginItem(_:)), keyEquivalent: "")
+        item.state = initialState ? .on : .off
+
+        menu.addItem(item)
     }
 
     private func setupQuitItem() {

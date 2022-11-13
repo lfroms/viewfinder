@@ -23,11 +23,20 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     )
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        var opensAtLogin = false
+
+        if #available(macOS 13.0, *) {
+            let controller = LaunchAtLoginController()
+            controller.performInitialSetupIfNeeded()
+
+            opensAtLogin = controller.launchesAtLogin
+        }
+
         Task {
             deviceManager.discoverConnectedDevices()
         }
 
-        self.statusBarApplication = StatusBarApplication()
+        self.statusBarApplication = StatusBarApplication(opensAtLogin: opensAtLogin)
         self.statusBarApplication?.delegate = self
 
         if AVCaptureDevice.authorizationStatus(for: .video) != .authorized {
@@ -66,6 +75,14 @@ extension AppDelegate: StatusBarApplicationDelegate {
 
     func didPressCheckForUpdatesItem(_ sender: Any?) {
         self.updaterController.checkForUpdates(sender)
+    }
+
+    @available(macOS 13.0, *)
+    func didPressOpenAtLoginItem(_ sender: NSMenuItem) {
+        let controller = LaunchAtLoginController()
+        controller.toggleRegistration()
+
+        sender.state = controller.launchesAtLogin ? .on : .off
     }
 
     func didPressQuitItem(_ sender: Any?) {

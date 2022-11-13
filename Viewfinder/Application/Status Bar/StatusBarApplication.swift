@@ -14,7 +14,7 @@ final class StatusBarApplication {
     )
 
     private let mainMenu = MainStatusBarMenu()
-    private let advancedMenu = AdvancedStatusBarMenu()
+    private let advancedMenu: AdvancedStatusBarMenu
 
     var delegate: StatusBarApplicationDelegate? {
         didSet {
@@ -23,7 +23,9 @@ final class StatusBarApplication {
         }
     }
 
-    init() {
+    init(opensAtLogin: Bool = false) {
+        self.advancedMenu = AdvancedStatusBarMenu(openAtLoginItemState: opensAtLogin)
+
         setupSubmenuItems()
         setupStatusBarItem()
     }

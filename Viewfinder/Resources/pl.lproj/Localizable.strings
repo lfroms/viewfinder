@@ -58,6 +58,9 @@
 /* Check for updates item in the Advanced menu. */
 "menu.advanced.check_for_updates" = "Sprawdź dostępność aktualizacji…";
 
+/* Open at login item in the Advanced menu. */
+"menu.advanced.open_at_login" = "Otwieraj podczas logowania";
+
 /* Quit item in the Advanced menu. */
 "menu.advanced.quit" = "Zakończ %@";
 
