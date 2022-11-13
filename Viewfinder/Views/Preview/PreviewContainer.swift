@@ -9,7 +9,7 @@
 import AVFoundation
 import SwiftUI
 
-final class PreviewContainer: NSViewRepresentable {
+struct PreviewContainer: NSViewRepresentable {
     private let captureSession: AVCaptureSession
 
     init(captureSession: AVCaptureSession) {
