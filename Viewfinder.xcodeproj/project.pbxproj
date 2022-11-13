@@ -63,7 +63,6 @@
 		8078968327AC8D3300179CA2 /* ViewfinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078968227AC8D3300179CA2 /* ViewfinderApp.swift */; };
 		8078968527AC8D3300179CA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078968427AC8D3300179CA2 /* ContentView.swift */; };
 		8078968727AC8D3400179CA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8078968627AC8D3400179CA2 /* Assets.xcassets */; };
-		808706F227D84676006213BA /* UpdaterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808706F127D84676006213BA /* UpdaterDelegate.swift */; };
 		808706FA27D99F20006213BA /* PreviewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808706F927D99F20006213BA /* PreviewState.swift */; };
 		808706FC27D99F38006213BA /* PreviewStateEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808706FB27D99F38006213BA /* PreviewStateEmptyState.swift */; };
 		809127A927B5DE8C00C38C0A /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809127A827B5DE8C00C38C0A /* DeviceManager.swift */; };
@@ -194,7 +193,6 @@
 		8078968427AC8D3300179CA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8078968627AC8D3400179CA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8078968B27AC8D3400179CA2 /* Viewfinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Viewfinder.entitlements; sourceTree = "<group>"; };
-		808706F127D84676006213BA /* UpdaterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterDelegate.swift; sourceTree = "<group>"; };
 		808706F927D99F20006213BA /* PreviewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewState.swift; sourceTree = "<group>"; };
 		808706FB27D99F38006213BA /* PreviewStateEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewStateEmptyState.swift; sourceTree = "<group>"; };
 		809127A827B5DE8C00C38C0A /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 			children = (
 				8010495D27DE8A6F00688A86 /* Constants */,
 				8010493627DD8EA000688A86 /* Status Bar */,
-				808706F027D84664006213BA /* Updater */,
 				8078968427AC8D3300179CA2 /* ContentView.swift */,
 			);
 			path = Application;
@@ -457,14 +454,6 @@
 				8078968B27AC8D3400179CA2 /* Viewfinder.entitlements */,
 			);
 			path = Viewfinder;
-			sourceTree = "<group>";
-		};
-		808706F027D84664006213BA /* Updater */ = {
-			isa = PBXGroup;
-			children = (
-				808706F127D84676006213BA /* UpdaterDelegate.swift */,
-			);
-			path = Updater;
 			sourceTree = "<group>";
 		};
 		809127AC27B5E5D500C38C0A /* Models */ = {
@@ -739,7 +728,6 @@
 				8010494827DE62F400688A86 /* MainStatusBarMenu.swift in Sources */,
 				80C4481F27AF28B40059150C /* PreviewView.swift in Sources */,
 				8010495527DE680D00688A86 /* MainStatusBarMenuDelegate.swift in Sources */,
-				808706F227D84676006213BA /* UpdaterDelegate.swift in Sources */,
 				8010494C27DE639100688A86 /* AdvancedStatusBarMenu.swift in Sources */,
 				809127AB27B5E37200C38C0A /* Device.swift in Sources */,
 				8010494427DE5E3600688A86 /* StatusBarApplication.swift in Sources */,
