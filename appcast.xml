@@ -3,6 +3,15 @@
   <channel>
     <title>Viewfinder</title>
     <item>
+      <title>0.6.0</title>
+      <link>https://github.com/lfroms/viewfinder</link>
+      <sparkle:version>7</sparkle:version>
+      <sparkle:shortVersionString>0.6.0</sparkle:shortVersionString>
+      <description><![CDATA[<p>Thanks for using Viewfinder! This update features a light design refresh to make Viewfinder even more of a joy to use.</p>]]></description>
+      <pubDate>Sun, 22 Jan 2023 02:06:39 +0000</pubDate>
+      <enclosure url="https://github.com/lfroms/viewfinder/releases/download/0.6.0/Viewfinder-0.6.0-7.dmg" length="4247081" type="application/octet-stream" sparkle:edSignature="GSZSGqia4TQG0di1gWsNzVMWNSxPU1msU53/3bGwT76BqCBr6gVjuFcBMZihjs6mWEGESc7/cu4am+qkimqCCw=="/>
+    </item>
+    <item>
       <title>0.5.0</title>
       <link>https://github.com/lfroms/viewfinder</link>
       <sparkle:version>6</sparkle:version>
