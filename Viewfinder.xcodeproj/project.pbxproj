@@ -26,6 +26,7 @@
 		802D194427B35FAF001A5B25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194327B35FAF001A5B25 /* Constants.swift */; };
 		802D194627B3651E001A5B25 /* SignedInteger+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194527B3651E001A5B25 /* SignedInteger+Bytes.swift */; };
 		802D194827B3656B001A5B25 /* SignedInteger+ByteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D194727B3656B001A5B25 /* SignedInteger+ByteArray.swift */; };
+		8040B503296BB06A00BA8129 /* VisualEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 8040B502296BB06A00BA8129 /* VisualEffects */; };
 		8044385127C5998400715373 /* CameraControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385027C5998400715373 /* CameraControl.swift */; };
 		8044385427C6EA4600715373 /* UVCControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385327C6EA4600715373 /* UVCControllable.swift */; };
 		8044385627C6EA6F00715373 /* UVCRangeControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044385527C6EA6F00715373 /* UVCRangeControllable.swift */; };
@@ -51,7 +52,7 @@
 		8044388427CB117500715373 /* UVCCameraTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044388327CB117500715373 /* UVCCameraTerminal.swift */; };
 		8044388627CB119200715373 /* UVCProcessingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8044388527CB119200715373 /* UVCProcessingUnit.swift */; };
 		806221A127DC28EA007125C0 /* CollapsibleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806221A027DC28EA007125C0 /* CollapsibleSection.swift */; };
-		806221A427DC3611007125C0 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806221A327DC3611007125C0 /* Dimension.swift */; };
+		806221A427DC3611007125C0 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806221A327DC3611007125C0 /* Metrics.swift */; };
 		806867B427B1EDB20000C64D /* UVCSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B327B1EDB20000C64D /* UVCSelector.swift */; };
 		806867B727B1EF880000C64D /* UVCDescriptorSubtype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */; };
 		806867B927B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */; };
@@ -179,7 +180,7 @@
 		8044388327CB117500715373 /* UVCCameraTerminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCCameraTerminal.swift; sourceTree = "<group>"; };
 		8044388527CB119200715373 /* UVCProcessingUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCProcessingUnit.swift; sourceTree = "<group>"; };
 		806221A027DC28EA007125C0 /* CollapsibleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleSection.swift; sourceTree = "<group>"; };
-		806221A327DC3611007125C0 /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
+		806221A327DC3611007125C0 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		806867B327B1EDB20000C64D /* UVCSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCSelector.swift; sourceTree = "<group>"; };
 		806867B627B1EF880000C64D /* UVCDescriptorSubtype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDescriptorSubtype.swift; sourceTree = "<group>"; };
 		806867B827B1F03A0000C64D /* UVCVideoInterfaceClassCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCVideoInterfaceClassCode.swift; sourceTree = "<group>"; };
@@ -244,6 +245,7 @@
 			files = (
 				80D0679E27B082A60007BCF8 /* UVCKit.framework in Frameworks */,
 				80C21FD027CB2BF300071134 /* Sparkle in Frameworks */,
+				8040B503296BB06A00BA8129 /* VisualEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +346,7 @@
 		8010495D27DE8A6F00688A86 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				806221A327DC3611007125C0 /* Dimension.swift */,
+				806221A327DC3611007125C0 /* Metrics.swift */,
 				80CF9BE427BB1EDA001C0E0A /* Notifications.swift */,
 			);
 			path = Constants;
@@ -611,6 +613,7 @@
 			name = Viewfinder;
 			packageProductDependencies = (
 				80C21FCF27CB2BF300071134 /* Sparkle */,
+				8040B502296BB06A00BA8129 /* VisualEffects */,
 			);
 			productName = Viewfinder;
 			productReference = 8078967F27AC8D3300179CA2 /* Viewfinder.app */;
@@ -664,6 +667,7 @@
 			mainGroup = 8078967627AC8D3300179CA2;
 			packageReferences = (
 				80C21FCE27CB2BF300071134 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				8040B501296BB06A00BA8129 /* XCRemoteSwiftPackageReference "VisualEffects" */,
 			);
 			productRefGroup = 8078968027AC8D3300179CA2 /* Products */;
 			projectDirPath = "";
@@ -723,7 +727,7 @@
 				8044386827C876D300715373 /* SaturationPanel.swift in Sources */,
 				80D9369A27D3F5F400232BAD /* CameraList.swift in Sources */,
 				80DC4DFE27D19B69009DBCC3 /* NoWebcamEmptyState.swift in Sources */,
-				806221A427DC3611007125C0 /* Dimension.swift in Sources */,
+				806221A427DC3611007125C0 /* Metrics.swift in Sources */,
 				801FC6C428066B1C0005B930 /* FlipButton.swift in Sources */,
 				8010494827DE62F400688A86 /* MainStatusBarMenu.swift in Sources */,
 				80C4481F27AF28B40059150C /* PreviewView.swift in Sources */,
@@ -971,8 +975,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Viewfinder/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Viewfinder needs access to your camera so that you can control its settings.";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Lukas Romsicki, GNU General Public License.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Lukas Romsicki, GNU General Public License.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1004,8 +1009,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Viewfinder/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Viewfinder needs access to your camera so that you can control its settings.";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Lukas Romsicki, GNU General Public License.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Lukas Romsicki, GNU General Public License.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1105,6 +1111,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8040B501296BB06A00BA8129 /* XCRemoteSwiftPackageReference "VisualEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/VisualEffects";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.3;
+			};
+		};
 		80C21FCE27CB2BF300071134 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
@@ -1116,6 +1130,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8040B502296BB06A00BA8129 /* VisualEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8040B501296BB06A00BA8129 /* XCRemoteSwiftPackageReference "VisualEffects" */;
+			productName = VisualEffects;
+		};
 		80C21FCF27CB2BF300071134 /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 80C21FCE27CB2BF300071134 /* XCRemoteSwiftPackageReference "Sparkle" */;

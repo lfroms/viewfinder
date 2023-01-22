@@ -25,19 +25,19 @@ struct CollapsibleSection<Label: View, Content: View>: View {
                 HStack {
                     label
                         .sectionHeaderTextStyle()
+                        .padding(.vertical, 0.5)
 
                     Spacer()
 
                     Image(systemName: "chevron.right")
                         .font(.callout)
                         .rotationEffect(expanded ? .degrees(90) : .zero)
-                        .padding(.trailing, 4)
                 }
             }
             .buttonStyle(MenuItemButtonStyle())
 
             content()
-                .frame(height: expanded ? .none : 0, alignment: .bottom)
+                .frame(height: expanded ? nil : 0, alignment: .bottom)
                 .opacity(expanded ? 1 : 0)
                 .clipped()
         }

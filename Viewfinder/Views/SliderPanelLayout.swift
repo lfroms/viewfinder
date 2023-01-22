@@ -22,7 +22,7 @@ struct SliderPanelLayout: View {
             accessories: {
                 Text(verbatim: valueLabel)
                     .font(.caption.bold().monospacedDigit())
-                    .opacity(0.8)
+                    .foregroundStyle(.secondary)
 
                 if auto {
                     AutoBadge()

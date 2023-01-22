@@ -19,7 +19,7 @@ struct WhiteBalancePanel: View {
                 accessories: {
                     Text(verbatim: "\(whiteBalance.value)K")
                         .font(.caption.bold().monospacedDigit())
-                        .opacity(0.8)
+                        .foregroundStyle(.secondary)
 
                     if whiteBalanceAuto.value {
                         AutoBadge()

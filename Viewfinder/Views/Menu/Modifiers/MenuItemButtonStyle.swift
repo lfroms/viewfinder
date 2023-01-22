@@ -13,17 +13,14 @@ struct MenuItemButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .padding(.vertical, 4)
-            .padding(.horizontal, 7)
+            .padding(.vertical, Metrics.menuPaddingVertical)
+            .padding(.horizontal, Metrics.menuPaddingHorizontal)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(
-                Color.primary
-                    .opacity(hovering ? 0.15 : 0)
-                    .cornerRadius(4)
-                    .onBackgroundHover { hovering in
-                        self.hovering = hovering
-                    }
-            )
+            .background(.quaternary.opacity(hovering ? 1 : 0))
+            .cornerRadius(4)
+            .onBackgroundHover { hovering in
+                self.hovering = hovering
+            }
             .environment(\.buttonPressed, configuration.isPressed)
     }
 }

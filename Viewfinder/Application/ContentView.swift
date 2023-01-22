@@ -15,20 +15,20 @@ struct ContentView: View {
         VStack(spacing: 0) {
             if deviceManager.currentDevice != nil {
                 PreviewPanel()
-                    .padding(Dimension.Menu.inset)
+                    .padding(Metrics.panelInset)
             }
 
             if deviceManager.connectedDevices.count > 1 {
                 CameraPicker()
-                    .padding([.horizontal, .bottom], Dimension.Menu.margin)
+                    .padding([.horizontal, .bottom], Metrics.menuMargin)
             }
 
             Divider()
-                .padding(.horizontal, Dimension.Divider.width)
+                .padding(.horizontal, Metrics.dividerWidth)
 
             if let uvc = deviceManager.currentDevice?.uvc {
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: Dimension.Menu.inset) {
+                    VStack(spacing: Metrics.panelInset) {
                         if uvc.cameraTerminalCapabilities.exposureTimeAbsolute {
                             ExposurePanel()
                         }
@@ -65,7 +65,7 @@ struct ContentView: View {
                             HDRPanel()
                         }
                     }
-                    .padding(Dimension.Menu.inset)
+                    .padding(Metrics.panelInset)
                 }
             }
 
@@ -78,8 +78,8 @@ struct ContentView: View {
             }
 
             Divider()
-                .padding(.horizontal, Dimension.Divider.width)
-                .padding(.bottom, Dimension.Menu.margin - Dimension.Divider.width)
+                .padding(.horizontal, Metrics.dividerWidth)
+                .padding(.bottom, Metrics.menuMargin)
         }
     }
 }

@@ -36,7 +36,7 @@ struct ExposurePanel: View {
                             accessories: {
                                 Text(verbatim: "+ \(gain.value)")
                                     .font(.caption.bold().monospacedDigit())
-                                    .opacity(0.8)
+                                    .foregroundStyle(.secondary)
                             }
                         ) {
                             MenuSlider(value: $gain.value, in: gain.range)

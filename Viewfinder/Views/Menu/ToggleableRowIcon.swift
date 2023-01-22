@@ -16,29 +16,14 @@ struct ToggleableRowIcon: View {
     let selected: Bool
 
     var body: some View {
-        ZStack(alignment: .center) {
-            Circle()
-                .foregroundColor(selected ? .blue : .primary.opacity(0.2))
-
-            Image(systemName: systemName)
-                .font(.callout)
-                .foregroundColor(iconColor)
-                .padding(.bottom, 1)
-                .opacity(selected ? 1 : 0.7)
-
-            if buttonPressed {
-                Circle()
-                    .foregroundColor(.primary.opacity(0.15))
-            }
-        }
-        .frame(width: 27, height: 27)
-    }
-
-    private var iconColor: Color {
-        if selected {
-            return .white
-        }
-
-        return colorScheme == .dark ? .white : .black
+        Image(systemName: systemName)
+            .font(.callout)
+            .padding(.bottom, 1)
+            .foregroundColor(selected ? .white : .secondary)
+            .frame(width: 26, height: 26, alignment: .center)
+            .background(.quaternary.opacity(selected ? 0 : 1))
+            .background(.blue.opacity(selected ? 1 : 0))
+            .overlay(.primary.opacity(buttonPressed ? 0.15 : 0))
+            .cornerRadius(.infinity)
     }
 }

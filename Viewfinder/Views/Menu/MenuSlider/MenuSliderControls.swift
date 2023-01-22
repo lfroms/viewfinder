@@ -18,24 +18,24 @@ struct MenuSliderControls: View {
     var body: some View {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 11)
-                .fill(Color.primary.opacity(0.2))
+                .foregroundStyle(.quaternary)
 
             if colorScheme == .light {
                 RoundedRectangle(cornerRadius: 11)
-                    .strokeBorder(Color.black.opacity(0.1), lineWidth: 1)
+                    .strokeBorder(.quaternary, lineWidth: 1)
             }
 
             Group {
                 switch trackStyle {
-                case .standard:
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(.white)
-                        .frame(width: offset + 20, height: 20, alignment: .leading)
+                    case .standard:
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(.white)
+                            .frame(width: offset + 20, height: 20, alignment: .leading)
 
-                case .gradient(let gradient):
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(gradient)
-                        .frame(height: 20, alignment: .leading)
+                    case .gradient(let gradient):
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(gradient)
+                            .frame(height: 20, alignment: .leading)
                 }
             }
             .padding(.horizontal, 1)
@@ -61,10 +61,10 @@ struct MenuSliderControls: View {
         }
 
         switch offset {
-        case 0 ... 16:
-            return offset / 16
-        default:
-            return 1
+            case 0 ... 16:
+                return offset / 16
+            default:
+                return 1
         }
     }
 }

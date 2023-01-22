@@ -12,6 +12,7 @@ import SwiftUI
 class PreviewPanelViewModel: ObservableObject {
     @AppStorage("mirrorVideoPreview") var mirrorVideoPreview: Bool = false
     @Published var hovering: Bool = false
+    @Published var previewActive: Bool = false
 
     func didChangeHoverState(hovering: Bool) {
         withAnimation(.easeInOut(duration: 0.2)) {

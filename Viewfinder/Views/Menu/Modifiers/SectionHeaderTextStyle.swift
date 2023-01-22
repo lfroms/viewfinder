@@ -9,12 +9,10 @@
 import SwiftUI
 
 struct SectionHeaderTextStyle: ViewModifier {
-    @Environment(\.colorScheme) private var colorScheme: ColorScheme
-
     func body(content: Content) -> some View {
         content
             .font(.callout.weight(.semibold))
-            .foregroundColor(.primary.opacity(colorScheme == .dark ? 0.6 : 0.8))
+            .foregroundColor(.secondary)
     }
 }
 

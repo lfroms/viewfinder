@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct PreviewStateEmptyState: View {
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
-
     let state: PreviewState
 
     var body: some View {
@@ -18,14 +16,13 @@ struct PreviewStateEmptyState: View {
             if case .initializing = state {
                 ProgressView()
                     .progressViewStyle(.circular)
-                    .tint(colorScheme == .dark ? .white : .black)
                     .scaleEffect(0.7)
             }
 
             if let iconName = state.iconName {
                 Image(systemName: iconName)
                     .font(.system(size: 28))
-                    .opacity(0.6)
+                    .foregroundStyle(.tertiary)
             }
 
             Group {
@@ -38,7 +35,7 @@ struct PreviewStateEmptyState: View {
                 }
             }
             .font(.callout.weight(.medium))
-            .opacity(0.6)
+            .foregroundStyle(.tertiary)
         }
     }
 }

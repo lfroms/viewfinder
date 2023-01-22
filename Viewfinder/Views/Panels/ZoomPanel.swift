@@ -20,7 +20,7 @@ struct ZoomPanel: View {
                 accessories: {
                     Text(verbatim: "\(zoom.value)")
                         .font(.caption.bold().monospacedDigit())
-                        .opacity(0.8)
+                        .foregroundStyle(.secondary)
                 }
             ) {
                 HStack(spacing: 8) {

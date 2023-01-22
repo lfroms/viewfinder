@@ -17,7 +17,11 @@ struct ToggleableRow: View {
         Button(action: action) {
             HStack(alignment: .center) {
                 icon
+    
                 title
+                    // Seems to make animations perform better.
+                    .compositingGroup()
+                
                 Spacer()
             }
         }

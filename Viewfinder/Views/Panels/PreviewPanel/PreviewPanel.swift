@@ -14,15 +14,15 @@ struct PreviewPanel: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            ZStack(alignment: .center) {
-                PreviewStateEmptyState(state: previewState)
+            Panel {
+                ZStack(alignment: .center) {
+                    PreviewStateEmptyState(state: previewState)
 
-                Panel {
                     PreviewContainer(captureSession: deviceManager.captureSession)
                         .aspectRatio(16 / 9, contentMode: .fit)
                 }
-                .scaleEffect(CGSize(width: viewModel.mirrorVideoPreview ? -1 : 1, height: 1))
             }
+            .scaleEffect(CGSize(width: viewModel.mirrorVideoPreview ? -1 : 1, height: 1))
 
             if previewState == .initializing {
                 FlipButton(activated: viewModel.mirrorVideoPreview, action: viewModel.didPressMirrorVideoButton)

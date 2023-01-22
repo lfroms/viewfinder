@@ -17,14 +17,14 @@ struct FlipButton: View {
             Image(systemName: "arrow.left.and.right.righttriangle.left.righttriangle.right.fill")
                 .font(.caption)
                 .foregroundColor(activated ? .black : .white)
-                .padding(Dimension.Menu.padding)
+                .padding(7)
                 .background(
                     Circle()
                         .foregroundColor(activated ? .white : .init(white: 0.3, opacity: 0.8))
                 )
         }
         .buttonStyle(.plain)
-        .padding(Dimension.Menu.inset)
+        .padding(Metrics.panelInset)
         .transaction { transaction in
             transaction.animation = nil
         }

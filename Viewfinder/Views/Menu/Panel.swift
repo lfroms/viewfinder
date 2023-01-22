@@ -7,13 +7,12 @@
 //
 
 import SwiftUI
+import VisualEffects
 
 struct Panel<Content>: View where Content: View {
     @Environment(\.colorScheme) private var colorScheme
 
-    let content: () -> Content
-    let cornerRadius: CGFloat = 10
-    let shadowPadding: CGFloat = 12
+    private let content: () -> Content
 
     init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content
@@ -21,24 +20,30 @@ struct Panel<Content>: View where Content: View {
 
     var body: some View {
         content()
-            .background(.white.opacity(0.03))
-            .cornerRadius(cornerRadius)
-            .clipped()
+            .background(VisualEffectBlur(material: .menu, blendingMode: .behindWindow, state: .active))
+            .cornerRadius(baseCornerRadius)
             .overlay(
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .strokeBorder(.white.opacity(0.15), lineWidth: 0.5)
+                RoundedRectangle(cornerRadius: baseCornerRadius)
+                    .strokeBorder(.white.opacity(showProminentBorder ? 0.18 : 0), lineWidth: lineWidth)
             )
-            .padding(shadowPadding)
-            .background(
-                RoundedRectangle(cornerRadius: cornerRadius)
-                    .foregroundColor(colorScheme == .dark ? .black : .gray)
-                    .padding(shadowPadding)
-                    .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 0)
-                    .reverseMask {
-                        RoundedRectangle(cornerRadius: cornerRadius)
-                            .padding(shadowPadding)
-                    }
+            .padding(lineWidth)
+            .overlay(
+                RoundedRectangle(cornerRadius: baseCornerRadius + lineWidth)
+                    .strokeBorder(.black.opacity(showProminentBorder ? 0.4 : 0), lineWidth: lineWidth)
             )
-            .padding(-shadowPadding)
+            .compositingGroup()
+            .shadow(color: .black.opacity(0.18), radius: 4, x: 0, y: 2)
+    }
+    
+    private var showProminentBorder: Bool {
+        colorScheme == .dark
+    }
+    
+    private var baseCornerRadius: CGFloat {
+        Metrics.panelCornerRadius
+    }
+    
+    private var lineWidth: CGFloat {
+        Metrics.hairlineWidth
     }
 }
