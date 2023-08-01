@@ -13,6 +13,10 @@ enum UVCRequest {
         selector: UVCSelector,
         length: Int
     ) throws -> Int {
+        guard selector.unitId >= 0 else {
+            return 0
+        }
+
         let requestType = createRequestType(direction: kUSBIn, type: kUSBClass, recipient: kUSBInterface)
 
         let value = try UVCRequest.perform(
@@ -34,6 +38,10 @@ enum UVCRequest {
         value: Int,
         length: Int
     ) throws -> Int {
+        guard selector.unitId >= 0 else {
+            return value
+        }
+
         let requestType = createRequestType(direction: kUSBOut, type: kUSBClass, recipient: kUSBInterface)
 
         let value = try UVCRequest.perform(
