@@ -7,12 +7,19 @@
 //
 
 public class UVCBitmapControl<BitmapValue: UVCBitmapValue>: UVCControl, UVCControllable {
+    private let fallbackValue: BitmapValue
+
+    init(interface: USBInterface, length: Int, selector: UVCSelector, fallbackValue: BitmapValue) {
+        self.fallbackValue = fallbackValue
+        super.init(interface: interface, length: length, selector: selector)
+    }
+
     public lazy var defaultValue: BitmapValue = {
         guard
             let value = try? read(requestType: .getDefault, length: length),
             let bitmapValue = BitmapValue(rawValue: value)
         else {
-            return BitmapValue(rawValue: 0)!
+            return fallbackValue
         }
 
         return bitmapValue

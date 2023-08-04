@@ -50,7 +50,8 @@ public class UVCDeviceControls {
         exposureMode = UVCBitmapControl(
             interface: interface,
             length: 1,
-            selector: cameraTerminal(.aeMode)
+            selector: cameraTerminal(.aeMode),
+            fallbackValue: .auto
         )
         exposurePriority = UVCIntControl(
             interface: interface,
