@@ -3,6 +3,15 @@
   <channel>
     <title>Viewfinder</title>
     <item>
+      <title>0.6.1</title>
+      <link>https://github.com/lfroms/viewfinder</link>
+      <sparkle:version>8</sparkle:version>
+      <sparkle:shortVersionString>0.6.1</sparkle:shortVersionString>
+      <description><![CDATA[<p>Thanks for using Viewfinder! This update fixes a crash when using Viewfinder with certain camera models.</p>]]></description>
+      <pubDate>Sat, 2 Dec 2023 16:53:01 +0000</pubDate>
+      <enclosure url="https://github.com/lfroms/viewfinder/releases/download/0.6.1/Viewfinder-0.6.1-8.dmg" length="3968137" type="application/octet-stream" sparkle:edSignature="amku9sa4K1Zd2XWdgJNFntuCrLo2Sm0lTNpkGnjAJj8PTH+Bp/S4tCNC2UFYTcqmMO2+SZLx/qY4QIxfT0RXAQ=="/>
+    </item>
+    <item>
       <title>0.6.0</title>
       <link>https://github.com/lfroms/viewfinder</link>
       <sparkle:version>7</sparkle:version>
