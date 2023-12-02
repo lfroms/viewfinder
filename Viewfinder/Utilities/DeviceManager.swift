@@ -38,9 +38,15 @@ class DeviceManager: ObservableObject {
 
     /// Finds all connected devices then selects and starts the capture session if an appropriate device was found.
     func discoverConnectedDevices() {
+        let deviceTypes: [AVCaptureDevice.DeviceType] = if #available(macOS 14, *) {
+            [.external, .builtInWideAngleCamera, .continuityCamera, .deskViewCamera]
+        } else {
+            [.externalUnknown, .builtInWideAngleCamera]
+        }
+
         let discoverySession = AVCaptureDevice.DiscoverySession(
-            deviceTypes: [.externalUnknown, .builtInWideAngleCamera],
-            mediaType: nil,
+            deviceTypes: deviceTypes,
+            mediaType: .video,
             position: .unspecified
         )
 
